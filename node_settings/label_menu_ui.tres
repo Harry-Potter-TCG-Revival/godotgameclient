@@ -1,0 +1,7 @@
+[gd_resource type="LabelSettings" load_steps=2 format=3 uid="uid://w38o7lmmpxib"]
+
+[ext_resource type="FontFile" uid="uid://dvqtymqwhgi03" path="res://fonts/HARRYP__.TTF" id="1_22nci"]
+
+[resource]
+font = ExtResource("1_22nci")
+font_size = 40

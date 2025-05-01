@@ -1,0 +1,236 @@
+[gd_scene load_steps=7 format=3 uid="uid://cp2s4ev1tgljh"]
+
+[ext_resource type="Script" path="res://scenes/login_page/login_page.gd" id="1_3rkvw"]
+[ext_resource type="Texture2D" uid="uid://dxon5laic0j5m" path="res://art/Backgrounds/1.20 B1C7M2 The Sorting Ceremony.jpg" id="1_l71dn"]
+[ext_resource type="FontFile" uid="uid://dvqtymqwhgi03" path="res://fonts/HARRYP__.TTF" id="2_naowi"]
+[ext_resource type="LabelSettings" uid="uid://w38o7lmmpxib" path="res://node_settings/label_menu_ui.tres" id="3_y46ef"]
+[ext_resource type="Theme" uid="uid://swsaxumgur54" path="res://node_settings/button_menu_ui.tres" id="4_rt8rq"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_h22jj"]
+font = ExtResource("2_naowi")
+font_size = 80
+font_color = Color(0.827451, 0.65098, 0.145098, 1)
+
+[node name="LoginPage" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_3rkvw")
+
+[node name="Background" type="TextureRect" parent="."]
+layout_mode = 0
+offset_left = -256.0
+offset_top = -7.0
+offset_right = 1550.0
+offset_bottom = 659.0
+texture = ExtResource("1_l71dn")
+expand_mode = 1
+stretch_mode = 4
+
+[node name="Title" type="Label" parent="."]
+layout_mode = 0
+offset_left = 170.0
+offset_top = 45.0
+offset_right = 976.0
+offset_bottom = 140.0
+text = "Harry Potter Trading Card Game"
+label_settings = SubResource("LabelSettings_h22jj")
+
+[node name="LoginUI" type="Panel" parent="."]
+visible = false
+layout_mode = 0
+offset_left = 610.0
+offset_top = 210.0
+offset_right = 1120.0
+offset_bottom = 460.0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="LoginUI"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_bottom = -61.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="EmailLabel" type="Label" parent="LoginUI/VBoxContainer"]
+layout_mode = 2
+text = "Email"
+label_settings = ExtResource("3_y46ef")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="EmailInput" type="LineEdit" parent="LoginUI/VBoxContainer"]
+layout_mode = 2
+alignment = 1
+clear_button_enabled = true
+
+[node name="PasswordLabel" type="Label" parent="LoginUI/VBoxContainer"]
+layout_mode = 2
+text = "Password"
+label_settings = ExtResource("3_y46ef")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="PasswordInput" type="LineEdit" parent="LoginUI/VBoxContainer"]
+layout_mode = 2
+alignment = 1
+clear_button_enabled = true
+
+[node name="HBoxContainer" type="HBoxContainer" parent="LoginUI"]
+layout_mode = 2
+offset_top = 199.0
+offset_right = 507.0
+offset_bottom = 249.0
+size_flags_vertical = 3
+theme_override_constants/separation = 20
+alignment = 1
+
+[node name="StartRegisterButton" type="Button" parent="LoginUI/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme = ExtResource("4_rt8rq")
+text = "Register"
+
+[node name="LoginButton" type="Button" parent="LoginUI/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme = ExtResource("4_rt8rq")
+text = "Login"
+
+[node name="RegisterUI" type="Panel" parent="."]
+layout_mode = 0
+offset_left = 610.0
+offset_top = 210.0
+offset_right = 1120.0
+offset_bottom = 592.0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="RegisterUI"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_bottom = -69.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="EmailRegisterLabel" type="Label" parent="RegisterUI/VBoxContainer"]
+layout_mode = 2
+text = "Email"
+label_settings = ExtResource("3_y46ef")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="EmailRegisterInput" type="LineEdit" parent="RegisterUI/VBoxContainer"]
+layout_mode = 2
+placeholder_text = "This is what you will use to login"
+alignment = 1
+clear_button_enabled = true
+
+[node name="UsernameRegisterLabel" type="Label" parent="RegisterUI/VBoxContainer"]
+layout_mode = 2
+text = "Username"
+label_settings = ExtResource("3_y46ef")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="UserNameRegisterInput" type="LineEdit" parent="RegisterUI/VBoxContainer"]
+layout_mode = 2
+placeholder_text = "Must be a unique name"
+alignment = 1
+clear_button_enabled = true
+
+[node name="DisplaynameRegisterLabel" type="Label" parent="RegisterUI/VBoxContainer"]
+layout_mode = 2
+text = "Displayname"
+label_settings = ExtResource("3_y46ef")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="DisplayNameRegisterInput" type="LineEdit" parent="RegisterUI/VBoxContainer"]
+layout_mode = 2
+placeholder_text = "What you want other players to see"
+alignment = 1
+clear_button_enabled = true
+
+[node name="PasswordRegisterLabel" type="Label" parent="RegisterUI/VBoxContainer"]
+layout_mode = 2
+text = "Password"
+label_settings = ExtResource("3_y46ef")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="PasswordRegisterInput" type="LineEdit" parent="RegisterUI/VBoxContainer"]
+layout_mode = 2
+placeholder_text = "Must be atleast 8 characters"
+alignment = 1
+clear_button_enabled = true
+
+[node name="HBoxContainer" type="HBoxContainer" parent="RegisterUI"]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -255.0
+offset_top = -50.0
+offset_right = 255.0
+grow_horizontal = 2
+grow_vertical = 0
+
+[node name="CancelRegisterAccount" type="Button" parent="RegisterUI/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme = ExtResource("4_rt8rq")
+text = "Cancel"
+
+[node name="FinishRegisterAccount" type="Button" parent="RegisterUI/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme = ExtResource("4_rt8rq")
+text = "Create Account"
+
+[node name="ErrorUI" type="Panel" parent="."]
+layout_mode = 0
+offset_left = 88.0
+offset_top = 512.0
+offset_right = 550.0
+offset_bottom = 602.0
+
+[node name="ErrorLabel" type="Label" parent="ErrorUI"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -164.0
+offset_right = 164.0
+offset_bottom = 41.0
+grow_horizontal = 2
+text = "Login Failed"
+label_settings = ExtResource("3_y46ef")
+horizontal_alignment = 1
+
+[node name="ErrorMessage" type="Label" parent="ErrorUI"]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -325.0
+offset_top = -41.0
+offset_right = 325.0
+grow_horizontal = 2
+grow_vertical = 0
+text = "Login Error Message"
+label_settings = ExtResource("3_y46ef")
+horizontal_alignment = 1
+
+[connection signal="pressed" from="LoginUI/HBoxContainer/StartRegisterButton" to="." method="_on_start_register_button_pressed"]
+[connection signal="pressed" from="LoginUI/HBoxContainer/LoginButton" to="." method="_on_login_button_pressed"]
+[connection signal="pressed" from="RegisterUI/HBoxContainer/CancelRegisterAccount" to="." method="_on_cancel_register_account_pressed"]
+[connection signal="pressed" from="RegisterUI/HBoxContainer/FinishRegisterAccount" to="." method="_on_finish_register_account_pressed"]

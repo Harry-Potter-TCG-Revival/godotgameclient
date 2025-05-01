@@ -1,0 +1,170 @@
+class_name MainMenu
+extends Control
+
+const MATCH_SELECTION_UI_SCENE := preload("res://scenes/match_ui/match_selection_ui.tscn")
+const BATTLE_SCENE := preload("res://scenes/battle/battle.tscn")
+
+var selected_match_name : String : set = _set_selected_match_name
+
+@onready var host_game_ui_container = $Matchmaking/Host_game_ui_container
+@onready var custom_match_name = $Matchmaking/Host_game_ui_container/custom_match_name
+@onready var cancel_game_ui_container = $Matchmaking/Cancel_game_ui_container
+@onready var hosted_match_name = $Matchmaking/Cancel_game_ui_container/hosted_match_name
+@onready var match_game_container = $Matchmaking/Match_game_list/MarginContainer/MatchGameContainer
+@onready var cancel_hosted_game_button = $Matchmaking/Cancel_game_ui_container/cancel_hosted_game_button
+@onready var join_game_button = $Matchmaking/HBoxContainer/join_game_button
+
+func _ready():
+	host_game_ui_container.show()
+	cancel_game_ui_container.hide()
+	Global.player_is_host = false
+
+func _on_host_game_button_pressed():
+	# Create the multiplayer bridge
+	Global.player_is_host = true
+	setupMutilplayerBridge()
+	
+	# Joined the multiplayer bridge match
+	Global.joined_match = await Global.multiplayerbridge.join_named_match(custom_match_name.text)
+	
+	host_game_ui_container.hide()
+	cancel_game_ui_container.show()
+
+func setupMutilplayerBridge():
+	Global.multiplayerbridge = NakamaMultiplayerBridge.new(Global.socket)
+	Global.multiplayerbridge.match_join_error.connect(_on_match_join_error)
+	Global.multiplayerbridge.match_joined.connect(_on_match_joined)
+	multiplayer.multiplayer_peer = Global.multiplayerbridge.multiplayer_peer
+	multiplayer.peer_connected.connect(_on_peer_connected)
+	multiplayer.peer_disconnected.connect(_on_peer_disconnected)
+	
+	if Global.player_is_host:
+		var created_bridge_properties = {
+			"match_name" : custom_match_name.text,
+			"match_creator" : Global.session.username
+		}
+		
+		var created_bridge_properties_json = JSON.stringify(created_bridge_properties)
+		
+		var _created_bridge_storage = await  Global.client.write_storage_objects_async(
+			Global.session,[
+				NakamaWriteStorageObject.new(
+					"Matches",
+					"Open_Match",
+					2,
+					1, 
+					created_bridge_properties_json,
+					"")
+			]
+		)
+
+func _on_match_join_error(error):
+	show_error_ui("Failed to Join match",error.message)
+
+func _on_match_joined():
+	print("joined matched with id of : " + Global.multiplayerbridge.match_id)
+	
+	# Set the Nakama Unique ID to the Player ID
+	# This is used for validating the owner/controller of cards
+	Global.player_id = multiplayer.get_unique_id()
+	
+
+func _on_peer_connected(id):
+	print("Peer conencted id : " + str(id))
+	
+	# Check for and add the peer
+	if !Global.players_in_match.has(id):
+		
+		# Get the peer info, has username and other info
+		var connected_peer_info = Global.multiplayerbridge.get_user_presence_for_peer(id)
+		
+		Global.players_in_match[id] = {
+			"player_id" : id,
+			"player_username" : connected_peer_info.username
+		}
+	
+	# Check for and add the host
+	if !Global.players_in_match.has(multiplayer.get_unique_id()):
+		Global.players_in_match[multiplayer.get_unique_id()] = {
+			"player_id" : multiplayer.get_unique_id(),
+			"player_username" : Global.session.username
+		}
+	
+	# Set the Nakama Unique ID to the Player ID
+	# This is used for validating the owner/controller of cards
+	Global.player_id = multiplayer.get_unique_id()
+	print("test")
+	
+	# If ther are two players connecte in the match start it
+	if multiplayer.is_server():
+		if Global.players_in_match.size() == 2:
+			start_match.rpc()
+
+func _on_peer_disconnected(id):
+	print("Peer disconnected id : " + str(id))
+
+@rpc("any_peer","call_local")
+func start_match():
+	# Move players to battle scene
+	get_tree().change_scene_to_packed(BATTLE_SCENE)
+
+func _on_cancel_hosted_game_button_pressed():
+	await Global.socket.leave_match_async(Global.joined_match.match_id)
+	cancel_game_ui_container.hide()
+	host_game_ui_container.show()
+	join_game_button.disabled = false
+
+func _on_refresh_game_list_button_pressed():
+	var open_match_list = await Global.client.list_storage_objects_async(
+		Global.session,
+		"Matches",
+		"",
+		100,
+		null
+	)
+	_update_match_list(open_match_list)
+
+func show_error_ui(title:String,message: String):
+	print("Error is" + title + message)
+
+func _update_match_list(match_list):
+	# Remove all matches regardless if current or not
+	for i in match_game_container.get_children():
+		i.queue_free()
+	
+	# Add all current matches
+	for i in match_list.objects:
+		var i_parsed = JSON.parse_string(i.value)
+		var new_match_selection_ui := MATCH_SELECTION_UI_SCENE.instantiate() as MatchSelectionUI
+		match_game_container.add_child(new_match_selection_ui)
+		new_match_selection_ui.match_creator.text = i_parsed.match_creator
+		new_match_selection_ui.match_name.text = i_parsed.match_name
+		new_match_selection_ui.match_button.pressed.connect(_update_selected_match.bind(new_match_selection_ui))
+	
+
+func _update_selected_match(selected_match_ui: MatchSelectionUI):
+	selected_match_name = selected_match_ui.match_name.text
+
+func _set_selected_match_name(value: String):
+	selected_match_name = value
+	# Check if a match has been selected, and if the user is hosting a match
+	if selected_match_name:
+		if Global.player_is_host:
+			join_game_button.disabled = true
+		else:
+			join_game_button.disabled = false
+	else:
+		join_game_button.disabled = true
+
+func _on_join_game_button_pressed():
+	# Check if a match id is selected first
+	if not selected_match_name:
+		show_error_ui("No match selected","")
+	
+	# Setup multiplayer bridge
+	Global.player_is_host = false
+	setupMutilplayerBridge()
+	
+	# Join multplayerbridge match
+	Global.joined_match = await Global.multiplayerbridge.join_named_match(selected_match_name)
+	

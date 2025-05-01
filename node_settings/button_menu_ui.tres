@@ -1,0 +1,8 @@
+[gd_resource type="Theme" load_steps=2 format=3 uid="uid://swsaxumgur54"]
+
+[ext_resource type="FontFile" uid="uid://dvqtymqwhgi03" path="res://fonts/HARRYP__.TTF" id="1_3h1ve"]
+
+[resource]
+Button/font_sizes/font_size = 25
+Button/fonts/font = ExtResource("1_3h1ve")
+Label/fonts/font = ExtResource("1_3h1ve")

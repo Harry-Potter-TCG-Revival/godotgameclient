@@ -1,0 +1,50 @@
+[gd_scene load_steps=4 format=3 uid="uid://bidslfmll6t48"]
+
+[ext_resource type="Script" path="res://test_card_ui.gd" id="1_ibxgq"]
+[ext_resource type="Texture2D" uid="uid://dqtdjy5jd1bd1" path="res://art/Cards/CardBacks/HPTCG-RevivalBack.png" id="1_mtlr8"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_ed3m5"]
+font_size = 20
+font_color = Color(0.145098, 0.745098, 0.247059, 1)
+
+[node name="TestCardUI" type="Panel"]
+offset_right = 159.0
+offset_bottom = 218.0
+script = ExtResource("1_ibxgq")
+
+[node name="CardVisuals" type="Panel" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="CardImage" type="TextureRect" parent="CardVisuals"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_mtlr8")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="PlayerText" type="Label" parent="CardVisuals"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -49.5
+offset_top = 20.0
+offset_right = 49.5
+offset_bottom = 43.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Player Name"
+label_settings = SubResource("LabelSettings_ed3m5")
+horizontal_alignment = 1
+vertical_alignment = 1

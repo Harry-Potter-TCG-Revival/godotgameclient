@@ -1,0 +1,34 @@
+[gd_scene load_steps=3 format=3 uid="uid://y4mfvmni0aef"]
+
+[ext_resource type="Script" path="res://scenes/match_ui/match_selection_ui.gd" id="1_jauv3"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_kmtbh"]
+font_size = 8
+
+[node name="MatchSelectionUI" type="CenterContainer"]
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("1_jauv3")
+
+[node name="MatchButton" type="Button" parent="."]
+custom_minimum_size = Vector2(240, 50)
+layout_mode = 2
+
+[node name="MatchName" type="Label" parent="MatchButton"]
+layout_mode = 2
+offset_left = 3.0
+offset_top = 4.0
+offset_right = 237.0
+offset_bottom = 34.0
+text = "Match Name"
+horizontal_alignment = 1
+
+[node name="MatchCreator" type="Label" parent="MatchButton"]
+layout_mode = 2
+offset_left = 176.0
+offset_top = 34.0
+offset_right = 236.0
+offset_bottom = 46.0
+text = "Match Creator"
+label_settings = SubResource("LabelSettings_kmtbh")
+horizontal_alignment = 1

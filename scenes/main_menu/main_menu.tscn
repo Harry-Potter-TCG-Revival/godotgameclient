@@ -1,0 +1,254 @@
+[gd_scene load_steps=6 format=3 uid="uid://cqt1toobxoj67"]
+
+[ext_resource type="Script" path="res://scenes/main_menu/main_menu.gd" id="1_a1nom"]
+[ext_resource type="Texture2D" uid="uid://bufc67ltc4c0y" path="res://art/Backgrounds/4.09 Quidditch World Cup - Ireland VS Bulgaria Quidditch Stadium B4C8M1.jpg" id="1_xqxlx"]
+[ext_resource type="LabelSettings" uid="uid://w38o7lmmpxib" path="res://node_settings/label_menu_ui.tres" id="2_mtpip"]
+[ext_resource type="Texture2D" uid="uid://b2gpjjuukdubm" path="res://art/Misc/under_construction.png" id="4_c62kb"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_xdjd1"]
+bg_color = Color(0, 0, 0, 1)
+
+[node name="MainMenu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_a1nom")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 0
+offset_left = -25.0
+offset_top = -19.0
+offset_right = 1181.0
+offset_bottom = 668.0
+texture = ExtResource("1_xqxlx")
+expand_mode = 1
+stretch_mode = 4
+
+[node name="Resources" type="Panel" parent="."]
+layout_mode = 0
+offset_left = 42.0
+offset_top = 52.0
+offset_right = 361.0
+offset_bottom = 622.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_xdjd1")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Resources"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -85.5
+offset_top = -255.0
+offset_right = 85.5
+offset_bottom = 224.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 50
+
+[node name="resource_links_title" type="Label" parent="Resources/VBoxContainer"]
+layout_mode = 2
+text = "Resource Links"
+label_settings = ExtResource("2_mtpip")
+horizontal_alignment = 1
+
+[node name="deck_lists_link_button" type="LinkButton" parent="Resources/VBoxContainer"]
+layout_mode = 2
+text = "Deck Lists"
+underline = 1
+uri = "https://harrypottertcg.com/decks.html"
+
+[node name="accio_link_button" type="LinkButton" parent="Resources/VBoxContainer"]
+layout_mode = 2
+text = "Accio"
+underline = 1
+uri = "https://accio.cards/"
+
+[node name="rules_link_button" type="LinkButton" parent="Resources/VBoxContainer"]
+layout_mode = 2
+text = "Rules"
+underline = 1
+uri = "https://docs.google.com/document/d/14nlmMGUaKFaDvQxvix9bCwHozmtxih9B8CM10mK88Ac/edit?tab=t.0"
+
+[node name="how_to_play_link_button" type="LinkButton" parent="Resources/VBoxContainer"]
+layout_mode = 2
+text = "How To Play"
+underline = 1
+
+[node name="how_to_build_a_deck_link_button" type="LinkButton" parent="Resources/VBoxContainer"]
+layout_mode = 2
+text = "How To Build a Deck"
+underline = 1
+uri = "https://www.youtube.com/watch?v=jFm4GWsdDMw"
+
+[node name="discord_server_link_button" type="LinkButton" parent="Resources/VBoxContainer"]
+layout_mode = 2
+text = "Discord Server"
+underline = 1
+uri = "https://discord.gg/EKJSXBC"
+
+[node name="Decks" type="Panel" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -159.0
+offset_top = -274.0
+offset_right = 160.0
+offset_bottom = 82.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_xdjd1")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Decks"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -95.5
+offset_top = -150.0
+offset_right = 95.5
+offset_bottom = 100.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 50
+
+[node name="deck_building_title_button" type="Label" parent="Decks/VBoxContainer"]
+layout_mode = 2
+text = "Deck Building"
+label_settings = ExtResource("2_mtpip")
+horizontal_alignment = 1
+
+[node name="import_deck_accio_button" type="Button" parent="Decks/VBoxContainer"]
+layout_mode = 2
+text = "Import Deck from Accio"
+
+[node name="view_decks_button" type="Button" parent="Decks/VBoxContainer"]
+layout_mode = 2
+text = "View Decks"
+
+[node name="TextureRect" type="TextureRect" parent="Decks"]
+self_modulate = Color(1, 1, 1, 0.482353)
+layout_mode = 0
+offset_left = 29.0
+offset_top = 61.0
+offset_right = 305.0
+offset_bottom = 349.0
+texture = ExtResource("4_c62kb")
+expand_mode = 1
+stretch_mode = 4
+
+[node name="Matchmaking" type="Panel" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 215.0
+offset_top = -274.0
+offset_right = 534.0
+offset_bottom = 296.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_xdjd1")
+
+[node name="deck_building_title_button" type="Label" parent="Matchmaking"]
+layout_mode = 2
+offset_left = 20.0
+offset_top = 30.0
+offset_right = 298.0
+offset_bottom = 71.0
+text = "Match Making"
+label_settings = ExtResource("2_mtpip")
+horizontal_alignment = 1
+
+[node name="Host_game_ui_container" type="VBoxContainer" parent="Matchmaking"]
+layout_mode = 0
+offset_left = 18.0
+offset_top = 93.0
+offset_right = 302.0
+offset_bottom = 168.0
+theme_override_constants/separation = 15
+alignment = 1
+
+[node name="custom_match_name" type="LineEdit" parent="Matchmaking/Host_game_ui_container"]
+layout_mode = 2
+placeholder_text = "Type the name of your game"
+alignment = 1
+
+[node name="host_game_button" type="Button" parent="Matchmaking/Host_game_ui_container"]
+layout_mode = 2
+text = "Host Game"
+
+[node name="Cancel_game_ui_container" type="VBoxContainer" parent="Matchmaking"]
+visible = false
+layout_mode = 0
+offset_left = 18.0
+offset_top = 93.0
+offset_right = 302.0
+offset_bottom = 168.0
+theme_override_constants/separation = 15
+alignment = 1
+
+[node name="hosted_match_name" type="Label" parent="Matchmaking/Cancel_game_ui_container"]
+layout_mode = 2
+text = "Hosted Match Name"
+horizontal_alignment = 1
+
+[node name="cancel_hosted_game_button" type="Button" parent="Matchmaking/Cancel_game_ui_container"]
+layout_mode = 2
+text = "Cancel Game"
+
+[node name="Match_game_list" type="Panel" parent="Matchmaking"]
+layout_mode = 0
+offset_top = 205.0
+offset_right = 319.0
+offset_bottom = 512.0
+
+[node name="MarginContainer" type="MarginContainer" parent="Matchmaking/Match_game_list"]
+layout_mode = 2
+offset_right = 319.0
+offset_bottom = 307.0
+size_flags_vertical = 3
+theme_override_constants/margin_left = 5
+theme_override_constants/margin_top = 5
+theme_override_constants/margin_right = 5
+theme_override_constants/margin_bottom = 5
+
+[node name="MatchGameContainer" type="VBoxContainer" parent="Matchmaking/Match_game_list/MarginContainer"]
+layout_mode = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Matchmaking"]
+layout_mode = 1
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -50.0
+grow_horizontal = 2
+grow_vertical = 0
+alignment = 1
+
+[node name="join_game_button" type="Button" parent="Matchmaking/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Join Game"
+
+[node name="refresh_game_list_button" type="Button" parent="Matchmaking/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Refresh Game List"
+
+[connection signal="pressed" from="Matchmaking/Host_game_ui_container/host_game_button" to="." method="_on_host_game_button_pressed"]
+[connection signal="pressed" from="Matchmaking/Cancel_game_ui_container/cancel_hosted_game_button" to="." method="_on_cancel_hosted_game_button_pressed"]
+[connection signal="pressed" from="Matchmaking/HBoxContainer/join_game_button" to="." method="_on_join_game_button_pressed"]
+[connection signal="pressed" from="Matchmaking/HBoxContainer/refresh_game_list_button" to="." method="_on_refresh_game_list_button_pressed"]

@@ -1,0 +1,15 @@
+MultiplayerSynchronizer
+Node2D
+Label
+TextureRect
+Panel
+Sprite2D
+CharacterBody2D
+MultiplayerSpawner
+CenterContainer
+Button
+HBoxContainer
+MarginContainer
+VBoxContainer
+LineEdit
+LinkButton
