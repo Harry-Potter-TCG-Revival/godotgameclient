@@ -28,7 +28,10 @@ func _ready():
 	login_ui.show()
 	register_ui.hide()
 	error_ui.hide()
-	client = Nakama.create_client("defaultkey","127.0.0.1",7350,"http")
+	# Local Host Testing
+	#client = Nakama.create_client("defaultkey","127.0.0.1",7350,"http")
+	# Hosted Internet Testing (do not use for PROD)
+	client = Nakama.create_client("AGgpLqM45wdkEIH4PMvs5c90T6HxtrBV","164.90.255.189",7350,"https")
 
 func _on_login_button_pressed():
 	session = await client.authenticate_email_async(email_input.text,password_input.text,null,false)
