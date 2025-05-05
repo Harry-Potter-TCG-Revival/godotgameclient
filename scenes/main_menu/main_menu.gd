@@ -5,6 +5,7 @@ const MATCH_SELECTION_UI_SCENE := preload("res://scenes/match_ui/match_selection
 const BATTLE_SCENE := preload("res://scenes/battle/battle.tscn")
 
 var selected_match_name : String : set = _set_selected_match_name
+var is_importing_decklist : bool = false
 
 @onready var host_game_ui_container = $Matchmaking/Host_game_ui_container
 @onready var custom_match_name = $Matchmaking/Host_game_ui_container/custom_match_name
@@ -13,10 +14,14 @@ var selected_match_name : String : set = _set_selected_match_name
 @onready var match_game_container = $Matchmaking/Match_game_list/MarginContainer/MatchGameContainer
 @onready var cancel_hosted_game_button = $Matchmaking/Cancel_game_ui_container/cancel_hosted_game_button
 @onready var join_game_button = $Matchmaking/HBoxContainer/join_game_button
+@onready var deck_import = $DeckImport
+@onready var file_dialog_load_deck = $DeckImport/FileDialogLoadDeck
 
 func _ready():
 	host_game_ui_container.show()
 	cancel_game_ui_container.hide()
+	deck_import.hide()
+	file_dialog_load_deck.hide()
 	Global.player_is_host = false
 
 func _on_host_game_button_pressed():
@@ -167,4 +172,25 @@ func _on_join_game_button_pressed():
 	
 	# Join multplayerbridge match
 	Global.joined_match = await Global.multiplayerbridge.join_named_match(selected_match_name)
+	
+
+
+func _on_import_deck_accio_button_pressed():
+	is_importing_decklist = true
+	_show_deck_import()
+
+func _show_deck_import():
+	deck_import.show()
+	file_dialog_load_deck.show()
+	# Only works for windows, need to have OS detector and switch default value
+	file_dialog_load_deck.current_dir = "C:\\Users"
+
+func _hide_deck_import():
+	deck_import.hide()
+	file_dialog_load_deck.hide()
+
+func _on_file_dialog_load_deck_file_selected(path):
+	_hide_deck_import()
+	if FileAccess.file_exists(path):
+		var deck_file = FileAccess.open(path, FileAccess.READ)
 	

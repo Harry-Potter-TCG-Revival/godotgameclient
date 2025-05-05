@@ -1,8 +1,10 @@
+FileDialog
+Panel
+CanvasLayer
 MultiplayerSynchronizer
 Node2D
 Label
 TextureRect
-Panel
 Sprite2D
 CharacterBody2D
 MultiplayerSpawner
@@ -11,5 +13,3 @@ Button
 HBoxContainer
 MarginContainer
 VBoxContainer
-LineEdit
-LinkButton

@@ -29,9 +29,9 @@ func _ready():
 	register_ui.hide()
 	error_ui.hide()
 	# Local Host Testing
-	#client = Nakama.create_client("defaultkey","127.0.0.1",7350,"http")
+	client = Nakama.create_client("defaultkey","127.0.0.1",7350,"http")
 	# Hosted Internet Testing (do not use for PROD)
-	client = Nakama.create_client("AGgpLqM45wdkEIH4PMvs5c90T6HxtrBV","164.90.255.189",7350,"https")
+	#client = Nakama.create_client("defaultkey","api.finepointcgi.online",7350,"http")
 
 func _on_login_button_pressed():
 	session = await client.authenticate_email_async(email_input.text,password_input.text,null,false)
@@ -77,13 +77,13 @@ func _on_finish_register_account_pressed():
 	# Create Account
 	session = await client.authenticate_email_async(email_register_input.text,password_register_input.text,user_name_register_input.text,true)
 	
-	# Update Account
-	var update_account_request = await client.update_account_async(session,user_name_register_input.text,display_name_register_input.text)
-	
 	if session.is_exception():
 		var exception = session.get_exception()
 		show_error_ui("Failed to Create Account",exception.message)
 		return
+	
+	# Update Account
+	var update_account_request = await client.update_account_async(session,user_name_register_input.text,display_name_register_input.text)
 	
 	if update_account_request.is_exception():
 		var exception = update_account_request.get_exception()
