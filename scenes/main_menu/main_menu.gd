@@ -174,7 +174,6 @@ func _on_join_game_button_pressed():
 	Global.joined_match = await Global.multiplayerbridge.join_named_match(selected_match_name)
 	
 
-
 func _on_import_deck_accio_button_pressed():
 	is_importing_decklist = true
 	_show_deck_import()
@@ -190,7 +189,69 @@ func _hide_deck_import():
 	file_dialog_load_deck.hide()
 
 func _on_file_dialog_load_deck_file_selected(path):
+	# Hide the canvar layer
 	_hide_deck_import()
-	if FileAccess.file_exists(path):
-		var deck_file = FileAccess.open(path, FileAccess.READ)
 	
+	# Check that file exists
+	if FileAccess.file_exists(path):
+		
+		# Get the file and read the text
+		var deck_file = FileAccess.open(path, FileAccess.READ)
+		var deck_file_text = deck_file.get_as_text()
+		
+		# Split the file into three sections. Main Deck, Sideboard, Starting Character
+		var deck_file_text_split = deck_file_text.split("//",true)
+		
+		# Loop through each section and check what section you are in
+		for card_section_in_deck_file in deck_file_text_split:
+			if card_section_in_deck_file.contains("deck"):
+				# Split on the new line to get each entry
+				var cards_in_main_deck = card_section_in_deck_file.split("\n",false)
+				for current_card in cards_in_main_deck:
+					# Skip the line that says "deck-1"
+					if not current_card == "deck-1":
+						# Split on the space to get the card name and count
+						var current_card_split = current_card.split(" ",false,1)
+						
+						# Add the card to the deck
+						add_card_to_main_deck(current_card_split[0],current_card_split[1])
+					
+			if card_section_in_deck_file.contains("sideboard"):
+				# Split on the new line to get each entry
+				var cards_in_sideboard = card_section_in_deck_file.split("\n",false)
+				for current_card in cards_in_sideboard:
+					# Skip the line that says "sideboard-1"
+					if not current_card == "sideboard-1":
+						# Split on the space to get the card name and count
+						var current_card_split = current_card.split(" ",false,1)
+						
+						# Add the card to the sideboard
+						add_card_to_side_board(current_card_split[0],current_card_split[1])
+			if card_section_in_deck_file.contains("play"):
+				# Split on the new line to get each entry
+				var starting_character = card_section_in_deck_file.split("\n",false)
+				
+				# There should be only one starting character, but size is 2 because of the
+				# line of "play-1" break out if not
+				if not starting_character.size() == 2:
+					print("More than one starting character fix it")
+					return
+				
+				# Split on the space to get the card name and count, get the 2nd line because
+				# The first line is the "play-1"
+				var starting_character_split = starting_character[1].split(" ",false,1)
+				
+				# Add the starting character to the deck
+				add_card_as_starting_character(starting_character_split[1])
+			
+		
+	
+
+func add_card_to_main_deck(card_amount_to_add:String, card_name_to_add:String):
+	print("Add ", card_amount_to_add, " copies of ", card_name_to_add, " to the main deck")
+
+func add_card_to_side_board(card_amount_to_add:String, card_name_to_add:String):
+	print("Add ", card_amount_to_add, " copies of ", card_name_to_add, " to the side board")
+
+func add_card_as_starting_character(card_name_to_add:String):
+	print("Add ", card_name_to_add, " as the starting character")

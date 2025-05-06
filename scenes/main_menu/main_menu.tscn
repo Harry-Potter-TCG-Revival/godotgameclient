@@ -260,7 +260,7 @@ grow_horizontal = 2
 grow_vertical = 2
 
 [node name="FileDialogLoadDeck" type="FileDialog" parent="DeckImport"]
-title = "Import Deck File (.txt)"
+title = "Open a File"
 initial_position = 2
 size = Vector2i(800, 500)
 ok_button_text = "Open"
