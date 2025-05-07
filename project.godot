@@ -13,9 +13,10 @@ config_version=5
 config/name="HPTCG_Nakama"
 run/main_scene="res://scenes/login_page/login_page.tscn"
 config/features=PackedStringArray("4.3", "Forward Plus")
-config/icon="res://icon.svg"
+config/icon="res://art/Cards/CardBacks/HPTCG-RevivalBack.png"
 
 [autoload]
 
 Nakama="*res://addons/com.heroiclabs.nakama/Nakama.gd"
 Global="*res://global/global.gd"
+Events="*res://global/events.gd"

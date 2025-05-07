@@ -1,10 +1,10 @@
 ea4bc82a6ad023ab7ee23ee620429895
-::res://::1746509812
+::res://::1746601247
 CHANGELOG.md::TextFile::-1::1742104097::0::1::::<><>::
 icon.svg::CompressedTexture2D::1255812641535387210::1742103709::1742103715::1::::<><>::
 README.md::TextFile::-1::1742104097::0::1::::<><>::
 test_card_ui.gd::GDScript::-1::1743743290::0::1::::<>Panel<>::
-test_card_ui.tscn::PackedScene::2955237397332424143::1746424249::0::1::::<><>::res://test_card_ui.gd<>uid://dqtdjy5jd1bd1::::res://art/Cards/CardBacks/HPTCG-RevivalBack.png
+test_card_ui.tscn::PackedScene::2955237397332424143::1746514367::0::1::::<><>::res://test_card_ui.gd<>uid://dqtdjy5jd1bd1::::res://art/Cards/CardBacks/HPTCG-RevivalBack.png
 ::res://addons/::1742104097
 ::res://addons/com.heroiclabs.nakama/::1742104097
 Nakama.gd::GDScript::-1::1742104097::0::1::::<>Node<>::
@@ -53,23 +53,34 @@ Icon_Transfiguration.webp::CompressedTexture2D::5520943446569148732::1742107293:
 under_construction.png::CompressedTexture2D::4294833060009427638::1743314544::1743314648::1::::<><>::
 ::res://codegen/::1742171163
 README.md::TextFile::-1::1742104096::0::1::::<><>::
+::res://custom_resources/::1746600390
+card.gd::GDScript::-1::1746600390::0::1::::Card<>Resource<>::
+card_pile.gd::GDScript::-1::1746598434::0::1::::CardPile<>Resource<>::
+card_zone.gd::GDScript::-1::1746598733::0::1::::CardZone<>Resource<>::
+deck_list.gd::GDScript::-1::1746598434::0::1::::DeckList<>Resource<>::
+player_stats.gd::GDScript::-1::1746599362::0::1::::PlayerStats<>Stats<>::
+stats.gd::GDScript::-1::1746598796::0::1::::Stats<>Resource<>::
 ::res://fonts/::1742105668
 HARRYP__.TTF::FontFile::8667454949465471982::1742105666::1742105668::1::::<><>::
-::res://global/::1743486598
+::res://global/::1746601175
+events.gd::GDScript::-1::1746601175::0::1::::<>Node<>::
 global.gd::GDScript::-1::1743486598::0::1::::<>Node<>::
 ::res://node_settings/::1742106594
 button_menu_ui.tres::Theme::1309909641430885853::1742106594::0::1::::<><>::uid://dvqtymqwhgi03::::res://fonts/HARRYP__.TTF
 label_menu_ui.tres::LabelSettings::1603987497328278757::1742106441::0::1::::<><>::uid://dvqtymqwhgi03::::res://fonts/HARRYP__.TTF
-::res://scenes/::1743483499
-::res://scenes/battle/::1746424249
+::res://scenes/::1746601122
+::res://scenes/battle/::1746514367
 battle.gd::GDScript::-1::1743741958::0::1::::<>Node2D<>::
-battle.tscn::PackedScene::3669092719670110455::1746424249::0::1::::<><>::res://scenes/battle/battle.gd<>uid://btrfts84g8jjb::::res://art/Backgrounds/4.17 Fleur Delacour - Beauxbaton Carriage Winged Horses B4C15M1.jpg<>uid://bidslfmll6t48::::res://test_card_ui.tscn
-::res://scenes/login_page/::1746424249
+battle.tscn::PackedScene::3669092719670110455::1746514367::0::1::::<><>::res://scenes/battle/battle.gd<>uid://btrfts84g8jjb::::res://art/Backgrounds/4.17 Fleur Delacour - Beauxbaton Carriage Winged Horses B4C15M1.jpg<>uid://bidslfmll6t48::::res://test_card_ui.tscn
+::res://scenes/login_page/::1746514367
 login_page.gd::GDScript::-1::1746417789::0::1::::LoginPage<>Control<>::
-login_page.tscn::PackedScene::5882557158950593733::1746424249::0::1::::<><>::res://scenes/login_page/login_page.gd<>uid://dxon5laic0j5m::::res://art/Backgrounds/1.20 B1C7M2 The Sorting Ceremony.jpg<>uid://dvqtymqwhgi03::::res://fonts/HARRYP__.TTF<>uid://w38o7lmmpxib::::res://node_settings/label_menu_ui.tres<>uid://swsaxumgur54::::res://node_settings/button_menu_ui.tres
-::res://scenes/main_menu/::1746425209
-main_menu.gd::GDScript::-1::1746424364::0::1::::MainMenu<>Control<>::
-main_menu.tscn::PackedScene::5936699371848873826::1746425209::0::1::::<><>::res://scenes/main_menu/main_menu.gd<>uid://bufc67ltc4c0y::::res://art/Backgrounds/4.09 Quidditch World Cup - Ireland VS Bulgaria Quidditch Stadium B4C8M1.jpg<>uid://w38o7lmmpxib::::res://node_settings/label_menu_ui.tres<>uid://b2gpjjuukdubm::::res://art/Misc/under_construction.png
+login_page.tscn::PackedScene::5882557158950593733::1746514367::0::1::::<><>::res://scenes/login_page/login_page.gd<>uid://dxon5laic0j5m::::res://art/Backgrounds/1.20 B1C7M2 The Sorting Ceremony.jpg<>uid://dvqtymqwhgi03::::res://fonts/HARRYP__.TTF<>uid://w38o7lmmpxib::::res://node_settings/label_menu_ui.tres<>uid://swsaxumgur54::::res://node_settings/button_menu_ui.tres
+::res://scenes/main_menu/::1746601238
+main_menu.gd::GDScript::-1::1746514367::0::1::::MainMenu<>Control<>::
+main_menu.tscn::PackedScene::5936699371848873826::1746601238::0::1::::<><>::res://scenes/main_menu/main_menu.gd<>uid://bufc67ltc4c0y::::res://art/Backgrounds/4.09 Quidditch World Cup - Ireland VS Bulgaria Quidditch Stadium B4C8M1.jpg<>uid://w38o7lmmpxib::::res://node_settings/label_menu_ui.tres<>uid://b2gpjjuukdubm::::res://art/Misc/under_construction.png
 ::res://scenes/match_ui/::1743484009
 match_selection_ui.gd::GDScript::-1::1742366550::0::1::::MatchSelectionUI<>CenterContainer<>::
 match_selection_ui.tscn::PackedScene::1745137857193572725::1743484009::0::1::::<><>::res://scenes/match_ui/match_selection_ui.gd
+::res://scenes/ui/::1746601130
+::res://scenes/ui/card_ui/::1746601175
+card_ui.gd::GDScript::-1::1746601175::0::1::::CardUI<>Panel<>::
