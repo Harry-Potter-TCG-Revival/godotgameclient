@@ -4,11 +4,15 @@ extends Stats
 @export var player_name: String
 @export var selected_deck_list: DeckList
 @export var deck_lists: Array[DeckList]
+@export var player_avatar: Texture
+@export var card_back: Texture
+
+# These three settings need to get inherited from the game manager
+# This allows different game modes to exist
 @export var cards_per_turn: int
 @export var cards_in_opening_hand: int
 @export var max_action_count := 2
-@export var player_avatar: Texture
-@export var card_back: Texture
+
 
 var action_count: int : set = set_action_count
 var transfiguration_power_count: int : set = set_transifiguration_power_count

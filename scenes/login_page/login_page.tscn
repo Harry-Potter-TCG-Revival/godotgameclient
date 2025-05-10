@@ -1,7 +1,7 @@
 [gd_scene load_steps=7 format=3 uid="uid://cp2s4ev1tgljh"]
 
 [ext_resource type="Script" path="res://scenes/login_page/login_page.gd" id="1_3rkvw"]
-[ext_resource type="Texture2D" uid="uid://dxon5laic0j5m" path="res://art/Backgrounds/1.20 B1C7M2 The Sorting Ceremony.jpg" id="1_l71dn"]
+[ext_resource type="Texture2D" uid="uid://dxon5laic0j5m" path="res://art/backgrounds/1.20 B1C7M2 The Sorting Ceremony.jpg" id="1_l71dn"]
 [ext_resource type="FontFile" uid="uid://dvqtymqwhgi03" path="res://fonts/HARRYP__.TTF" id="2_naowi"]
 [ext_resource type="LabelSettings" uid="uid://w38o7lmmpxib" path="res://node_settings/label_menu_ui.tres" id="3_y46ef"]
 [ext_resource type="Theme" uid="uid://swsaxumgur54" path="res://node_settings/button_menu_ui.tres" id="4_rt8rq"]

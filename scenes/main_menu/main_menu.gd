@@ -6,6 +6,7 @@ const BATTLE_SCENE := preload("res://scenes/battle/battle.tscn")
 
 var selected_match_name : String : set = _set_selected_match_name
 var is_importing_decklist : bool = false
+var imported_deck_list : DeckList
 
 @onready var host_game_ui_container = $Matchmaking/Host_game_ui_container
 @onready var custom_match_name = $Matchmaking/Host_game_ui_container/custom_match_name
@@ -183,21 +184,28 @@ func _show_deck_import():
 	file_dialog_load_deck.show()
 	# Only works for windows, need to have OS detector and switch default value
 	file_dialog_load_deck.current_dir = "C:\\Users"
+	file_dialog_load_deck.add_filter("*.txt, Text File")
 
 func _hide_deck_import():
 	deck_import.hide()
 	file_dialog_load_deck.hide()
 
 func _on_file_dialog_load_deck_file_selected(path):
+	
 	# Hide the canvar layer
 	_hide_deck_import()
 	
 	# Check that file exists
 	if FileAccess.file_exists(path):
+		# Create the new deck list
+		imported_deck_list = DeckList.new()
 		
 		# Get the file and read the text
 		var deck_file = FileAccess.open(path, FileAccess.READ)
 		var deck_file_text = deck_file.get_as_text()
+		
+		# Get File Name or Prompt User
+		imported_deck_list.name = "Imported_Deck"
 		
 		# Split the file into three sections. Main Deck, Sideboard, Starting Character
 		var deck_file_text_split = deck_file_text.split("//",true)
@@ -248,9 +256,15 @@ func _on_file_dialog_load_deck_file_selected(path):
 	
 
 func add_card_to_main_deck(card_amount_to_add:String, card_name_to_add:String):
+	var main_deck_card_resource_path = CardLookup.get_resource_path(card_name_to_add)
+	for i in card_amount_to_add:
+		imported_deck_list.main_deck.cards.append(main_deck_card_resource_path)
 	print("Add ", card_amount_to_add, " copies of ", card_name_to_add, " to the main deck")
 
 func add_card_to_side_board(card_amount_to_add:String, card_name_to_add:String):
+	var side_board_card_resource_path = CardLookup.get_resource_path(card_name_to_add)
+	for i in card_amount_to_add:
+		imported_deck_list.side_board.cards.append(side_board_card_resource_path)
 	print("Add ", card_amount_to_add, " copies of ", card_name_to_add, " to the side board")
 
 func add_card_as_starting_character(card_name_to_add:String):

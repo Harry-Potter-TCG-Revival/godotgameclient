@@ -1,9 +1,9 @@
 [gd_scene load_steps=6 format=3 uid="uid://cqt1toobxoj67"]
 
 [ext_resource type="Script" path="res://scenes/main_menu/main_menu.gd" id="1_a1nom"]
-[ext_resource type="Texture2D" uid="uid://bufc67ltc4c0y" path="res://art/Backgrounds/4.09 Quidditch World Cup - Ireland VS Bulgaria Quidditch Stadium B4C8M1.jpg" id="1_xqxlx"]
+[ext_resource type="Texture2D" uid="uid://bufc67ltc4c0y" path="res://art/backgrounds/4.09 Quidditch World Cup - Ireland VS Bulgaria Quidditch Stadium B4C8M1.jpg" id="1_xqxlx"]
 [ext_resource type="LabelSettings" uid="uid://w38o7lmmpxib" path="res://node_settings/label_menu_ui.tres" id="2_mtpip"]
-[ext_resource type="Texture2D" uid="uid://b2gpjjuukdubm" path="res://art/Misc/under_construction.png" id="4_c62kb"]
+[ext_resource type="Texture2D" uid="uid://b2gpjjuukdubm" path="res://art/misc/under_construction.png" id="4_c62kb"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_xdjd1"]
 bg_color = Color(0, 0, 0, 1)

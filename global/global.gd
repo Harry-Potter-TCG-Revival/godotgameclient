@@ -9,3 +9,6 @@ var joined_match : NakamaRTAPI.Match
 var players_in_match : Dictionary
 var player_id : int
 var player_is_host : bool
+
+# Player Variables
+var player_stats : PlayerStats

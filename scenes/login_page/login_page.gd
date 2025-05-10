@@ -49,11 +49,7 @@ func _on_login_button_pressed():
 	
 	await socket.connect_async(session)
 	
-	# transition player to the main menu
-	Global.client = client
-	Global.session = session
-	Global.socket = socket
-	get_tree().change_scene_to_packed(MAIN_MENU_SCENE)
+	_on_successfull_login()
 
 func _on_socket_connected():
 	print("socket connected")
@@ -98,12 +94,36 @@ func _on_finish_register_account_pressed():
 	socket.closed.connect(_on_socket_closed)
 	socket.received_error.connect(_on_socket_received_error)
 	
-	# transition player to the main menu
-	Global.client = client
-	Global.session = session
-	Global.socket = socket
-	get_tree().change_scene_to_packed(MAIN_MENU_SCENE)
+	_on_successfull_login()
+	
+
 
 func _on_cancel_register_account_pressed():
 	register_ui.hide()
 	login_ui.show()
+
+func _on_successfull_login() -> void:
+	# Setup Global Multiplayer Networking
+	Global.client = client
+	Global.session = session
+	Global.socket = socket
+	
+	# Setup Player and retrieve data from server
+	Global.player_stats = PlayerStats.new()
+	Global.player_stats.player_name = Global.session.username
+	Global.player_stats.deck_lists = await import_deck_lists()
+	# Change this to pull from the nakama storage
+	Global.player_stats.card_back = load("res://art/Cards/CardBacks/HPTCG-RevivalBack.png")
+	# Change this to pull from the nakama storage
+	Global.player_stats.player_avatar = load("res://art/player_avatars/owl_brown.jpg")
+	
+	get_tree().change_scene_to_packed(MAIN_MENU_SCENE)
+
+func import_deck_lists() -> Array[DeckList]:
+	var new_player_deck_lists: Array[DeckList] = []
+	
+	# Read All Deck_List Storage accounts
+	# Loop through and append to new_player_deck_lists
+	
+	return new_player_deck_lists
+	

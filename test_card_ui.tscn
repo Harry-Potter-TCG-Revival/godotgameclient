@@ -1,7 +1,7 @@
 [gd_scene load_steps=4 format=3 uid="uid://bidslfmll6t48"]
 
 [ext_resource type="Script" path="res://test_card_ui.gd" id="1_ibxgq"]
-[ext_resource type="Texture2D" uid="uid://dqtdjy5jd1bd1" path="res://art/Cards/CardBacks/HPTCG-RevivalBack.png" id="1_mtlr8"]
+[ext_resource type="Texture2D" uid="uid://dqtdjy5jd1bd1" path="res://art/cards/card_backs/HPTCG-RevivalBack.png" id="1_mtlr8"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_ed3m5"]
 font_size = 20

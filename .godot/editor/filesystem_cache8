@@ -1,10 +1,10 @@
 ea4bc82a6ad023ab7ee23ee620429895
-::res://::1746601247
+::res://::1746857687
 CHANGELOG.md::TextFile::-1::1742104097::0::1::::<><>::
 icon.svg::CompressedTexture2D::1255812641535387210::1742103709::1742103715::1::::<><>::
 README.md::TextFile::-1::1742104097::0::1::::<><>::
 test_card_ui.gd::GDScript::-1::1743743290::0::1::::<>Panel<>::
-test_card_ui.tscn::PackedScene::2955237397332424143::1746514367::0::1::::<><>::res://test_card_ui.gd<>uid://dqtdjy5jd1bd1::::res://art/Cards/CardBacks/HPTCG-RevivalBack.png
+test_card_ui.tscn::PackedScene::2955237397332424143::1746767996::0::1::::<><>::res://test_card_ui.gd<>uid://dqtdjy5jd1bd1::::res://art/cards/card_backs/HPTCG-RevivalBack.png
 ::res://addons/::1742104097
 ::res://addons/com.heroiclabs.nakama/::1742104097
 Nakama.gd::GDScript::-1::1742104097::0::1::::<>Node<>::
@@ -29,55 +29,62 @@ NakamaLogger.gd::GDScript::-1::1742104097::0::1::::NakamaLogger<>RefCounted<>::
 NakamaMultiplayerBridge.gd::GDScript::-1::1742104097::0::1::::NakamaMultiplayerBridge<>RefCounted<>::
 NakamaMultiplayerPeer.gd::GDScript::-1::1742104097::0::1::::NakamaMultiplayerPeer<>MultiplayerPeerExtension<>::
 NakamaSerializer.gd::GDScript::-1::1742104097::0::1::::NakamaSerializer<>RefCounted<>::
-::res://art/::1743483243
-::res://art/Backgrounds/::1743314643
-1.18.jpg::CompressedTexture2D::1637366530361055572::1471326665::1743288185::1::::<><>::
-1.20 B1C7M2 The Sorting Ceremony.jpg::CompressedTexture2D::8803350216157997460::1742105528::1742105528::1::::<><>::
-1.27 Fluffy - Forbidden Corridor Door Closed B1C9M3.jpg::CompressedTexture2D::7087508933755893265::1471383681::1743288033::1::::<><>::
-1.47 McGonagalls Office - Wizards Chess in McGonagalls Office B1C16M2.jpg::CompressedTexture2D::1506339176743882374::1471383516::1743288142::1::::<><>::
-4.09 Quidditch World Cup - Ireland VS Bulgaria Quidditch Stadium B4C8M1.jpg::CompressedTexture2D::3800697937427774234::1742171135::1742171167::1::::<><>::
-4.17 Fleur Delacour - Beauxbaton Carriage Winged Horses B4C15M1.jpg::CompressedTexture2D::3755441647408559263::1471389468::1743288338::1::::<><>::
-4.18 Viktor Krum - Durmstrang Ship Emerges B4C15M2.jpg::CompressedTexture2D::7929644262731176603::1471389473::1743288338::1::::<><>::
-::res://art/Cards/::1743483292
-::res://art/Cards/CardBacks/::1743483339
-HPTCG-RevivalBack.png::CompressedTexture2D::8321706257056887460::1743483333::1743483334::1::::<><>::
-hp_tcg_cardback_proxy_bleed.png::CompressedTexture2D::410524904608445931::1743483333::1743483339::1::::<><>::
-::res://art/Icons/::1742107299
-Icon_Care_Of_Magical_Creatures.webp::CompressedTexture2D::7592302868574874085::1742107293::1742107299::1::::<><>::
-Icon_Charms.webp::CompressedTexture2D::8232372585732666770::1742107293::1742107299::1::::<><>::
-Icon_Lightning_Bolt.webp::CompressedTexture2D::4908394008308233996::1742107293::1742107299::1::::<><>::
-Icon_Potions.webp::CompressedTexture2D::1272030197610844620::1742107293::1742107299::1::::<><>::
-Icon_Quidditch.webp::CompressedTexture2D::337159191872487180::1742107293::1742107299::1::::<><>::
-Icon_Transfiguration.webp::CompressedTexture2D::5520943446569148732::1742107293::1742107299::1::::<><>::
-::res://art/Misc/::1743314648
-under_construction.png::CompressedTexture2D::4294833060009427638::1743314544::1743314648::1::::<><>::
+::res://art/::1746767984
+::res://art/backgrounds/::1746767978
+1.18.jpg::CompressedTexture2D::1637366530361055572::1471326665::1746767974::1::::<><>::
+1.20 B1C7M2 The Sorting Ceremony.jpg::CompressedTexture2D::8803350216157997460::1742105528::1746767974::1::::<><>::
+1.27 Fluffy - Forbidden Corridor Door Closed B1C9M3.jpg::CompressedTexture2D::7087508933755893265::1471383681::1746767975::1::::<><>::
+1.47 McGonagalls Office - Wizards Chess in McGonagalls Office B1C16M2.jpg::CompressedTexture2D::1506339176743882374::1471383516::1746767975::1::::<><>::
+4.09 Quidditch World Cup - Ireland VS Bulgaria Quidditch Stadium B4C8M1.jpg::CompressedTexture2D::3800697937427774234::1742171135::1746767978::1::::<><>::
+4.17 Fleur Delacour - Beauxbaton Carriage Winged Horses B4C15M1.jpg::CompressedTexture2D::3755441647408559263::1471389468::1746767975::1::::<><>::
+4.18 Viktor Krum - Durmstrang Ship Emerges B4C15M2.jpg::CompressedTexture2D::7929644262731176603::1471389473::1746767975::1::::<><>::
+::res://art/cards/::1746767996
+::res://art/cards/card_backs/::1746768002
+HPTCG-RevivalBack.png::CompressedTexture2D::8321706257056887460::1743483333::1746767997::1::::<><>::
+hp_tcg_cardback_proxy_bleed.png::CompressedTexture2D::410524904608445931::1743483333::1746768002::1::::<><>::
+::res://art/icons/::1746767965
+Icon_Care_Of_Magical_Creatures.webp::CompressedTexture2D::7592302868574874085::1742107293::1746767965::1::::<><>::
+Icon_Charms.webp::CompressedTexture2D::8232372585732666770::1742107293::1746767965::1::::<><>::
+Icon_Lightning_Bolt.webp::CompressedTexture2D::4908394008308233996::1742107293::1746767965::1::::<><>::
+Icon_Potions.webp::CompressedTexture2D::1272030197610844620::1742107293::1746767965::1::::<><>::
+Icon_Quidditch.webp::CompressedTexture2D::337159191872487180::1742107293::1746767965::1::::<><>::
+Icon_Transfiguration.webp::CompressedTexture2D::5520943446569148732::1742107293::1746767965::1::::<><>::
+::res://art/misc/::1746767961
+under_construction.png::CompressedTexture2D::4294833060009427638::1743314544::1746767961::1::::<><>::
+::res://art/player_avatars/::1746768052
+owl_brown.jpg::CompressedTexture2D::7986178544307327796::1733126315::1746768052::1::::<><>::
+::res://cards/::1746762545
+::res://cards/base_set/::1746762577
+::res://cards/base_set/images/::1746762568
+::res://cards/base_set/resources/::1746762574
+::res://cards/base_set/scripts/::1746762577
 ::res://codegen/::1742171163
 README.md::TextFile::-1::1742104096::0::1::::<><>::
-::res://custom_resources/::1746600390
+::res://custom_resources/::1746764556
 card.gd::GDScript::-1::1746600390::0::1::::Card<>Resource<>::
 card_pile.gd::GDScript::-1::1746598434::0::1::::CardPile<>Resource<>::
 card_zone.gd::GDScript::-1::1746598733::0::1::::CardZone<>Resource<>::
 deck_list.gd::GDScript::-1::1746598434::0::1::::DeckList<>Resource<>::
-player_stats.gd::GDScript::-1::1746599362::0::1::::PlayerStats<>Stats<>::
+player_stats.gd::GDScript::-1::1746764556::0::1::::PlayerStats<>Stats<>::
 stats.gd::GDScript::-1::1746598796::0::1::::Stats<>Resource<>::
 ::res://fonts/::1742105668
 HARRYP__.TTF::FontFile::8667454949465471982::1742105666::1742105668::1::::<><>::
-::res://global/::1746601175
+::res://global/::1746764597
 events.gd::GDScript::-1::1746601175::0::1::::<>Node<>::
-global.gd::GDScript::-1::1743486598::0::1::::<>Node<>::
+global.gd::GDScript::-1::1746764597::0::1::::<>Node<>::
 ::res://node_settings/::1742106594
 button_menu_ui.tres::Theme::1309909641430885853::1742106594::0::1::::<><>::uid://dvqtymqwhgi03::::res://fonts/HARRYP__.TTF
 label_menu_ui.tres::LabelSettings::1603987497328278757::1742106441::0::1::::<><>::uid://dvqtymqwhgi03::::res://fonts/HARRYP__.TTF
 ::res://scenes/::1746601122
-::res://scenes/battle/::1746514367
+::res://scenes/battle/::1746767973
 battle.gd::GDScript::-1::1743741958::0::1::::<>Node2D<>::
-battle.tscn::PackedScene::3669092719670110455::1746514367::0::1::::<><>::res://scenes/battle/battle.gd<>uid://btrfts84g8jjb::::res://art/Backgrounds/4.17 Fleur Delacour - Beauxbaton Carriage Winged Horses B4C15M1.jpg<>uid://bidslfmll6t48::::res://test_card_ui.tscn
-::res://scenes/login_page/::1746514367
-login_page.gd::GDScript::-1::1746417789::0::1::::LoginPage<>Control<>::
-login_page.tscn::PackedScene::5882557158950593733::1746514367::0::1::::<><>::res://scenes/login_page/login_page.gd<>uid://dxon5laic0j5m::::res://art/Backgrounds/1.20 B1C7M2 The Sorting Ceremony.jpg<>uid://dvqtymqwhgi03::::res://fonts/HARRYP__.TTF<>uid://w38o7lmmpxib::::res://node_settings/label_menu_ui.tres<>uid://swsaxumgur54::::res://node_settings/button_menu_ui.tres
-::res://scenes/main_menu/::1746601238
+battle.tscn::PackedScene::3669092719670110455::1746767973::0::1::::<><>::res://scenes/battle/battle.gd<>uid://btrfts84g8jjb::::res://art/backgrounds/4.17 Fleur Delacour - Beauxbaton Carriage Winged Horses B4C15M1.jpg<>uid://bidslfmll6t48::::res://test_card_ui.tscn
+::res://scenes/login_page/::1746768252
+login_page.gd::GDScript::-1::1746768252::0::1::::LoginPage<>Control<>::
+login_page.tscn::PackedScene::5882557158950593733::1746768252::0::1::::<><>::res://scenes/login_page/login_page.gd<>uid://dxon5laic0j5m::::res://art/backgrounds/1.20 B1C7M2 The Sorting Ceremony.jpg<>uid://dvqtymqwhgi03::::res://fonts/HARRYP__.TTF<>uid://w38o7lmmpxib::::res://node_settings/label_menu_ui.tres<>uid://swsaxumgur54::::res://node_settings/button_menu_ui.tres
+::res://scenes/main_menu/::1746767973
 main_menu.gd::GDScript::-1::1746514367::0::1::::MainMenu<>Control<>::
-main_menu.tscn::PackedScene::5936699371848873826::1746601238::0::1::::<><>::res://scenes/main_menu/main_menu.gd<>uid://bufc67ltc4c0y::::res://art/Backgrounds/4.09 Quidditch World Cup - Ireland VS Bulgaria Quidditch Stadium B4C8M1.jpg<>uid://w38o7lmmpxib::::res://node_settings/label_menu_ui.tres<>uid://b2gpjjuukdubm::::res://art/Misc/under_construction.png
+main_menu.tscn::PackedScene::5936699371848873826::1746767973::0::1::::<><>::res://scenes/main_menu/main_menu.gd<>uid://bufc67ltc4c0y::::res://art/backgrounds/4.09 Quidditch World Cup - Ireland VS Bulgaria Quidditch Stadium B4C8M1.jpg<>uid://w38o7lmmpxib::::res://node_settings/label_menu_ui.tres<>uid://b2gpjjuukdubm::::res://art/misc/under_construction.png
 ::res://scenes/match_ui/::1743484009
 match_selection_ui.gd::GDScript::-1::1742366550::0::1::::MatchSelectionUI<>CenterContainer<>::
 match_selection_ui.tscn::PackedScene::1745137857193572725::1743484009::0::1::::<><>::res://scenes/match_ui/match_selection_ui.gd
