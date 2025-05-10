@@ -1,0 +1,54 @@
+[gd_resource type="Resource" script_class="Card" load_steps=3 format=3 uid="uid://b82m1hwtjn3ot"]
+
+[ext_resource type="Texture2D" uid="uid://d3cdotu66e083" path="res://cards/base_set/images/005-Base-ElixirOfLife.png" id="1_bhw2p"]
+[ext_resource type="Script" path="res://custom_resources/card.gd" id="1_s4hnh"]
+
+[resource]
+script = ExtResource("1_s4hnh")
+setname = 0
+setnumber = 5
+cardname = "Elixir of Life"
+rarity = 0
+powercost = 10
+actioncost = 1
+care_of_magical_creatures_power_provided_amount = 0
+charms_power_provided_amount = 0
+potions_power_provided_amount = 0
+transfiguration_power_provided_amount = 0
+quidditch_power_provided_amount = 0
+powerneeded_type = "POTIONS"
+artist = "Michael Koelsch"
+type_adventure = false
+type_character = false
+type_creature = false
+type_item = false
+type_lesson = true
+type_spell = false
+subtype_bird = false
+subtype_cauldron = false
+subtype_deer = false
+subtype_dog = false
+subtype_dragon = false
+subtype_ghost = false
+subtype_gryffindor = false
+subtype_healing = true
+subtype_hufflepuff = false
+subtype_kelpie = false
+subtype_rat = false
+subtype_ravenclaw = false
+subtype_slytherin = false
+subtype_snake = false
+subtype_spider = false
+subtype_toad = false
+subtype_troll = false
+subtype_unicorn = false
+subtype_wand = false
+subtype_witch = false
+subtype_wizard = false
+subtype_wolf = false
+rulestexteffect = "To play this card, discard 2 of your Potions Lessons from play. Shuffle up to 16 non-Healing cards from your discard pile into your deck."
+rulestexttoSolve = ""
+rulestextreward = ""
+flavortext = "'The Stone... produces the Elixir of Life, which will make the drinker immortal.'"
+card_image = ExtResource("1_bhw2p")
+is_valid_choice = false

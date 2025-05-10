@@ -1,0 +1,54 @@
+[gd_resource type="Resource" script_class="Card" load_steps=3 format=3 uid="uid://duavcrqh8dcb3"]
+
+[ext_resource type="Script" path="res://custom_resources/card.gd" id="1_1pmok"]
+[ext_resource type="Texture2D" uid="uid://wfpmjcoep37q" path="res://cards/base_set/images/015-Base-ProfessorFiliusFlitwick.png" id="1_35t5l"]
+
+[resource]
+script = ExtResource("1_1pmok")
+setname = 0
+setnumber = 15
+cardname = "Professor Filius Flitwick"
+rarity = 0
+powercost = 0
+actioncost = 2
+care_of_magical_creatures_power_provided_amount = 0
+charms_power_provided_amount = 1
+potions_power_provided_amount = 0
+transfiguration_power_provided_amount = 0
+quidditch_power_provided_amount = 0
+powerneeded_type = ""
+artist = "Jon Foster"
+type_adventure = false
+type_character = true
+type_creature = false
+type_item = false
+type_lesson = false
+type_spell = false
+subtype_bird = false
+subtype_cauldron = false
+subtype_deer = false
+subtype_dog = false
+subtype_dragon = false
+subtype_ghost = false
+subtype_gryffindor = false
+subtype_healing = false
+subtype_hufflepuff = false
+subtype_kelpie = false
+subtype_rat = false
+subtype_ravenclaw = true
+subtype_slytherin = false
+subtype_snake = false
+subtype_spider = false
+subtype_toad = false
+subtype_troll = false
+subtype_unicorn = false
+subtype_wand = false
+subtype_witch = false
+subtype_wizard = true
+subtype_wolf = false
+rulestexteffect = "Once per game, you may trade 2 cards in your hand for 1 card in your discard pile that needs Charms Power."
+rulestexttoSolve = ""
+rulestextreward = ""
+flavortext = "'Professor Flitwick, the Charms teacher, was a tiny little wizard who had to stand on a pile of books to see over his desk.'"
+card_image = ExtResource("1_35t5l")
+is_valid_choice = false

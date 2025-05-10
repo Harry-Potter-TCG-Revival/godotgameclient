@@ -1,0 +1,54 @@
+[gd_resource type="Resource" script_class="Card" load_steps=3 format=3 uid="uid://booo0lmu5qgyj"]
+
+[ext_resource type="Texture2D" uid="uid://blrg4ny3fjjsn" path="res://cards/base_set/images/020-Base-Unicorn.png" id="1_3mf3p"]
+[ext_resource type="Script" path="res://custom_resources/card.gd" id="1_l0kor"]
+
+[resource]
+script = ExtResource("1_l0kor")
+setname = 0
+setnumber = 20
+cardname = "Unicorn"
+rarity = 0
+powercost = 6
+actioncost = 1
+care_of_magical_creatures_power_provided_amount = 0
+charms_power_provided_amount = 0
+potions_power_provided_amount = 0
+transfiguration_power_provided_amount = 0
+quidditch_power_provided_amount = 0
+powerneeded_type = "CARE_OF_MAGICAL_CREATURES"
+artist = "Zina Saunders"
+type_adventure = false
+type_character = false
+type_creature = true
+type_item = false
+type_lesson = false
+type_spell = false
+subtype_bird = false
+subtype_cauldron = false
+subtype_deer = false
+subtype_dog = false
+subtype_dragon = false
+subtype_ghost = false
+subtype_gryffindor = false
+subtype_healing = false
+subtype_hufflepuff = false
+subtype_kelpie = false
+subtype_rat = false
+subtype_ravenclaw = false
+subtype_slytherin = false
+subtype_snake = false
+subtype_spider = false
+subtype_toad = false
+subtype_troll = false
+subtype_unicorn = true
+subtype_wand = false
+subtype_witch = false
+subtype_wizard = false
+subtype_wolf = false
+rulestexteffect = "To play this card, discard 1 of your Care of Magical Creatures Lessons from play. You get 1 more Action on each of your turns (including the turn you play Unicorn)."
+rulestexttoSolve = ""
+rulestextreward = ""
+flavortext = "''That is because it is a monstrous thing, to slay a unicorn,' said Firenze.'"
+card_image = ExtResource("1_3mf3p")
+is_valid_choice = false

@@ -1,0 +1,54 @@
+[gd_resource type="Resource" script_class="Card" load_steps=3 format=3 uid="uid://dcm4kivtgqx8f"]
+
+[ext_resource type="Texture2D" uid="uid://c7rbphgcro0ig" path="res://cards/base_set/images/006-Base-GringottsCartRide.png" id="1_gvrbr"]
+[ext_resource type="Script" path="res://custom_resources/card.gd" id="1_imb0d"]
+
+[resource]
+script = ExtResource("1_imb0d")
+setname = 0
+setnumber = 6
+cardname = "Gringotts' Cart Ride"
+rarity = 0
+powercost = 0
+actioncost = 2
+care_of_magical_creatures_power_provided_amount = 0
+charms_power_provided_amount = 0
+potions_power_provided_amount = 0
+transfiguration_power_provided_amount = 0
+quidditch_power_provided_amount = 0
+powerneeded_type = ""
+artist = "Warner Bros."
+type_adventure = true
+type_character = false
+type_creature = false
+type_item = false
+type_lesson = false
+type_spell = false
+subtype_bird = false
+subtype_cauldron = false
+subtype_deer = false
+subtype_dog = false
+subtype_dragon = false
+subtype_ghost = false
+subtype_gryffindor = false
+subtype_healing = false
+subtype_hufflepuff = false
+subtype_kelpie = false
+subtype_rat = false
+subtype_ravenclaw = false
+subtype_slytherin = false
+subtype_snake = false
+subtype_spider = false
+subtype_toad = false
+subtype_troll = false
+subtype_unicorn = false
+subtype_wand = false
+subtype_witch = false
+subtype_wizard = false
+subtype_wolf = false
+rulestexteffect = "Before each of your opponent's turns, he or she chooses a card in his or her hand (if any) and discards it."
+rulestexttoSolve = "Your opponent skips a total of 5 Actions. (Those Actions don't have to be one right after the other."
+rulestextreward = "Your opponent may draw 5 cards."
+flavortext = "'The rattling cart seemed to know its own way, because Griphook wasn't steering.'"
+card_image = ExtResource("1_gvrbr")
+is_valid_choice = false

@@ -251,6 +251,8 @@ func _on_file_dialog_load_deck_file_selected(path):
 				
 				# Add the starting character to the deck
 				add_card_as_starting_character(starting_character_split[1])
+				
+				print(imported_deck_list)
 			
 		
 	
@@ -259,13 +261,13 @@ func add_card_to_main_deck(card_amount_to_add:String, card_name_to_add:String):
 	var main_deck_card_resource_path = CardLookup.get_resource_path(card_name_to_add)
 	for i in card_amount_to_add:
 		imported_deck_list.main_deck.cards.append(main_deck_card_resource_path)
-	print("Add ", card_amount_to_add, " copies of ", card_name_to_add, " to the main deck")
+	print("Adding ", card_amount_to_add, " copies of ", card_name_to_add, " to the main deck")
 
 func add_card_to_side_board(card_amount_to_add:String, card_name_to_add:String):
 	var side_board_card_resource_path = CardLookup.get_resource_path(card_name_to_add)
 	for i in card_amount_to_add:
 		imported_deck_list.side_board.cards.append(side_board_card_resource_path)
-	print("Add ", card_amount_to_add, " copies of ", card_name_to_add, " to the side board")
+	print("Adding ", card_amount_to_add, " copies of ", card_name_to_add, " to the side board")
 
 func add_card_as_starting_character(card_name_to_add:String):
-	print("Add ", card_name_to_add, " as the starting character")
+	print("Adding ", card_name_to_add, " as the starting character")
