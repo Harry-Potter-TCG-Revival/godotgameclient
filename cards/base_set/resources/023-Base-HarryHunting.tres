@@ -1,0 +1,55 @@
+[gd_resource type="Resource" script_class="Card" load_steps=3 format=3 uid="uid://djcdq70ywnsap"]
+
+[ext_resource type="Script" path="res://custom_resources/card.gd" id="1_i7s4b"]
+[ext_resource type="Texture2D" uid="uid://c8wbo72piuwwi" path="res://cards/base_set/images/023-Base-HarryHunting.png" id="1_pcrus"]
+
+[resource]
+script = ExtResource("1_i7s4b")
+setname = 0
+setnumber = 23
+cardname = "Harry Hunting"
+rarity = 0
+powercost = 0
+actioncost = 2
+care_of_magical_creatures_power_provided_amount = 0
+charms_power_provided_amount = 0
+potions_power_provided_amount = 0
+transfiguration_power_provided_amount = 0
+quidditch_power_provided_amount = 0
+powerneeded_type = ""
+artist = "Patrick Faricy"
+type_adventure = true
+type_character = false
+type_creature = false
+type_item = false
+type_lesson = false
+type_spell = false
+subtype_bird = false
+subtype_cauldron = false
+subtype_deer = false
+subtype_dog = false
+subtype_dragon = false
+subtype_ghost = false
+subtype_gryffindor = false
+subtype_healing = false
+subtype_hufflepuff = false
+subtype_kelpie = false
+subtype_owl = false
+subtype_rat = false
+subtype_ravenclaw = false
+subtype_slytherin = false
+subtype_snake = false
+subtype_spider = false
+subtype_toad = false
+subtype_troll = false
+subtype_unicorn = false
+subtype_wand = false
+subtype_witch = false
+subtype_wizard = false
+subtype_wolf = false
+rulestexteffect = "Your opponent's Creature and Spell cards need 2 more Power to play."
+rulestexttoSolve = "Your opponent chooses 7 cards in his or her hand and discards them."
+rulestextreward = "Your opponent may put a Lesson card from his or her discard pile into play."
+flavortext = ""
+card_image = ExtResource("1_pcrus")
+is_valid_choice = false

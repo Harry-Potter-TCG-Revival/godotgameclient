@@ -1,5 +1,5 @@
 ea4bc82a6ad023ab7ee23ee620429895
-::res://::1746900375
+::res://::1746923037
 CHANGELOG.md::TextFile::-1::1742104097::0::1::::<><>::
 icon.svg::CompressedTexture2D::1255812641535387210::1742103709::1742103715::1::::<><>::
 README.md::TextFile::-1::1742104097::0::1::::<><>::
@@ -174,7 +174,7 @@ owl_brown.jpg::CompressedTexture2D::7986178544307327796::1733126315::1746768052:
 114-Base-Charms.png::CompressedTexture2D::6960766222428342197::1614966758::1746897280::1::::<><>::
 115-Base-Potions.png::CompressedTexture2D::9153632618204525857::1614966758::1746897280::1::::<><>::
 116-Base-Transfiguration.png::CompressedTexture2D::6566458305779942659::1614966760::1746897280::1::::<><>::
-::res://cards/base_set/resources/::1746900368
+::res://cards/base_set/resources/::1746901546
 001-Base-DeanThomas.tres::Resource/Card::6279006103879599090::1746898005::0::1::::<><>::res://custom_resources/card.gd<>uid://clggd5e1pc4qs::::res://cards/base_set/images/001-Base-DeanThomas.png
 002-Base-DracoMalfoy.tres::Resource/Card::7950498164440207323::1746898005::0::1::::<><>::res://custom_resources/card.gd<>uid://u5rukrfkprnw::::res://cards/base_set/images/002-Base-DracoMalfoy.png
 003-Base-DracoMalfoy.tres::Resource/Card::4490082569475959376::1746900093::0::1::::<><>::uid://eji2tlbhws8g::::res://cards/base_set/images/003-Base-DracoMalfoy.png<>res://custom_resources/card.gd
@@ -182,9 +182,19 @@ owl_brown.jpg::CompressedTexture2D::7986178544307327796::1733126315::1746768052:
 005-Base-ElixirOfLife.tres::Resource/Card::4759166160187500599::1746900093::0::1::::<><>::uid://d3cdotu66e083::::res://cards/base_set/images/005-Base-ElixirOfLife.png<>res://custom_resources/card.gd
 006-Base-GringottsCartRide.tres::Resource/Card::7326191375633003203::1746900093::0::1::::<><>::uid://c7rbphgcro0ig::::res://cards/base_set/images/006-Base-GringottsCartRide.png<>res://custom_resources/card.gd
 007-Base-HannahAbbott.tres::Resource/Card::7695263574115020742::1746900093::0::1::::<><>::res://custom_resources/card.gd<>uid://cfbwsrcidmtx2::::res://cards/base_set/images/007-Base-HannahAbbott.png
-008-Base-HarryPotter.tres::Resource/Card::7480399896111704100::1746900080::0::1::::<><>::res://custom_resources/card.gd
-009-Base-HermioneGranger.tres::Resource/Card::986614847360652286::1746900212::0::1::::<><>::res://custom_resources/card.gd
-010-Base-HermioneGranger.tres::Resource/Card::2855653096218105977::1746900368::0::1::::<><>::res://custom_resources/card.gd
+008-Base-HarryPotter.tres::Resource/Card::7480399896111704100::1746901545::0::1::::<><>::res://custom_resources/card.gd<>uid://hmct6h71jjl1::::res://cards/base_set/images/008-Base-HarryPotter.png
+009-Base-HermioneGranger.tres::Resource/Card::986614847360652286::1746901545::0::1::::<><>::res://custom_resources/card.gd<>uid://c15ptfq5hv6nt::::res://cards/base_set/images/009-Base-HermioneGranger.png
+010-Base-HermioneGranger.tres::Resource/Card::2855653096218105977::1746901545::0::1::::<><>::res://custom_resources/card.gd<>uid://ca3kc7uarg4f3::::res://cards/base_set/images/010-Base-HermioneGranger.png
+011-Base-HumanChessGame.tres::Resource/Card::7017819757415678806::1746901545::0::1::::<><>::uid://bp4o3ixa8j1yl::::res://cards/base_set/images/011-Base-HumanChessGame.png<>res://custom_resources/card.gd
+012-Base-InvisibilityCloak.tres::Resource/Card::8793240470687616928::1746901545::0::1::::<><>::uid://8yapb3a1jc6q::::res://cards/base_set/images/012-Base-InvisibilityCloak.png<>res://custom_resources/card.gd
+013-Base-NearlyHeadlessNick.tres::Resource/Card::9095192629241041800::1746901545::0::1::::<><>::uid://dm75octnd6rbt::::res://cards/base_set/images/013-Base-NearlyHeadlessNick.png<>res://custom_resources/card.gd
+014-Base-Obliviate.tres::Resource/Card::6135973201987808531::1746900810::0::1::::<><>::res://custom_resources/card.gd
+015-Base-ProfessorFiliusFlitwick.tres::Resource/Card::8564318470251946830::1746901546::0::1::::<><>::res://custom_resources/card.gd<>uid://wfpmjcoep37q::::res://cards/base_set/images/015-Base-ProfessorFiliusFlitwick.png
+016-Base-ProfessorSeverousSnape.tres::Resource/Card::6279319449002815519::1746901546::0::1::::<><>::uid://cy06v3f3l5jsd::::res://cards/base_set/images/016-Base-ProfessorSeverousSnape.png<>res://custom_resources/card.gd
+017-Base-RonWeasley.tres::Resource/Card::2869219367329932786::1746901546::0::1::::<><>::uid://c6vyd3u8vemhp::::res://cards/base_set/images/017-Base-RonWeasley.png<>res://custom_resources/card.gd
+018-Base-RubeusHagrid.tres::Resource/Card::7697541350271637994::1746901546::0::1::::<><>::res://custom_resources/card.gd<>uid://bw6nq5t8035rh::::res://cards/base_set/images/018-Base-RubeusHagrid.png
+019-Base-TrollintheBathroom.tres::Resource/Card::8502126428279344639::1746901546::0::1::::<><>::uid://lonwy52ly6ge::::res://cards/base_set/images/019-Base-TrollintheBathroom.png<>res://custom_resources/card.gd
+020-Base-Unicorn.tres::Resource/Card::3398861063172683953::1746901546::0::1::::<><>::uid://blrg4ny3fjjsn::::res://cards/base_set/images/020-Base-Unicorn.png<>res://custom_resources/card.gd
 ::res://cards/base_set/scripts/::1746762577
 ::res://codegen/::1742171163
 README.md::TextFile::-1::1742104096::0::1::::<><>::
@@ -197,8 +207,8 @@ player_stats.gd::GDScript::-1::1746764556::0::1::::PlayerStats<>Stats<>::
 stats.gd::GDScript::-1::1746598796::0::1::::Stats<>Resource<>::
 ::res://fonts/::1742105668
 HARRYP__.TTF::FontFile::8667454949465471982::1742105666::1742105668::1::::<><>::
-::res://global/::1746900093
-card_lookup.gd::GDScript::-1::1746900093::0::1::::<>Node<>::
+::res://global/::1746901546
+card_lookup.gd::GDScript::-1::1746901546::0::1::::<>Node<>::
 events.gd::GDScript::-1::1746601175::0::1::::<>Node<>::
 global.gd::GDScript::-1::1746764597::0::1::::<>Node<>::
 ::res://node_settings/::1742106594
@@ -211,9 +221,9 @@ battle.tscn::PackedScene::3669092719670110455::1746859009::0::1::::<><>::res://s
 ::res://scenes/login_page/::1746859008
 login_page.gd::GDScript::-1::1746858191::0::1::::LoginPage<>Control<>::
 login_page.tscn::PackedScene::5882557158950593733::1746859008::0::1::::<><>::res://scenes/login_page/login_page.gd<>uid://dxon5laic0j5m::::res://art/backgrounds/1.20 B1C7M2 The Sorting Ceremony.jpg<>uid://dvqtymqwhgi03::::res://fonts/HARRYP__.TTF<>uid://w38o7lmmpxib::::res://node_settings/label_menu_ui.tres<>uid://swsaxumgur54::::res://node_settings/button_menu_ui.tres
-::res://scenes/main_menu/::1746900093
+::res://scenes/main_menu/::1746901793
 main_menu.gd::GDScript::-1::1746894832::0::1::::MainMenu<>Control<>::
-main_menu.tscn::PackedScene::5936699371848873826::1746900093::0::1::::<><>::res://scenes/main_menu/main_menu.gd<>uid://bufc67ltc4c0y::::res://art/backgrounds/4.09 Quidditch World Cup - Ireland VS Bulgaria Quidditch Stadium B4C8M1.jpg<>uid://w38o7lmmpxib::::res://node_settings/label_menu_ui.tres<>uid://b2gpjjuukdubm::::res://art/misc/under_construction.png
+main_menu.tscn::PackedScene::5936699371848873826::1746901793::0::1::::<><>::res://scenes/main_menu/main_menu.gd<>uid://bufc67ltc4c0y::::res://art/backgrounds/4.09 Quidditch World Cup - Ireland VS Bulgaria Quidditch Stadium B4C8M1.jpg<>uid://w38o7lmmpxib::::res://node_settings/label_menu_ui.tres<>uid://b2gpjjuukdubm::::res://art/misc/under_construction.png
 ::res://scenes/match_ui/::1743484009
 match_selection_ui.gd::GDScript::-1::1742366550::0::1::::MatchSelectionUI<>CenterContainer<>::
 match_selection_ui.tscn::PackedScene::1745137857193572725::1743484009::0::1::::<><>::res://scenes/match_ui/match_selection_ui.gd

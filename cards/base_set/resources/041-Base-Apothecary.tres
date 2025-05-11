@@ -1,0 +1,56 @@
+[gd_resource type="Resource" script_class="Card" load_steps=3 format=3 uid="uid://r3auyv337ud0"]
+
+[ext_resource type="Script" path="res://custom_resources/card.gd" id="1_jkfj4"]
+[ext_resource type="Texture2D" uid="uid://651k7w47deh6" path="res://cards/base_set/images/041-Base-Apothecary.png" id="1_rs6tu"]
+
+[resource]
+script = ExtResource("1_jkfj4")
+setname = 0
+setnumber = 41
+cardname = "Apothecary"
+rarity = 1
+powercost = 5
+actioncost = 1
+care_of_magical_creatures_power_provided_amount = 0
+charms_power_provided_amount = 0
+potions_power_provided_amount = 0
+transfiguration_power_provided_amount = 0
+quidditch_power_provided_amount = 0
+powerneeded_type = "POTIONS"
+artist = "James Bernardin"
+type_adventure = false
+type_character = false
+type_creature = false
+type_item = false
+type_lesson = false
+type_spell = true
+subtype_bird = false
+subtype_cauldron = false
+subtype_cat = false
+subtype_deer = false
+subtype_dog = false
+subtype_dragon = false
+subtype_ghost = false
+subtype_gryffindor = false
+subtype_healing = false
+subtype_hufflepuff = false
+subtype_kelpie = false
+subtype_owl = false
+subtype_rat = false
+subtype_ravenclaw = false
+subtype_slytherin = false
+subtype_snake = false
+subtype_spider = false
+subtype_toad = false
+subtype_troll = false
+subtype_unicorn = false
+subtype_wand = false
+subtype_witch = false
+subtype_wizard = false
+subtype_wolf = false
+rulestexteffect = "To play this card, discard 2 other cards from your hand. You may take a card that needs Potions Power from your deck, show it to your opponent and put it into your hand. Then shuffle your deck."
+rulestexttoSolve = ""
+rulestextreward = ""
+flavortext = ""
+card_image = ExtResource("1_rs6tu")
+is_valid_choice = false

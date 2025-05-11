@@ -34,6 +34,7 @@ enum Rarity {RARE, UNCOMMON, COMMON}
 @export_subgroup("SubType")
 @export var subtype_bird: bool
 @export var subtype_cauldron: bool
+@export var subtype_cat : bool
 @export var subtype_deer: bool
 @export var subtype_dog: bool
 @export var subtype_dragon: bool
@@ -42,6 +43,7 @@ enum Rarity {RARE, UNCOMMON, COMMON}
 @export var subtype_healing: bool
 @export var subtype_hufflepuff: bool
 @export var subtype_kelpie: bool
+@export var subtype_owl: bool
 @export var subtype_rat: bool
 @export var subtype_ravenclaw: bool
 @export var subtype_slytherin: bool
