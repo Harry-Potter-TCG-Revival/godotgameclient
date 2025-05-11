@@ -1,0 +1,56 @@
+[gd_resource type="Resource" script_class="Card" load_steps=3 format=3 uid="uid://fwdwpgrbe83p"]
+
+[ext_resource type="Script" path="res://custom_resources/card.gd" id="1_4mner"]
+[ext_resource type="Texture2D" uid="uid://dg5cfj35i0glt" path="res://cards/base_set/images/078-Base-BorrowedWand.png" id="1_vn8ck"]
+
+[resource]
+script = ExtResource("1_4mner")
+setname = 0
+setnumber = 78
+cardname = "Borrowed Wand"
+rarity = 2
+powercost = 3
+actioncost = 1
+care_of_magical_creatures_power_provided_amount = 0
+charms_power_provided_amount = 2
+potions_power_provided_amount = 0
+transfiguration_power_provided_amount = 0
+quidditch_power_provided_amount = 0
+powerneeded_type = "CHARMS"
+artist = "Keith Garletts"
+type_adventure = false
+type_character = false
+type_creature = false
+type_item = true
+type_lesson = false
+type_spell = false
+subtype_bird = false
+subtype_cauldron = false
+subtype_cat = false
+subtype_deer = false
+subtype_dog = false
+subtype_dragon = false
+subtype_ghost = false
+subtype_gryffindor = false
+subtype_healing = false
+subtype_hufflepuff = false
+subtype_kelpie = false
+subtype_owl = false
+subtype_rat = false
+subtype_ravenclaw = false
+subtype_slytherin = false
+subtype_snake = false
+subtype_spider = false
+subtype_toad = false
+subtype_troll = false
+subtype_unicorn = false
+subtype_wand = true
+subtype_witch = false
+subtype_wizard = false
+subtype_wolf = false
+rulestexteffect = "If you play this card and you already have a Wand in play, discard the old one."
+rulestexttoSolve = ""
+rulestextreward = ""
+flavortext = ""
+card_image = ExtResource("1_vn8ck")
+is_valid_choice = false

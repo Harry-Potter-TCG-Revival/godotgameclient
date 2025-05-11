@@ -1,0 +1,56 @@
+[gd_resource type="Resource" script_class="Card" load_steps=3 format=3 uid="uid://dm6aw13kcuxku"]
+
+[ext_resource type="Script" path="res://custom_resources/card.gd" id="1_flsqs"]
+[ext_resource type="Texture2D" uid="uid://cpq23qyi643f3" path="res://cards/base_set/images/075-Base-Baubillious.png" id="1_j74r4"]
+
+[resource]
+script = ExtResource("1_flsqs")
+setname = 0
+setnumber = 75
+cardname = "Baubillious"
+rarity = 2
+powercost = 2
+actioncost = 1
+care_of_magical_creatures_power_provided_amount = 0
+charms_power_provided_amount = 0
+potions_power_provided_amount = 0
+transfiguration_power_provided_amount = 0
+quidditch_power_provided_amount = 0
+powerneeded_type = "CHARMS"
+artist = "George Davis"
+type_adventure = false
+type_character = false
+type_creature = false
+type_item = false
+type_lesson = false
+type_spell = true
+subtype_bird = false
+subtype_cauldron = false
+subtype_cat = false
+subtype_deer = false
+subtype_dog = false
+subtype_dragon = false
+subtype_ghost = false
+subtype_gryffindor = false
+subtype_healing = false
+subtype_hufflepuff = false
+subtype_kelpie = false
+subtype_owl = false
+subtype_rat = false
+subtype_ravenclaw = false
+subtype_slytherin = false
+subtype_snake = false
+subtype_spider = false
+subtype_toad = false
+subtype_troll = false
+subtype_unicorn = false
+subtype_wand = false
+subtype_witch = false
+subtype_wizard = false
+subtype_wolf = false
+rulestexteffect = "Do 1 damage to your opponent or to a Creature of your choice. Then draw a card."
+rulestexttoSolve = ""
+rulestextreward = ""
+flavortext = ""
+card_image = ExtResource("1_j74r4")
+is_valid_choice = false

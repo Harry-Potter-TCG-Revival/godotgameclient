@@ -1,0 +1,56 @@
+[gd_resource type="Resource" script_class="Card" load_steps=3 format=3 uid="uid://ctd46ye8wupji"]
+
+[ext_resource type="Texture2D" uid="uid://c72rpyt05tkd8" path="res://cards/base_set/images/072-Base-WingedKeys.png" id="1_3dx27"]
+[ext_resource type="Script" path="res://custom_resources/card.gd" id="1_xx1e4"]
+
+[resource]
+script = ExtResource("1_xx1e4")
+setname = 0
+setnumber = 72
+cardname = "Winged Keys"
+rarity = 1
+powercost = 10
+actioncost = 0
+care_of_magical_creatures_power_provided_amount = 0
+charms_power_provided_amount = 0
+potions_power_provided_amount = 0
+transfiguration_power_provided_amount = 0
+quidditch_power_provided_amount = 0
+powerneeded_type = "TRANSFIGURATION"
+artist = "Ron Spears"
+type_adventure = false
+type_character = false
+type_creature = false
+type_item = true
+type_lesson = false
+type_spell = false
+subtype_bird = false
+subtype_cauldron = false
+subtype_cat = false
+subtype_deer = false
+subtype_dog = false
+subtype_dragon = false
+subtype_ghost = false
+subtype_gryffindor = false
+subtype_healing = false
+subtype_hufflepuff = false
+subtype_kelpie = false
+subtype_owl = false
+subtype_rat = false
+subtype_ravenclaw = false
+subtype_slytherin = false
+subtype_snake = false
+subtype_spider = false
+subtype_toad = false
+subtype_troll = false
+subtype_unicorn = false
+subtype_wand = false
+subtype_witch = false
+subtype_wizard = false
+subtype_wolf = false
+rulestexteffect = "Once during each of your turns, you may choose 1 of your opponent's Creatures in play. Prevent all damage done by that creature until the end of your opponent's next turn."
+rulestexttoSolve = ""
+rulestextreward = ""
+flavortext = ""
+card_image = ExtResource("1_3dx27")
+is_valid_choice = false

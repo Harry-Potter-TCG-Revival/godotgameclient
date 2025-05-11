@@ -1,0 +1,56 @@
+[gd_resource type="Resource" script_class="Card" load_steps=3 format=3 uid="uid://x2gopred8fij"]
+
+[ext_resource type="Script" path="res://custom_resources/card.gd" id="1_37y4w"]
+[ext_resource type="Texture2D" uid="uid://yr4if250cbru" path="res://cards/base_set/images/064-Base-ReptileHouse.png" id="1_jsdv4"]
+
+[resource]
+script = ExtResource("1_37y4w")
+setname = 0
+setnumber = 64
+cardname = "Reptile House"
+rarity = 1
+powercost = 0
+actioncost = 2
+care_of_magical_creatures_power_provided_amount = 0
+charms_power_provided_amount = 0
+potions_power_provided_amount = 0
+transfiguration_power_provided_amount = 0
+quidditch_power_provided_amount = 0
+powerneeded_type = ""
+artist = "Michael Koelsch"
+type_adventure = true
+type_character = false
+type_creature = false
+type_item = false
+type_lesson = false
+type_spell = false
+subtype_bird = false
+subtype_cauldron = false
+subtype_cat = false
+subtype_deer = false
+subtype_dog = false
+subtype_dragon = false
+subtype_ghost = false
+subtype_gryffindor = false
+subtype_healing = false
+subtype_hufflepuff = false
+subtype_kelpie = false
+subtype_owl = false
+subtype_rat = false
+subtype_ravenclaw = false
+subtype_slytherin = false
+subtype_snake = false
+subtype_spider = false
+subtype_toad = false
+subtype_troll = false
+subtype_unicorn = false
+subtype_wand = false
+subtype_witch = false
+subtype_wizard = false
+subtype_wolf = false
+rulestexteffect = "Your opponent can't use more than 1 Action to play Lesson cards during each of his or her turns."
+rulestexttoSolve = "Your opponent chooses 4 of his or her Lessons in play and discards them."
+rulestextreward = "Your opponent may draw a card."
+flavortext = "'It gave Harry a look that said quite plainly: 'I get that all the time.''"
+card_image = ExtResource("1_jsdv4")
+is_valid_choice = false
