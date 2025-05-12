@@ -199,6 +199,8 @@ func _on_file_dialog_load_deck_file_selected(path):
 	if FileAccess.file_exists(path):
 		# Create the new deck list
 		imported_deck_list = DeckList.new()
+		imported_deck_list.main_deck = CardPile.new()
+		imported_deck_list.side_board = CardPile.new()
 		
 		# Get the file and read the text
 		var deck_file = FileAccess.open(path, FileAccess.READ)
@@ -260,13 +262,15 @@ func _on_file_dialog_load_deck_file_selected(path):
 func add_card_to_main_deck(card_amount_to_add:String, card_name_to_add:String):
 	var main_deck_card_resource_path = CardLookup.get_resource_path(card_name_to_add)
 	for i in card_amount_to_add:
-		imported_deck_list.main_deck.cards.append(main_deck_card_resource_path)
+		var main_deck_card_resource = load(main_deck_card_resource_path)
+		imported_deck_list.main_deck.cards.append(main_deck_card_resource)
 	print("Adding ", card_amount_to_add, " copies of ", card_name_to_add, " to the main deck")
 
 func add_card_to_side_board(card_amount_to_add:String, card_name_to_add:String):
 	var side_board_card_resource_path = CardLookup.get_resource_path(card_name_to_add)
 	for i in card_amount_to_add:
-		imported_deck_list.side_board.cards.append(side_board_card_resource_path)
+		var side_board_card_resource = load(side_board_card_resource_path)
+		imported_deck_list.side_board.cards.append(side_board_card_resource)
 	print("Adding ", card_amount_to_add, " copies of ", card_name_to_add, " to the side board")
 
 func add_card_as_starting_character(card_name_to_add:String):

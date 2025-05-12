@@ -1,0 +1,56 @@
+[gd_resource type="Resource" script_class="Card" load_steps=3 format=3 uid="uid://rarjhaa78sks"]
+
+[ext_resource type="Script" path="res://custom_resources/card.gd" id="1_a3wgo"]
+[ext_resource type="Texture2D" uid="uid://d2bjhwjkvhhol" path="res://cards/base_set/images/108-Base-ToeBiter.png" id="1_h7j34"]
+
+[resource]
+script = ExtResource("1_a3wgo")
+setname = 0
+setnumber = 108
+cardname = "Toe Biter"
+rarity = 2
+powercost = 3
+actioncost = 1
+care_of_magical_creatures_power_provided_amount = 0
+charms_power_provided_amount = 0
+potions_power_provided_amount = 0
+transfiguration_power_provided_amount = 0
+quidditch_power_provided_amount = 0
+powerneeded_type = "CHARMS"
+artist = "Michael T. Collins"
+type_adventure = false
+type_character = false
+type_creature = false
+type_item = false
+type_lesson = false
+type_spell = true
+subtype_bird = false
+subtype_cauldron = false
+subtype_cat = false
+subtype_deer = false
+subtype_dog = false
+subtype_dragon = false
+subtype_ghost = false
+subtype_gryffindor = false
+subtype_healing = false
+subtype_hufflepuff = false
+subtype_kelpie = false
+subtype_owl = false
+subtype_rat = false
+subtype_ravenclaw = false
+subtype_slytherin = false
+subtype_snake = false
+subtype_spider = false
+subtype_toad = false
+subtype_troll = false
+subtype_unicorn = false
+subtype_wand = false
+subtype_witch = false
+subtype_wizard = false
+subtype_wolf = false
+rulestexteffect = "Do 2 damage to your opponent. You may also choose a Creature and do 2 damage to it."
+rulestexttoSolve = ""
+rulestextreward = ""
+flavortext = ""
+card_image = ExtResource("1_h7j34")
+is_valid_choice = false

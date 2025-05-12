@@ -1,0 +1,56 @@
+[gd_resource type="Resource" script_class="Card" load_steps=3 format=3 uid="uid://cms3twjj0cg80"]
+
+[ext_resource type="Texture2D" uid="uid://mchyhd7qqlud" path="res://cards/base_set/images/110-Base-ViciousWolf.png" id="1_cbe1o"]
+[ext_resource type="Script" path="res://custom_resources/card.gd" id="1_hnhm3"]
+
+[resource]
+script = ExtResource("1_hnhm3")
+setname = 0
+setnumber = 110
+cardname = "Vicious Wolf"
+rarity = 2
+powercost = 6
+actioncost = 1
+care_of_magical_creatures_power_provided_amount = 0
+charms_power_provided_amount = 0
+potions_power_provided_amount = 0
+transfiguration_power_provided_amount = 0
+quidditch_power_provided_amount = 0
+powerneeded_type = "CARE_OF_MAGICAL_CREATURES"
+artist = "Patrick Faricy"
+type_adventure = false
+type_character = false
+type_creature = true
+type_item = false
+type_lesson = false
+type_spell = false
+subtype_bird = false
+subtype_cauldron = false
+subtype_cat = false
+subtype_deer = false
+subtype_dog = false
+subtype_dragon = false
+subtype_ghost = false
+subtype_gryffindor = false
+subtype_healing = false
+subtype_hufflepuff = false
+subtype_kelpie = false
+subtype_owl = false
+subtype_rat = false
+subtype_ravenclaw = false
+subtype_slytherin = false
+subtype_snake = false
+subtype_spider = false
+subtype_toad = false
+subtype_troll = false
+subtype_unicorn = false
+subtype_wand = false
+subtype_witch = false
+subtype_wizard = false
+subtype_wolf = true
+rulestexteffect = ""
+rulestexttoSolve = ""
+rulestextreward = ""
+flavortext = ""
+card_image = ExtResource("1_cbe1o")
+is_valid_choice = false
