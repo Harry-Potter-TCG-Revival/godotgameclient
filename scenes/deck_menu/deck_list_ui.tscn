@@ -1,0 +1,32 @@
+[gd_scene load_steps=4 format=3 uid="uid://hxt8iq7pb3de"]
+
+[ext_resource type="Script" path="res://scenes/deck_menu/deck_list_ui.gd" id="1_n0x6j"]
+[ext_resource type="Texture2D" uid="uid://c0s3ux6f51oq2" path="res://cards/lessons/images/Lesson-Transfiguration.png" id="1_t2idl"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_xsa5e"]
+font_color = Color(0, 0, 0, 1)
+
+[node name="DeckListUI" type="VBoxContainer"]
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("1_n0x6j")
+
+[node name="DeckName" type="Label" parent="."]
+layout_mode = 2
+text = "Deck Name"
+label_settings = SubResource("LabelSettings_xsa5e")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="DeckImage" type="TextureRect" parent="."]
+custom_minimum_size = Vector2(360, 500)
+layout_mode = 2
+texture = ExtResource("1_t2idl")
+expand_mode = 1
+stretch_mode = 4
+
+[node name="OpenDeck" type="Button" parent="."]
+layout_mode = 2
+text = "Open Deck"
+
+[connection signal="pressed" from="OpenDeck" to="." method="_on_open_deck_pressed"]

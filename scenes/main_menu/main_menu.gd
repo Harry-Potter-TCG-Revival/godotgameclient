@@ -192,86 +192,168 @@ func _hide_deck_import():
 
 func _on_file_dialog_load_deck_file_selected(path):
 	
-	# Hide the canvar layer
+	# Hide the canvas layer
 	_hide_deck_import()
 	
 	# Check that file exists
 	if FileAccess.file_exists(path):
-		# Create the new deck list
-		imported_deck_list = DeckList.new()
-		imported_deck_list.main_deck = CardPile.new()
-		imported_deck_list.side_board = CardPile.new()
-		
-		# Get the file and read the text
-		var deck_file = FileAccess.open(path, FileAccess.READ)
-		var deck_file_text = deck_file.get_as_text()
-		
-		# Get File Name or Prompt User
-		imported_deck_list.name = "Imported_Deck"
-		
-		# Split the file into three sections. Main Deck, Sideboard, Starting Character
-		var deck_file_text_split = deck_file_text.split("//",true)
-		
-		# Loop through each section and check what section you are in
-		for card_section_in_deck_file in deck_file_text_split:
-			if card_section_in_deck_file.contains("deck"):
-				# Split on the new line to get each entry
-				var cards_in_main_deck = card_section_in_deck_file.split("\n",false)
-				for current_card in cards_in_main_deck:
-					# Skip the line that says "deck-1"
-					if not current_card == "deck-1":
-						# Split on the space to get the card name and count
-						var current_card_split = current_card.split(" ",false,1)
-						
-						# Add the card to the deck
-						add_card_to_main_deck(current_card_split[0],current_card_split[1])
-					
-			if card_section_in_deck_file.contains("sideboard"):
-				# Split on the new line to get each entry
-				var cards_in_sideboard = card_section_in_deck_file.split("\n",false)
-				for current_card in cards_in_sideboard:
-					# Skip the line that says "sideboard-1"
-					if not current_card == "sideboard-1":
-						# Split on the space to get the card name and count
-						var current_card_split = current_card.split(" ",false,1)
-						
-						# Add the card to the sideboard
-						add_card_to_side_board(current_card_split[0],current_card_split[1])
-			if card_section_in_deck_file.contains("play"):
-				# Split on the new line to get each entry
-				var starting_character = card_section_in_deck_file.split("\n",false)
-				
-				# There should be only one starting character, but size is 2 because of the
-				# line of "play-1" break out if not
-				if not starting_character.size() == 2:
-					print("More than one starting character fix it")
-					return
-				
-				# Split on the space to get the card name and count, get the 2nd line because
-				# The first line is the "play-1"
-				var starting_character_split = starting_character[1].split(" ",false,1)
-				
-				# Add the starting character to the deck
-				add_card_as_starting_character(starting_character_split[1])
-				
-				print(imported_deck_list)
-			
-		
+		upload_imported_deck_list(path)
+		#import_uploaded_deck_list(path)
 	
 
-func add_card_to_main_deck(card_amount_to_add:String, card_name_to_add:String):
+func upload_imported_deck_list(path: String):
+	# Get the file and read the text
+	var deck_file = FileAccess.open(path, FileAccess.READ)
+	var deck_file_text = deck_file.get_as_text()
+	
+	# Setup Nested Deck Dictionary to Save in Nakama
+	var imported_deck_properties = {}
+	imported_deck_properties["Deck_Info"] = {}
+	imported_deck_properties["Main_Deck"] = {}
+	imported_deck_properties["Side_Board"] = {}
+	
+	# Create Custom Deck Name or Prompt User for Deck Name
+	var current_date_time = Time.get_datetime_string_from_system(false,false)
+	imported_deck_properties["Deck_Info"]["Name"] = "Imported_Deck_" + current_date_time
+	
+	# Set the deck's card backs
+	imported_deck_properties["Deck_Info"]["Card_Back"] = "res://art/cards/card_backs/HPTCG-RevivalBack.png"
+	
+	# Split the file into three sections. Main Deck, Sideboard, Starting Character
+	var deck_file_text_split = deck_file_text.split("//",true)
+	
+	# Loop through each section
+	for card_section_in_deck_file in deck_file_text_split:
+		# MAIN DECK
+		if card_section_in_deck_file.contains("deck"):
+			# Split on the new line to get each entry
+			var cards_in_main_deck = card_section_in_deck_file.split("\n",false)
+			
+			# Card Counter, used for unique keys in Dict
+			var card_main_deck_count : int = 0
+			
+			for current_card in cards_in_main_deck:
+				
+				# Skip the line that says "deck-1"
+				if not current_card == "deck-1":
+					# Split on the space to get the card name and count
+					var current_card_split = current_card.split(" ",false,1)
+					
+					var card_amount_to_add : int = int(current_card_split[0])
+					var card_name_to_add : String = current_card_split[1]
+					
+					for i in card_amount_to_add:
+						# Increment Card Counter
+						card_main_deck_count += 1
+						
+						# Add Card to Main Deck Nested Dictionary
+						imported_deck_properties["Main_Deck"][card_main_deck_count] = "res://cards/resources/" + card_name_to_add
+				
+			
+		# SIDE BOARD
+		if card_section_in_deck_file.contains("sideboard"):
+			# Split on the new line to get each entry
+			var cards_in_sideboard = card_section_in_deck_file.split("\n",false)
+			
+			# Card Counter, used for unique keys in Dict
+			var card_side_board_count : int = 0
+			
+			for current_card in cards_in_sideboard:
+				
+				# Skip the line that says "sideboard-1"
+				if not current_card == "sideboard-1":
+					# Split on the space to get the card name and count
+					var current_card_split = current_card.split(" ",false,1)
+					
+					var card_amount_to_add : int = int(current_card_split[0])
+					var card_name_to_add : String = current_card_split[1]
+					
+					for i in card_amount_to_add:
+						# Increment Card Counter
+						card_side_board_count += 1
+						
+						# Add Card to Main Deck Nested Dictionary
+						imported_deck_properties["Side_Board"][card_side_board_count] = "res://cards/resources/" + card_name_to_add
+					
+					# Add the card to the sideboard
+					#add_card_to_side_board(int(current_card_split[0]),current_card_split[1])
+		# STARTING CHARACTER
+		if card_section_in_deck_file.contains("play"):
+			# Split on the new line to get each entry
+			var starting_character = card_section_in_deck_file.split("\n",false)
+			
+			# There should be only one starting character, but size is 2 because of the
+			# line of "play-1" break out if not
+			if not starting_character.size() == 2:
+				print("More than one starting character fix it")
+				return
+			
+			# Split on the space to get the card name and count, get the 2nd line because
+			# The first line is the "play-1"
+			var starting_character_split = starting_character[1].split(" ",false,1)
+			var starting_character_name = starting_character_split[1]
+			# Add the starting character to the deck
+			#add_card_as_starting_character(starting_character_split[1])
+			imported_deck_properties["Deck_Info"]["Starting_Character"] = "res://cards/resources/" + starting_character_name
+			
+			# Save the deck to Nakama
+			save_deck_list(imported_deck_properties)
+
+func download_deck_list(path: String):
+	# Create the new deck list
+	imported_deck_list = DeckList.new()
+	imported_deck_list.main_deck = CardPile.new()
+	imported_deck_list.side_board = CardPile.new()
+	imported_deck_list.image = load("res://art/cards/card_backs/HPTCG-RevivalBack.png")
+	
+	# Add the newly imported deck to the player stats
+	Global.player_stats.deck_lists.append(imported_deck_list)
+	
+	print("")
+	print(imported_deck_list.name)
+	print("")
+	print(imported_deck_list.main_deck)
+	print("")
+	print(imported_deck_list.side_board)
+	print("")
+	print(imported_deck_list.starting_character.cardname)
+	
+
+func add_card_to_main_deck(card_amount_to_add:int, card_name_to_add:String):
 	var main_deck_card_resource_path = CardLookup.get_resource_path(card_name_to_add)
+	var main_deck_card_resource : Card = load(main_deck_card_resource_path)
 	for i in card_amount_to_add:
-		var main_deck_card_resource = load(main_deck_card_resource_path)
 		imported_deck_list.main_deck.cards.append(main_deck_card_resource)
 	print("Adding ", card_amount_to_add, " copies of ", card_name_to_add, " to the main deck")
 
-func add_card_to_side_board(card_amount_to_add:String, card_name_to_add:String):
+func add_card_to_side_board(card_amount_to_add:int, card_name_to_add:String):
 	var side_board_card_resource_path = CardLookup.get_resource_path(card_name_to_add)
+	var side_board_card_resource : Card = load(side_board_card_resource_path)
 	for i in card_amount_to_add:
-		var side_board_card_resource = load(side_board_card_resource_path)
 		imported_deck_list.side_board.cards.append(side_board_card_resource)
 	print("Adding ", card_amount_to_add, " copies of ", card_name_to_add, " to the side board")
 
 func add_card_as_starting_character(card_name_to_add:String):
+	var starting_character_resource_path = CardLookup.get_resource_path(card_name_to_add)
+	var starting_character_resource : Card = load(starting_character_resource_path)
+	imported_deck_list.starting_character = starting_character_resource
 	print("Adding ", card_name_to_add, " as the starting character")
+
+func save_deck_list(deck_dictionary: Dictionary):
+	var deck_dictionary_json = JSON.stringify(deck_dictionary)
+	
+	var deck_list_stoarge = await  Global.client.write_storage_objects_async(
+			Global.session,[
+				NakamaWriteStorageObject.new(
+					"Deck_List",
+					deck_dictionary["Deck_Info"]["Name"],
+					1,
+					1, 
+					deck_dictionary_json,
+					"")
+			]
+		)
+	
+
+func _on_view_decks_button_pressed():
+	print(Global.player_stats.deck_lists)

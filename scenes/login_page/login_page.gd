@@ -111,9 +111,11 @@ func _on_successfull_login() -> void:
 	# Setup Player and retrieve data from server
 	Global.player_stats = PlayerStats.new()
 	Global.player_stats.player_name = Global.session.username
+	var player_deck_lists : Array[DeckList] = []
+	Global.player_stats.deck_lists = player_deck_lists
 	Global.player_stats.deck_lists = await import_deck_lists()
 	# Change this to pull from the nakama storage
-	Global.player_stats.card_back = load("res://art/Cards/CardBacks/HPTCG-RevivalBack.png")
+	Global.player_stats.card_back = load("res://art/cards/card_backs/HPTCG-RevivalBack.png")
 	# Change this to pull from the nakama storage
 	Global.player_stats.player_avatar = load("res://art/player_avatars/owl_brown.jpg")
 	

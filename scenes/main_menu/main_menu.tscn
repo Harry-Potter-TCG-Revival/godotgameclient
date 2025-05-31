@@ -268,6 +268,7 @@ file_mode = 0
 access = 2
 
 [connection signal="pressed" from="Decks/VBoxContainer/import_deck_accio_button" to="." method="_on_import_deck_accio_button_pressed"]
+[connection signal="pressed" from="Decks/VBoxContainer/view_decks_button" to="." method="_on_view_decks_button_pressed"]
 [connection signal="pressed" from="Matchmaking/Host_game_ui_container/host_game_button" to="." method="_on_host_game_button_pressed"]
 [connection signal="pressed" from="Matchmaking/Cancel_game_ui_container/cancel_hosted_game_button" to="." method="_on_cancel_hosted_game_button_pressed"]
 [connection signal="pressed" from="Matchmaking/HBoxContainer/join_game_button" to="." method="_on_join_game_button_pressed"]
