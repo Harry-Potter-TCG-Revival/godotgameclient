@@ -1,7 +1,9 @@
-[gd_scene load_steps=4 format=3 uid="uid://dduuaudy8fos5"]
+[gd_scene load_steps=6 format=3 uid="uid://dduuaudy8fos5"]
 
 [ext_resource type="Texture2D" uid="uid://vpxglg6cke6i" path="res://art/backgrounds/1.47 McGonagalls Office - Wizards Chess in McGonagalls Office B1C16M2.jpg" id="1_fh7iq"]
+[ext_resource type="Script" path="res://scenes/deck_menu/deck_menu.gd" id="1_v5xwi"]
 [ext_resource type="FontFile" uid="uid://dvqtymqwhgi03" path="res://fonts/HARRYP__.TTF" id="2_b2rvm"]
+[ext_resource type="Script" path="res://scenes/deck_menu/deck_ui_container.gd" id="4_i4egj"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_dw5ty"]
 font = ExtResource("2_b2rvm")
@@ -14,6 +16,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_v5xwi")
 
 [node name="Background" type="TextureRect" parent="."]
 layout_mode = 0
@@ -47,3 +50,11 @@ text = "Decks"
 label_settings = SubResource("LabelSettings_dw5ty")
 horizontal_alignment = 1
 vertical_alignment = 1
+
+[node name="DeckUIContainer" type="GridContainer" parent="."]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("4_i4egj")
+
+[connection signal="pressed" from="Main_Menu" to="." method="_on_main_menu_pressed"]

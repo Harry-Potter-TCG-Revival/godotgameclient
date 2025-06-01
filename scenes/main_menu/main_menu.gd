@@ -3,10 +3,10 @@ extends Control
 
 const MATCH_SELECTION_UI_SCENE := preload("res://scenes/match_ui/match_selection_ui.tscn")
 const BATTLE_SCENE := preload("res://scenes/battle/battle.tscn")
+const DECK_MENU_SCENE := preload("res://scenes/deck_menu/deck_menu.tscn")
 
 var selected_match_name : String : set = _set_selected_match_name
 var is_importing_decklist : bool = false
-var imported_deck_list : DeckList
 
 @onready var host_game_ui_container = $Matchmaking/Host_game_ui_container
 @onready var custom_match_name = $Matchmaking/Host_game_ui_container/custom_match_name
@@ -197,11 +197,11 @@ func _on_file_dialog_load_deck_file_selected(path):
 	
 	# Check that file exists
 	if FileAccess.file_exists(path):
-		upload_imported_deck_list(path)
+		upload_downloaded_deck_list(path)
 		#import_uploaded_deck_list(path)
 	
 
-func upload_imported_deck_list(path: String):
+func upload_downloaded_deck_list(path: String):
 	# Get the file and read the text
 	var deck_file = FileAccess.open(path, FileAccess.READ)
 	var deck_file_text = deck_file.get_as_text()
@@ -240,7 +240,8 @@ func upload_imported_deck_list(path: String):
 					var current_card_split = current_card.split(" ",false,1)
 					
 					var card_amount_to_add : int = int(current_card_split[0])
-					var card_name_to_add : String = current_card_split[1]
+					var card_name_to_add_raw : String = current_card_split[1]
+					var card_name_to_add = card_name_to_add_raw.replace(" ","").replace("'","")
 					
 					for i in card_amount_to_add:
 						# Increment Card Counter
@@ -266,17 +267,16 @@ func upload_imported_deck_list(path: String):
 					var current_card_split = current_card.split(" ",false,1)
 					
 					var card_amount_to_add : int = int(current_card_split[0])
-					var card_name_to_add : String = current_card_split[1]
+					var card_name_to_add_raw : String = current_card_split[1]
+					var card_name_to_add = card_name_to_add_raw.replace(" ","").replace("'","")
 					
 					for i in card_amount_to_add:
 						# Increment Card Counter
 						card_side_board_count += 1
 						
-						# Add Card to Main Deck Nested Dictionary
+						# Add Card to Side Board Nested Dictionary
 						imported_deck_properties["Side_Board"][card_side_board_count] = "res://cards/resources/" + card_name_to_add
 					
-					# Add the card to the sideboard
-					#add_card_to_side_board(int(current_card_split[0]),current_card_split[1])
 		# STARTING CHARACTER
 		if card_section_in_deck_file.contains("play"):
 			# Split on the new line to get each entry
@@ -291,53 +291,59 @@ func upload_imported_deck_list(path: String):
 			# Split on the space to get the card name and count, get the 2nd line because
 			# The first line is the "play-1"
 			var starting_character_split = starting_character[1].split(" ",false,1)
-			var starting_character_name = starting_character_split[1]
+			var starting_character_name_raw = starting_character_split[1]
+			var starting_character_name = starting_character_name_raw.replace(" ","").replace("'","")
 			# Add the starting character to the deck
 			#add_card_as_starting_character(starting_character_split[1])
 			imported_deck_properties["Deck_Info"]["Starting_Character"] = "res://cards/resources/" + starting_character_name
 			
 			# Save the deck to Nakama
 			save_deck_list(imported_deck_properties)
+			download_deck_lists()
 
-func download_deck_list(path: String):
-	# Create the new deck list
-	imported_deck_list = DeckList.new()
-	imported_deck_list.main_deck = CardPile.new()
-	imported_deck_list.side_board = CardPile.new()
-	imported_deck_list.image = load("res://art/cards/card_backs/HPTCG-RevivalBack.png")
+func download_deck_lists():
+	
+	# Get Deck Lists from Nakama
+	var nakama_deck_lists = await Global.client.list_storage_objects_async(
+		Global.session,
+		"Deck_List",
+		Global.session.user_id,
+		100,
+		null
+	)
+	
+	for i in nakama_deck_lists.objects:
+		var i_parsed = JSON.parse_string(i.value)
+		download_deck_list(i_parsed)
+	
+	print(nakama_deck_lists)
+
+func download_deck_list(downloaded_deck_list):
+	# Check is decklist is already downloaded
+	
+	# Initialize the new deck list
+	var new_deck_list = DeckList.new()
+	new_deck_list.main_deck = CardPile.new()
+	new_deck_list.side_board = CardPile.new()
+	
+	# Set the deck info
+	new_deck_list.image = load(downloaded_deck_list.Deck_Info.Card_Back)
+	new_deck_list.name = downloaded_deck_list.Deck_Info.Name
+	new_deck_list.starting_character = load(downloaded_deck_list.Deck_Info.Starting_Character)
+	
+	# Setup Main Deck
+	for i in downloaded_deck_list.Main_Deck:
+		# Add Card by loading the resource using the path
+		new_deck_list.main_deck.cards.append(load(downloaded_deck_list.Main_Deck[i]))
+	
+	# Setup Side Board
+	for i in downloaded_deck_list.Side_Board:
+		# Add Card by loading the resource using the path
+		new_deck_list.side_board.cards.append(load(downloaded_deck_list.Side_Board[i]))
 	
 	# Add the newly imported deck to the player stats
-	Global.player_stats.deck_lists.append(imported_deck_list)
+	Global.player_stats.deck_lists.append(new_deck_list)
 	
-	print("")
-	print(imported_deck_list.name)
-	print("")
-	print(imported_deck_list.main_deck)
-	print("")
-	print(imported_deck_list.side_board)
-	print("")
-	print(imported_deck_list.starting_character.cardname)
-	
-
-func add_card_to_main_deck(card_amount_to_add:int, card_name_to_add:String):
-	var main_deck_card_resource_path = CardLookup.get_resource_path(card_name_to_add)
-	var main_deck_card_resource : Card = load(main_deck_card_resource_path)
-	for i in card_amount_to_add:
-		imported_deck_list.main_deck.cards.append(main_deck_card_resource)
-	print("Adding ", card_amount_to_add, " copies of ", card_name_to_add, " to the main deck")
-
-func add_card_to_side_board(card_amount_to_add:int, card_name_to_add:String):
-	var side_board_card_resource_path = CardLookup.get_resource_path(card_name_to_add)
-	var side_board_card_resource : Card = load(side_board_card_resource_path)
-	for i in card_amount_to_add:
-		imported_deck_list.side_board.cards.append(side_board_card_resource)
-	print("Adding ", card_amount_to_add, " copies of ", card_name_to_add, " to the side board")
-
-func add_card_as_starting_character(card_name_to_add:String):
-	var starting_character_resource_path = CardLookup.get_resource_path(card_name_to_add)
-	var starting_character_resource : Card = load(starting_character_resource_path)
-	imported_deck_list.starting_character = starting_character_resource
-	print("Adding ", card_name_to_add, " as the starting character")
 
 func save_deck_list(deck_dictionary: Dictionary):
 	var deck_dictionary_json = JSON.stringify(deck_dictionary)
@@ -356,4 +362,8 @@ func save_deck_list(deck_dictionary: Dictionary):
 	
 
 func _on_view_decks_button_pressed():
-	print(Global.player_stats.deck_lists)
+	get_tree().change_scene_to_packed(DECK_MENU_SCENE)
+
+
+func _on_download_decks_button_pressed():
+	download_deck_lists()

@@ -1,15 +1,15 @@
 [gd_scene load_steps=4 format=3 uid="uid://hxt8iq7pb3de"]
 
-[ext_resource type="Script" path="res://scenes/deck_menu/deck_list_ui.gd" id="1_n0x6j"]
-[ext_resource type="Texture2D" uid="uid://c0s3ux6f51oq2" path="res://cards/lessons/images/Lesson-Transfiguration.png" id="1_t2idl"]
+[ext_resource type="Script" path="res://scenes/deck_menu/deck_ui.gd" id="1_pbsvf"]
+[ext_resource type="Texture2D" uid="uid://c0s3ux6f51oq2" path="res://cards/lessons/images/Lesson-Transfiguration.png" id="2_3utpu"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_xsa5e"]
 font_color = Color(0, 0, 0, 1)
 
-[node name="DeckListUI" type="VBoxContainer"]
+[node name="DeckUI" type="VBoxContainer"]
 offset_right = 40.0
 offset_bottom = 40.0
-script = ExtResource("1_n0x6j")
+script = ExtResource("1_pbsvf")
 
 [node name="DeckName" type="Label" parent="."]
 layout_mode = 2
@@ -21,7 +21,7 @@ vertical_alignment = 1
 [node name="DeckImage" type="TextureRect" parent="."]
 custom_minimum_size = Vector2(360, 500)
 layout_mode = 2
-texture = ExtResource("1_t2idl")
+texture = ExtResource("2_3utpu")
 expand_mode = 1
 stretch_mode = 4
 

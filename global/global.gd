@@ -12,3 +12,6 @@ var player_is_host : bool
 
 # Player Variables
 var player_stats : PlayerStats
+
+# Testing Variables
+var auto_login : bool

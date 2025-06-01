@@ -24,6 +24,9 @@ const MAIN_MENU_SCENE := preload("res://scenes/main_menu/main_menu.tscn")
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
+	# Set Auto Login to help with Testing
+	Global.auto_login = true
+	
 	# manually hiding/showing these is redundant but is helpful for testing
 	login_ui.show()
 	register_ui.hide()
@@ -32,6 +35,14 @@ func _ready():
 	client = Nakama.create_client("defaultkey","127.0.0.1",7350,"http")
 	# Hosted Internet Testing (do not use for PROD)
 	#client = Nakama.create_client("defaultkey","api.finepointcgi.online",7350,"http")
+	
+	if Global.auto_login :
+		auto_login()
+
+func auto_login():
+	email_input.text = "test@gmail.com"
+	password_input.text = "Password"
+	_on_login_button_pressed()
 
 func _on_login_button_pressed():
 	session = await client.authenticate_email_async(email_input.text,password_input.text,null,false)
