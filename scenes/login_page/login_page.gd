@@ -5,6 +5,7 @@ var session : NakamaSession
 var client : NakamaClient
 var socket : NakamaSocket
 var received_error_message : String
+var New_Player_Stats : PlayerStats
 
 const MAIN_MENU_SCENE := preload("res://scenes/main_menu/main_menu.tscn")
 
@@ -119,24 +120,62 @@ func _on_successfull_login() -> void:
 	Global.session = session
 	Global.socket = socket
 	
-	# Setup Player and retrieve data from server
-	Global.player_stats = PlayerStats.new()
-	Global.player_stats.player_name = Global.session.username
-	var player_deck_lists : Array[DeckList] = []
-	Global.player_stats.deck_lists = player_deck_lists
-	Global.player_stats.deck_lists = await import_deck_lists()
+	# Setup new player stats and save it to disk
+	New_Player_Stats = PlayerStats.new()
+	New_Player_Stats.player_name = Global.session.username
+	New_Player_Stats.deck_lists = await download_deck_lists()
 	# Change this to pull from the nakama storage
-	Global.player_stats.card_back = load("res://art/cards/card_backs/HPTCG-RevivalBack.png")
+	New_Player_Stats.card_back = load("res://art/cards/card_backs/HPTCG-RevivalBack.png")
 	# Change this to pull from the nakama storage
-	Global.player_stats.player_avatar = load("res://art/player_avatars/owl_brown.jpg")
+	New_Player_Stats.player_avatar = load("res://art/player_avatars/owl_brown.jpg")
+	
+	Global.player_stats = New_Player_Stats
 	
 	get_tree().change_scene_to_packed(MAIN_MENU_SCENE)
 
-func import_deck_lists() -> Array[DeckList]:
+func download_deck_lists() -> Array[DeckList]:
 	var new_player_deck_lists: Array[DeckList] = []
 	
-	# Read All Deck_List Storage accounts
-	# Loop through and append to new_player_deck_lists
+	# Get Deck Lists from Nakama
+	var nakama_deck_lists = await Global.client.list_storage_objects_async(
+		Global.session,
+		"Deck_List",
+		Global.session.user_id,
+		100,
+		null
+	)
+	
+	for i in nakama_deck_lists.objects:
+		var i_parsed = JSON.parse_string(i.value)
+		var new_player_deck = download_deck_list(i_parsed,i.version)
+		new_player_deck_lists.append(new_player_deck)
 	
 	return new_player_deck_lists
+	
+
+func download_deck_list(downloaded_deck_list,downloaded_deck_version: String) -> DeckList:
+	# Check if decklist is already downloaded
+	
+	# Initialize the new deck list
+	var new_deck_list = DeckList.new()
+	new_deck_list.main_deck = CardPile.new()
+	new_deck_list.side_board = CardPile.new()
+	
+	# Set the deck info
+	new_deck_list.image = load(downloaded_deck_list.Deck_Info.Card_Back)
+	new_deck_list.name = downloaded_deck_list.Deck_Info.Name
+	new_deck_list.version = downloaded_deck_version
+	new_deck_list.starting_character = load(downloaded_deck_list.Deck_Info.Starting_Character)
+	
+	# Setup Main Deck
+	for i in downloaded_deck_list.Main_Deck:
+		# Add Card by loading the resource using the path
+		new_deck_list.main_deck.cards.append(load(downloaded_deck_list.Main_Deck[i]))
+	
+	# Setup Side Board
+	for i in downloaded_deck_list.Side_Board:
+		# Add Card by loading the resource using the path
+		new_deck_list.side_board.cards.append(load(downloaded_deck_list.Side_Board[i]))
+	
+	return new_deck_list
 	

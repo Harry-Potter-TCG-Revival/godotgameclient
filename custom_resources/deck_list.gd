@@ -6,3 +6,4 @@ extends Resource
 @export var main_deck: CardPile
 @export var side_board: CardPile
 @export var starting_character: Card
+@export var version: String

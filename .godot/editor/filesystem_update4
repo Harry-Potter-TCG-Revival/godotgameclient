@@ -2,7 +2,12 @@ res://scenes/login_page/login_page.tscn
 res://scenes/main_menu/main_menu.tscn
 res://scenes/deck_menu/deck_menu.tscn
 res://scenes/deck_menu/deck_ui.tscn
-res://scenes/deck_menu/deck_menu.gd
 res://scenes/main_menu/main_menu.gd
-res://global/global.gd
+res://scenes/deck_menu/deck_ui_container.gd
+res://scenes/deck_menu/deck_menu.gd
+res://node_settings/label_menu_ui.tres
 res://scenes/login_page/login_page.gd
+res://scenes/deck_menu/deck_ui.gd
+res://test_deck_list.tres
+res://players/88c253df-4093-4313-ad61-3f2c2439e83b.tres
+res://custom_resources/deck_list.gd

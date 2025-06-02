@@ -1,7 +1,6 @@
 class_name DeckUI
 extends VBoxContainer
 
-@onready var deck_name = $DeckName
 @onready var deck_image = $DeckImage
 @onready var open_deck = $OpenDeck
 
@@ -13,7 +12,7 @@ func _set_deck(value: DeckList) -> void:
 	
 	deck_list = value
 	deck_image.texture = deck_list.image
-	deck_name.text = deck_list.name
+	open_deck.text = deck_list.name
 
 func _on_open_deck_pressed():
 	# Change scene, load deck

@@ -20,22 +20,32 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_3rkvw")
 
+[node name="Panel" type="Panel" parent="."]
+modulate = Color(0, 0, 0, 1)
+self_modulate = Color(0.00784314, 0.00392157, 0, 1)
+z_index = -1
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
 [node name="Background" type="TextureRect" parent="."]
 layout_mode = 0
-offset_left = -256.0
-offset_top = -7.0
-offset_right = 1550.0
-offset_bottom = 659.0
+offset_left = -75.0
+offset_top = 138.0
+offset_right = 2043.0
+offset_bottom = 938.0
 texture = ExtResource("1_l71dn")
-expand_mode = 1
 stretch_mode = 4
 
 [node name="Title" type="Label" parent="."]
 layout_mode = 0
-offset_left = 170.0
-offset_top = 45.0
-offset_right = 976.0
-offset_bottom = 140.0
+offset_left = 545.0
+offset_top = 39.0
+offset_right = 1351.0
+offset_bottom = 134.0
 text = "Harry Potter Trading Card Game"
 label_settings = SubResource("LabelSettings_h22jj")
 

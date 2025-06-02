@@ -1,5 +1,5 @@
 class_name DeckUIContainer
-extends GridContainer
+extends HBoxContainer
 
 @onready var deck_ui_scene := preload("res://scenes/deck_menu/deck_ui.tscn")
 

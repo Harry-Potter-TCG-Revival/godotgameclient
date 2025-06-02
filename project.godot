@@ -21,3 +21,9 @@ Nakama="*res://addons/com.heroiclabs.nakama/Nakama.gd"
 Global="*res://global/global.gd"
 Events="*res://global/events.gd"
 CardLookup="*res://global/card_lookup.gd"
+
+[display]
+
+window/size/viewport_width=1920
+window/size/viewport_height=1080
+window/size/mode=3

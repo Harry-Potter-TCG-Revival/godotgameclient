@@ -1,9 +1,8 @@
+res://players
+res://
 res://scenes/deck_menu
 res://custom_resources
-res://cards/lessons/resources
-res://cards/base_set/resources
 res://global
-res://
 res://scenes
 res://scenes/battle
 res://scenes/match_ui

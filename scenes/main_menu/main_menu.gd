@@ -19,6 +19,7 @@ var is_importing_decklist : bool = false
 @onready var file_dialog_load_deck = $DeckImport/FileDialogLoadDeck
 
 func _ready():
+	# Setup UI
 	host_game_ui_container.show()
 	cancel_game_ui_container.hide()
 	deck_import.hide()
@@ -99,7 +100,6 @@ func _on_peer_connected(id):
 	# Set the Nakama Unique ID to the Player ID
 	# This is used for validating the owner/controller of cards
 	Global.player_id = multiplayer.get_unique_id()
-	print("test")
 	
 	# If ther are two players connecte in the match start it
 	if multiplayer.is_server():
@@ -198,7 +198,6 @@ func _on_file_dialog_load_deck_file_selected(path):
 	# Check that file exists
 	if FileAccess.file_exists(path):
 		upload_downloaded_deck_list(path)
-		#import_uploaded_deck_list(path)
 	
 
 func upload_downloaded_deck_list(path: String):
@@ -248,7 +247,7 @@ func upload_downloaded_deck_list(path: String):
 						card_main_deck_count += 1
 						
 						# Add Card to Main Deck Nested Dictionary
-						imported_deck_properties["Main_Deck"][card_main_deck_count] = "res://cards/resources/" + card_name_to_add
+						imported_deck_properties["Main_Deck"][card_main_deck_count] = "res://cards/resources/" + card_name_to_add + ".tres"
 				
 			
 		# SIDE BOARD
@@ -275,7 +274,7 @@ func upload_downloaded_deck_list(path: String):
 						card_side_board_count += 1
 						
 						# Add Card to Side Board Nested Dictionary
-						imported_deck_properties["Side_Board"][card_side_board_count] = "res://cards/resources/" + card_name_to_add
+						imported_deck_properties["Side_Board"][card_side_board_count] = "res://cards/resources/" + card_name_to_add + ".tres"
 					
 		# STARTING CHARACTER
 		if card_section_in_deck_file.contains("play"):
@@ -295,14 +294,15 @@ func upload_downloaded_deck_list(path: String):
 			var starting_character_name = starting_character_name_raw.replace(" ","").replace("'","")
 			# Add the starting character to the deck
 			#add_card_as_starting_character(starting_character_split[1])
-			imported_deck_properties["Deck_Info"]["Starting_Character"] = "res://cards/resources/" + starting_character_name
+			imported_deck_properties["Deck_Info"]["Starting_Character"] = "res://cards/resources/" + starting_character_name + ".tres"
 			
 			# Save the deck to Nakama
-			save_deck_list(imported_deck_properties)
+			await save_deck_list(imported_deck_properties)
 			download_deck_lists()
+		
+	
 
 func download_deck_lists():
-	
 	# Get Deck Lists from Nakama
 	var nakama_deck_lists = await Global.client.list_storage_objects_async(
 		Global.session,
@@ -312,14 +312,24 @@ func download_deck_lists():
 		null
 	)
 	
+	# Loop through each deck downloaded
 	for i in nakama_deck_lists.objects:
 		var i_parsed = JSON.parse_string(i.value)
-		download_deck_list(i_parsed)
+		download_deck_list(i_parsed,i.version)
 	
-	print(nakama_deck_lists)
 
-func download_deck_list(downloaded_deck_list):
-	# Check is decklist is already downloaded
+func download_deck_list(downloaded_deck_list,downloaded_deck_version):
+	# Check if decklist is already downloaded
+	var deck_list_exists : bool = false
+	
+	for i in Global.player_stats.deck_lists:
+		# Check if Deck and Version Match, if any match set deck_list_exists to true
+		if (downloaded_deck_list.Deck_Info.Name == i.name) and (downloaded_deck_version == i.version):
+			deck_list_exists = true
+		
+	# Break out if deck_list_exists
+	if deck_list_exists:
+		return
 	
 	# Initialize the new deck list
 	var new_deck_list = DeckList.new()
@@ -329,6 +339,7 @@ func download_deck_list(downloaded_deck_list):
 	# Set the deck info
 	new_deck_list.image = load(downloaded_deck_list.Deck_Info.Card_Back)
 	new_deck_list.name = downloaded_deck_list.Deck_Info.Name
+	new_deck_list.version = downloaded_deck_version
 	new_deck_list.starting_character = load(downloaded_deck_list.Deck_Info.Starting_Character)
 	
 	# Setup Main Deck
