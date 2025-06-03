@@ -1,0 +1,154 @@
+[gd_scene load_steps=19 format=3 uid="uid://cehgiridxlgsn"]
+
+[ext_resource type="Script" path="res://scenes/ui/card_ui/card_ui.gd" id="1_08l4y"]
+[ext_resource type="StyleBox" path="res://scenes/ui/card_ui/card_ui_selected_stylebox.tres" id="2_nkn0u"]
+[ext_resource type="Texture2D" uid="uid://ci4d0gl84ukdr" path="res://cards/images/CareOfMagicalCreatures.png" id="3_0l3mr"]
+[ext_resource type="Script" path="res://scenes/ui/card_ui/card_states/card_state_machine.gd" id="3_vi33c"]
+[ext_resource type="Script" path="res://scenes/ui/card_ui/card_states/card_hand_state.gd" id="4_1q5d5"]
+[ext_resource type="Script" path="res://scenes/ui/card_ui/card_states/card_clicked_state.gd" id="5_0cr8k"]
+[ext_resource type="Script" path="res://scenes/ui/card_ui/card_states/card_dragging_state.gd" id="6_xbgkg"]
+[ext_resource type="Script" path="res://scenes/ui/card_ui/card_hand_base_state.gd" id="7_ssy0k"]
+[ext_resource type="Script" path="res://scenes/ui/card_ui/card_states/card_released_state.gd" id="8_eit6f"]
+[ext_resource type="Script" path="res://scenes/ui/card_ui/card_hand_selectable_state.gd" id="8_ieglh"]
+[ext_resource type="Script" path="res://scenes/ui/card_ui/card_states/card_spell_zone_state.gd" id="9_sqvfr"]
+[ext_resource type="Script" path="res://scenes/ui/card_ui/card_hand_unselectable_state.gd" id="9_wstev"]
+[ext_resource type="Script" path="res://scenes/ui/card_ui/card_states/card_in_play_state.gd" id="10_qpnu5"]
+[ext_resource type="PackedScene" uid="uid://bstar43eumnxt" path="res://scenes/ui/card_ui/ability_used_flag.tscn" id="13_1crjl"]
+[ext_resource type="Script" path="res://scenes/ui/card_ui/card_in_play_base_state.gd" id="15_5e3u8"]
+[ext_resource type="Script" path="res://scenes/ui/card_ui/card_in_play_selectable_state.gd" id="16_onuv6"]
+[ext_resource type="Script" path="res://scenes/ui/card_ui/card_in_play_unselectable_state.gd" id="17_s0r7y"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_80pv2"]
+size = Vector2(202, 280)
+
+[node name="CardUI" type="Panel"]
+custom_minimum_size = Vector2(202, 280)
+offset_right = 202.0
+offset_bottom = 280.0
+pivot_offset = Vector2(101, 140)
+script = ExtResource("1_08l4y")
+
+[node name="CardVisuals" type="Panel" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 1
+
+[node name="GlowEffect" type="Panel" parent="CardVisuals"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 2.0
+offset_top = 2.0
+offset_right = -2.0
+offset_bottom = -2.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+theme_override_styles/panel = ExtResource("2_nkn0u")
+
+[node name="CardImage" type="TextureRect" parent="CardVisuals"]
+layout_mode = 1
+offset_right = 202.0
+offset_bottom = 280.0
+mouse_filter = 2
+texture = ExtResource("3_0l3mr")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="DropPointDetector" type="Area2D" parent="CardVisuals/CardImage"]
+collision_mask = 2
+monitorable = false
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CardVisuals/CardImage/DropPointDetector"]
+position = Vector2(101, 140)
+shape = SubResource("RectangleShape2D_80pv2")
+debug_color = Color(0.245753, 0.645223, 0.583529, 0)
+
+[node name="StateText" type="Label" parent="CardVisuals/CardImage"]
+visible = false
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -76.0
+offset_top = -42.0
+offset_right = 76.0
+offset_bottom = 42.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 30
+text = "State"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="AbilityUsedFlag" parent="CardVisuals" instance=ExtResource("13_1crjl")]
+visible = false
+layout_mode = 1
+rotation = -1.0472
+mouse_filter = 2
+
+[node name="CardStateMachine" type="Node" parent="." node_paths=PackedStringArray("initial_state")]
+script = ExtResource("3_vi33c")
+initial_state = NodePath("CardHandState")
+
+[node name="CardHandState" type="Node" parent="CardStateMachine" node_paths=PackedStringArray("initial_hand_state")]
+script = ExtResource("4_1q5d5")
+initial_hand_state = NodePath("CardHandBaseState")
+
+[node name="CardHandBaseState" type="Node" parent="CardStateMachine/CardHandState"]
+script = ExtResource("7_ssy0k")
+hand_state = 1
+
+[node name="CardHandSelectableState" type="Node" parent="CardStateMachine/CardHandState"]
+script = ExtResource("8_ieglh")
+hand_state = 2
+
+[node name="CardHandUnSelectableState" type="Node" parent="CardStateMachine/CardHandState"]
+script = ExtResource("9_wstev")
+hand_state = 3
+
+[node name="CardClickedState" type="Node" parent="CardStateMachine"]
+script = ExtResource("5_0cr8k")
+state = 1
+
+[node name="CardDraggingState" type="Node" parent="CardStateMachine"]
+script = ExtResource("6_xbgkg")
+state = 2
+
+[node name="CardReleasedState" type="Node" parent="CardStateMachine"]
+script = ExtResource("8_eit6f")
+state = 3
+
+[node name="CardSpellZoneState" type="Node" parent="CardStateMachine"]
+script = ExtResource("9_sqvfr")
+state = 4
+
+[node name="CardInPlayState" type="Node" parent="CardStateMachine" node_paths=PackedStringArray("initial_inplay_state")]
+script = ExtResource("10_qpnu5")
+initial_inplay_state = NodePath("CardInPlayBaseState")
+inplay_state = 3
+state = 5
+
+[node name="CardInPlayBaseState" type="Node" parent="CardStateMachine/CardInPlayState"]
+script = ExtResource("15_5e3u8")
+
+[node name="CardInPlaySelectableState" type="Node" parent="CardStateMachine/CardInPlayState"]
+script = ExtResource("16_onuv6")
+inplay_state = 1
+
+[node name="CardInPlayUnSelectableState" type="Node" parent="CardStateMachine/CardInPlayState"]
+script = ExtResource("17_s0r7y")
+inplay_state = 2
+
+[connection signal="gui_input" from="." to="." method="_on_gui_input"]
+[connection signal="mouse_entered" from="." to="." method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="." to="." method="_on_mouse_exited"]
+[connection signal="area_entered" from="CardVisuals/CardImage/DropPointDetector" to="." method="_on_drop_point_detector_area_entered"]
+[connection signal="area_exited" from="CardVisuals/CardImage/DropPointDetector" to="." method="_on_drop_point_detector_area_exited"]

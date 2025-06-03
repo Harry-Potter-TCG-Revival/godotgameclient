@@ -1,11 +1,12 @@
-res://players
+res://scenes/ui/card_ui/card_states
+res://cards/images
+res://scenes/ui
 res://
 res://scenes/deck_menu
 res://custom_resources
 res://global
 res://scenes
 res://scenes/battle
-res://scenes/match_ui
 res://node_settings
 res://scenes/main_menu
 res://fonts

@@ -9,13 +9,14 @@ script = ExtResource("1_2csfe")
 player_scene = ExtResource("2_1m80s")
 
 [node name="Background" type="TextureRect" parent="."]
-offset_left = -169.0
-offset_top = -56.0
-offset_right = 1419.0
-offset_bottom = 705.0
+offset_left = -316.0
+offset_top = -23.0
+offset_right = 2456.0
+offset_bottom = 1119.0
 texture = ExtResource("1_crh7g")
 expand_mode = 1
 stretch_mode = 5
+metadata/_edit_lock_ = true
 
 [node name="SpawnPoint" type="Node2D" parent="." groups=["Group_Spawnpoints"]]
 position = Vector2(271, 333)

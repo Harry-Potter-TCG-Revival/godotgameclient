@@ -1,7 +1,7 @@
 class_name MainMenu
 extends Control
 
-const MATCH_SELECTION_UI_SCENE := preload("res://scenes/match_ui/match_selection_ui.tscn")
+const MATCH_SELECTION_UI_SCENE := preload("res://scenes/ui/match_ui/match_selection_ui.tscn")
 const BATTLE_SCENE := preload("res://scenes/battle/battle.tscn")
 const DECK_MENU_SCENE := preload("res://scenes/deck_menu/deck_menu.tscn")
 
@@ -374,7 +374,3 @@ func save_deck_list(deck_dictionary: Dictionary):
 
 func _on_view_decks_button_pressed():
 	get_tree().change_scene_to_packed(DECK_MENU_SCENE)
-
-
-func _on_download_decks_button_pressed():
-	download_deck_lists()
