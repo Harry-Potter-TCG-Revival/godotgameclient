@@ -1,0 +1,49 @@
+[gd_scene load_steps=3 format=3 uid="uid://dtqq27f5rwlw3"]
+
+[ext_resource type="Script" path="res://scenes/ui/player_ui/in_play_lessons.gd" id="1_sktw5"]
+[ext_resource type="Script" path="res://scenes/ui/player_ui/in_play_card_arrangement_update.gd" id="2_7mfeo"]
+
+[node name="InPlayLessons" type="HBoxContainer"]
+custom_minimum_size = Vector2(0, 177)
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_top = -100.5
+offset_bottom = 100.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = -1
+alignment = 1
+script = ExtResource("1_sktw5")
+
+[node name="CareOfMagicalCreatures" type="ColorRect" parent="."]
+layout_mode = 2
+mouse_filter = 2
+color = Color(0.317647, 0.309804, 0.141176, 0)
+script = ExtResource("2_7mfeo")
+
+[node name="Charms" type="ColorRect" parent="."]
+layout_mode = 2
+mouse_filter = 2
+color = Color(0.235294, 0.219608, 1, 0)
+script = ExtResource("2_7mfeo")
+
+[node name="Potions" type="ColorRect" parent="."]
+layout_mode = 2
+mouse_filter = 2
+color = Color(0.290196, 0.898039, 0.509804, 0)
+script = ExtResource("2_7mfeo")
+
+[node name="Transfiguration" type="ColorRect" parent="."]
+layout_mode = 2
+mouse_filter = 2
+color = Color(1, 0.14902, 0.145098, 0)
+script = ExtResource("2_7mfeo")
+
+[node name="Quidditch" type="ColorRect" parent="."]
+layout_mode = 2
+mouse_filter = 2
+color = Color(0.72549, 0.878431, 0.188235, 0)
+script = ExtResource("2_7mfeo")

@@ -10,8 +10,8 @@ func enter() -> void:
 	# Because we just entered the released state the card is not played yet
 	played = false
 	
-	# Check if the card_ui has any targets, meaning it is over the card drop area
-	if not card_ui.targets.is_empty():
+	# Check if the card_ui.card_drop_area has anything in it, meaning it is over the card drop area
+	if not card_ui.card_drop_area.is_empty():
 		played = true
 		
 		card_ui.play()

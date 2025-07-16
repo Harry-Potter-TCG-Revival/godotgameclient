@@ -31,8 +31,8 @@ func enter() -> void:
 	if not card_ui :
 		return
 	
-	# Clear the current targets so only new valid targets exist
-	card_ui.targets.clear()
+	# Clear the current card_drop_area so only new valid card_drop_area exist
+	card_ui.card_drop_area.clear()
 	
 	card_ui.card.update_once_per_game_ability_state.connect(_update_update_once_per_game_ability_state)
 	

@@ -26,6 +26,7 @@ custom_minimum_size = Vector2(202, 280)
 offset_right = 202.0
 offset_bottom = 280.0
 pivot_offset = Vector2(101, 140)
+mouse_filter = 1
 script = ExtResource("1_08l4y")
 
 [node name="CardVisuals" type="Panel" parent="."]

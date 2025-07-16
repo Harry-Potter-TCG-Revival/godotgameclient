@@ -35,7 +35,7 @@ func enter() -> void:
 func on_gui_input(event: InputEvent) -> void:
 	
 	# If the card_ui has a target i.e. over the card drop area, update the glow effect
-	if card_ui.targets.size() > 0:
+	if card_ui.card_drop_area.size() > 0:
 		card_ui.glow_effect.set("theme_override_styles/panel", SELECTED_STYLEBOX)
 	else :
 		card_ui.glow_effect.set("theme_override_styles/panel", HOVER_STYLEBOX)

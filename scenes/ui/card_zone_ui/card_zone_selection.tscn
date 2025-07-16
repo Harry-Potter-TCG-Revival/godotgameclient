@@ -1,0 +1,49 @@
+[gd_scene load_steps=4 format=3 uid="uid://d4ah33ew645rv"]
+
+[ext_resource type="Script" path="res://scenes/ui/card_zone_ui/card_zone_selection.gd" id="1_3cgeo"]
+[ext_resource type="FontFile" uid="uid://dvqtymqwhgi03" path="res://fonts/HARRYP__.TTF" id="1_fyd38"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_m6q4s"]
+font = ExtResource("1_fyd38")
+font_size = 45
+
+[node name="CardZoneSelection" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+offset_left = 649.0
+offset_top = 89.0
+offset_right = 1263.0
+offset_bottom = 211.0
+script = ExtResource("1_3cgeo")
+
+[node name="MessageBackground" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.0980392, 0.0980392, 0.0980392, 0.619608)
+
+[node name="MessageTitle" type="Label" parent="MessageBackground"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Ability Message"
+label_settings = SubResource("LabelSettings_m6q4s")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="SubmitButton" type="Button" parent="."]
+layout_mode = 0
+offset_left = 911.0
+offset_top = 849.0
+offset_right = 1237.0
+offset_bottom = 940.0
+theme_override_font_sizes/font_size = 31
+text = "Submit"
+
+[connection signal="pressed" from="SubmitButton" to="." method="_on_submit_button_pressed"]

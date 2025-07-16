@@ -7,8 +7,8 @@ func enter() -> void:
 	print("entered SpellZone state")
 	card_ui.statetext.text = "Spell Zone"
 	
-	# Clear the current targets so only new valid targets exist
-	card_ui.targets.clear()
+	# Clear the current card_drop_area so only new valid card_drop_area exist
+	card_ui.card_drop_area.clear()
 	
 	# Animate Card to Spell Zone
 	await card_ui.animate_to_position(Vector2(1600,400),.6)

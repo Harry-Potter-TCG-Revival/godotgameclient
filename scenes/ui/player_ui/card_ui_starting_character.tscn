@@ -1,24 +1,26 @@
 [gd_scene load_steps=4 format=3 uid="uid://cv8a7p2ct54ic"]
 
-[ext_resource type="Script" path="res://scenes/ui/card_ui/card_ui_starting_character.gd" id="1_jvbbd"]
+[ext_resource type="Script" path="res://scenes/ui/player_ui/card_ui_starting_character.gd" id="1_jvbbd"]
 [ext_resource type="PackedScene" uid="uid://bstar43eumnxt" path="res://scenes/ui/card_ui/ability_used_flag.tscn" id="2_jfn3f"]
-[ext_resource type="Texture2D" uid="uid://csedniilnqcih" path="res://art/013-Base-NearlyHeadlessNick.png" id="3_a7gfw"]
+[ext_resource type="Texture2D" uid="uid://dm75octnd6rbt" path="res://cards/images/NearlyHeadlessNick.png" id="3_a7gfw"]
 
 [node name="CardUIStartingCharacter" type="PanelContainer"]
 self_modulate = Color(1, 1, 1, 0)
-offset_left = -80.0
-offset_top = -112.0
-offset_right = 80.0
-offset_bottom = 112.0
+offset_left = -50.0
+offset_top = -70.0
+offset_right = 51.0
+offset_bottom = 70.0
 rotation = 1.5708
-pivot_offset = Vector2(80, 112)
+scale = Vector2(1.5, 1.5)
+pivot_offset = Vector2(50, 70)
 script = ExtResource("1_jvbbd")
 
 [node name="CardImage" type="TextureRect" parent="."]
-custom_minimum_size = Vector2(160, 224)
+custom_minimum_size = Vector2(101, 140)
 layout_mode = 2
 texture = ExtResource("3_a7gfw")
 expand_mode = 1
+stretch_mode = 5
 
 [node name="GlowEffect" type="Panel" parent="CardImage"]
 z_index = -1

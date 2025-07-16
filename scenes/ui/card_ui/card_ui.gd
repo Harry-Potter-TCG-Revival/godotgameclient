@@ -28,7 +28,7 @@ var card_size: Vector2 = Vector2(202,280)
 @onready var statetext = $CardVisuals/CardImage/StateText
 @onready var drop_point_detector = $CardVisuals/CardImage/DropPointDetector
 @onready var card_state_machine: CardStateMachine = $CardStateMachine as CardStateMachine
-@onready var targets: Array[Node] = []
+@onready var card_drop_area: Array[Node] = []
 @onready var ability_used_flag = $CardVisuals/AbilityUsedFlag
 
 # card size - MTG Arena - 448 x 320 (7 - 5 ratio)
@@ -131,14 +131,14 @@ func _reset_valid_choice(_card_pile: CardPile) -> void:
 	print("reset selectable state using state machine")
 
 func _on_drop_point_detector_area_entered(area: Area2D) -> void:
-	# Check if the card drop area has already been added to the targets array
-	if not targets.has(area):
-		targets.append(area)
+	# Check if the card drop area has already been added to the card_drop_area array
+	if not card_drop_area.has(area):
+		card_drop_area.append(area)
 	
 
 func _on_drop_point_detector_area_exited(area: Area2D) -> void:
-	# Once we leave the card drop area we need to erase that from the targets array
-	targets.erase(area)
+	# Once we leave the card drop area we need to erase that from the card_drop_area array
+	card_drop_area.erase(area)
 
 func _on_card_drag_started(used_card: CardUI) -> void:
 	# Disable cards that aren't being dragged

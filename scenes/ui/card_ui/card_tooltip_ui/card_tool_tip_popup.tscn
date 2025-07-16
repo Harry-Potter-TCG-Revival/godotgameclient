@@ -1,0 +1,50 @@
+[gd_scene load_steps=3 format=3 uid="uid://dp4y6g58efx7k"]
+
+[ext_resource type="Script" path="res://scenes/ui/card_ui/card_tooltip_ui/card_tool_tip_popup.gd" id="1_wwr27"]
+[ext_resource type="PackedScene" uid="uid://ch1v65icf50tr" path="res://scenes/ui/card_ui/card_menu_ui/card_menu_ui.tscn" id="2_yfanj"]
+
+[node name="CardTooltipPopup" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 1149.0
+offset_top = 354.0
+offset_right = -61.0
+offset_bottom = -316.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_wwr27")
+
+[node name="Background" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+color = Color(0.0823529, 0.0823529, 0.0823529, 0.4)
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -224.0
+offset_top = -160.0
+offset_right = 224.0
+offset_bottom = 160.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="CardToolTip" type="CenterContainer" parent="VBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+
+[node name="CardMenuUI" parent="VBoxContainer/CardToolTip" instance=ExtResource("2_yfanj")]
+layout_mode = 2
+
+[connection signal="gui_input" from="." to="." method="_on_gui_input"]

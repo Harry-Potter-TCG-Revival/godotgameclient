@@ -1,12 +1,255 @@
-[gd_scene load_steps=4 format=3 uid="uid://bsjlokyh741yx"]
+[gd_scene load_steps=16 format=3 uid="uid://bsjlokyh741yx"]
 
 [ext_resource type="Script" path="res://scenes/battle/battle.gd" id="1_2csfe"]
 [ext_resource type="Texture2D" uid="uid://btrfts84g8jjb" path="res://art/backgrounds/4.17 Fleur Delacour - Beauxbaton Carriage Winged Horses B4C15M1.jpg" id="1_crh7g"]
-[ext_resource type="PackedScene" uid="uid://bidslfmll6t48" path="res://test_card_ui.tscn" id="2_1m80s"]
+[ext_resource type="PackedScene" uid="uid://bu6xir8f2j3bw" path="res://scenes/ui/player_ui/player.tscn" id="4_l0wvf"]
+[ext_resource type="PackedScene" uid="uid://blxedqt0ivo76" path="res://scenes/ui/card_pile_ui/card_pile_view_ui/card_pile_view.tscn" id="5_3g8tf"]
+[ext_resource type="PackedScene" uid="uid://dp4y6g58efx7k" path="res://scenes/ui/card_ui/card_tooltip_ui/card_tool_tip_popup.tscn" id="6_b47nt"]
+[ext_resource type="PackedScene" uid="uid://c6a87we2jhxtp" path="res://scenes/ui/confirmation_modal_ui/confirmation_modal_ui.tscn" id="7_i2hml"]
+[ext_resource type="PackedScene" uid="uid://die3pf2loyo36" path="res://scenes/ui/card_pile_ui/card_pile_select_ui/card_pile_selection_ui.tscn" id="8_vt8oh"]
+[ext_resource type="PackedScene" uid="uid://d4ah33ew645rv" path="res://scenes/ui/card_zone_ui/card_zone_selection.tscn" id="9_hc0u0"]
+[ext_resource type="Texture2D" uid="uid://dfxsr7o8sv2y2" path="res://art/misc/HP_Bolt_no text.png" id="10_nu2is"]
+[ext_resource type="LabelSettings" uid="uid://w38o7lmmpxib" path="res://node_settings/label_menu_ui.tres" id="11_8anqb"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_dtf0r"]
+size = Vector2(1920, 792)
+
+[sub_resource type="Animation" id="Animation_r7w8t"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("..:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1, 0.1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("..:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("..:self_modulate")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("../Bolts:self_modulate")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("../YourTurnLabel:self_modulate")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath(".:self_modulate")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_yt0l7"]
+resource_name = "show_and_hide_opponents_turn"
+length = 2.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("..:self_modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0.6, 1.7),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("..:scale")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.466667),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(1, 0.1), Vector2(1, 1)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("..:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("../Bolts:self_modulate")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0.6, 1.7),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("../YourTurnLabel:self_modulate")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0, 1.7),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 0)]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath(".:self_modulate")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0.6, 1.7),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_ivwk5"]
+resource_name = "show_and_hide_your_turn"
+length = 2.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("..:self_modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0.6, 1.7),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("..:scale")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.466667),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(1, 0.1), Vector2(1, 1)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("..:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("../Bolts:self_modulate")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0.6, 1.7),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("../YourTurnLabel:self_modulate")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0.6, 1.7),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath(".:self_modulate")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0, 1.7),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_ay4by"]
+_data = {
+"RESET": SubResource("Animation_r7w8t"),
+"show_and_hide_opponents_turn": SubResource("Animation_yt0l7"),
+"show_and_hide_your_turn": SubResource("Animation_ivwk5")
+}
 
 [node name="Battle" type="Node2D"]
 script = ExtResource("1_2csfe")
-player_scene = ExtResource("2_1m80s")
 
 [node name="Background" type="TextureRect" parent="."]
 offset_left = -316.0
@@ -18,8 +261,115 @@ expand_mode = 1
 stretch_mode = 5
 metadata/_edit_lock_ = true
 
-[node name="SpawnPoint" type="Node2D" parent="." groups=["Group_Spawnpoints"]]
-position = Vector2(271, 333)
+[node name="CardDropArea" type="Area2D" parent="."]
+position = Vector2(958, 492)
+collision_layer = 2
 
-[node name="SpawnPoint2" type="Node2D" parent="." groups=["Group_Spawnpoints"]]
-position = Vector2(858, 365)
+[node name="CardDropCollisionShape" type="CollisionShape2D" parent="CardDropArea"]
+position = Vector2(2, -92)
+shape = SubResource("RectangleShape2D_dtf0r")
+debug_color = Color(0, 0.6, 0.701961, 0.152941)
+
+[node name="RemotePlayer" parent="." instance=ExtResource("4_l0wvf")]
+unique_name_in_owner = true
+offset_left = 0.0
+offset_top = 168.0
+offset_right = 1920.0
+offset_bottom = 708.0
+rotation = 3.14159
+
+[node name="PlayerDivider" type="ColorRect" parent="."]
+offset_left = 2.0
+offset_top = 532.0
+offset_right = 1922.0
+offset_bottom = 537.0
+
+[node name="LocalPlayer" parent="." instance=ExtResource("4_l0wvf")]
+unique_name_in_owner = true
+anchors_preset = 2
+anchor_left = 0.0
+anchor_right = 0.0
+offset_left = 0.0
+offset_top = 537.0
+offset_right = 1920.0
+offset_bottom = 1077.0
+grow_horizontal = 1
+
+[node name="InspectionViews" type="CanvasLayer" parent="."]
+layer = 2
+
+[node name="CardPileView" parent="InspectionViews" instance=ExtResource("5_3g8tf")]
+unique_name_in_owner = true
+visible = false
+script = null
+
+[node name="CardTooltipPopup" parent="InspectionViews" instance=ExtResource("6_b47nt")]
+visible = false
+
+[node name="ConfirmationViews" type="CanvasLayer" parent="."]
+layer = 2
+
+[node name="ConfirmationModalUI" parent="ConfirmationViews" instance=ExtResource("7_i2hml")]
+visible = false
+
+[node name="CardPileSelection" parent="ConfirmationViews" instance=ExtResource("8_vt8oh")]
+visible = false
+script = null
+
+[node name="CardZoneSelection" parent="ConfirmationViews" instance=ExtResource("9_hc0u0")]
+visible = false
+
+[node name="TurnandPhaseInfo" type="CanvasLayer" parent="."]
+layer = 3
+
+[node name="TurnIndicator" type="ColorRect" parent="TurnandPhaseInfo"]
+offset_left = 660.0
+offset_top = 514.0
+offset_right = 1380.0
+offset_bottom = 594.0
+scale = Vector2(1, 0.1)
+color = Color(0, 0, 0, 0.772549)
+
+[node name="Bolts" type="TextureRect" parent="TurnandPhaseInfo/TurnIndicator"]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+texture = ExtResource("10_nu2is")
+
+[node name="YourTurnLabel" type="Label" parent="TurnandPhaseInfo/TurnIndicator"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -74.5
+offset_top = -24.5
+offset_right = 74.5
+offset_bottom = 24.5
+grow_horizontal = 2
+grow_vertical = 2
+text = "Your Turn"
+label_settings = ExtResource("11_8anqb")
+
+[node name="OpponentTurnLabel" type="Label" parent="TurnandPhaseInfo/TurnIndicator"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -109.5
+offset_top = -24.5
+offset_right = 109.5
+offset_bottom = 24.5
+grow_horizontal = 2
+grow_vertical = 2
+text = "Opponents Turn"
+label_settings = ExtResource("11_8anqb")
+
+[node name="TurnIndicatorAnimation" type="AnimationPlayer" parent="TurnandPhaseInfo/TurnIndicator"]
+root_node = NodePath("../OpponentTurnLabel")
+libraries = {
+"": SubResource("AnimationLibrary_ay4by")
+}

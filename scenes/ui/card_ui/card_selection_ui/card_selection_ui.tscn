@@ -1,0 +1,42 @@
+[gd_scene load_steps=4 format=3 uid="uid://b6rg5is8oqwys"]
+
+[ext_resource type="Script" path="res://scenes/ui/card_ui/card_selection_ui/card_selection_ui.gd" id="1_7mflm"]
+[ext_resource type="Texture2D" uid="uid://dg5cfj35i0glt" path="res://cards/images/BorrowedWand.png" id="3_bry7a"]
+[ext_resource type="StyleBox" path="res://scenes/ui/card_ui/card_ui_standard_stylebox.tres" id="3_irmto"]
+
+[node name="CardSelectionUI" type="CenterContainer"]
+offset_right = 202.0
+offset_bottom = 280.0
+size_flags_horizontal = 3
+script = ExtResource("1_7mflm")
+
+[node name="Visuals" type="Panel" parent="."]
+self_modulate = Color(1, 1, 1, 0)
+custom_minimum_size = Vector2(202, 280)
+layout_mode = 2
+
+[node name="CardImage" type="TextureRect" parent="Visuals"]
+layout_mode = 1
+offset_right = 202.0
+offset_bottom = 280.0
+mouse_filter = 2
+texture = ExtResource("3_bry7a")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="GlowEffect" type="Panel" parent="Visuals/CardImage"]
+z_index = -1
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = -4.0
+offset_bottom = -4.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+theme_override_styles/panel = ExtResource("3_irmto")
+
+[connection signal="gui_input" from="Visuals" to="." method="_on_visuals_gui_input"]
+[connection signal="mouse_entered" from="Visuals" to="." method="_on_visuals_mouse_entered"]
+[connection signal="mouse_exited" from="Visuals" to="." method="_on_visuals_mouse_exited"]

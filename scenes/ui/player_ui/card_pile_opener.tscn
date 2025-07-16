@@ -1,0 +1,15 @@
+[gd_scene load_steps=3 format=3 uid="uid://bphcyyafso7w4"]
+
+[ext_resource type="Texture2D" uid="uid://c3abceg53w5wv" path="res://art/card_piles/DeckPile.png" id="1_06dca"]
+[ext_resource type="Script" path="res://scenes/ui/player_ui/card_pile_opener.gd" id="2_h2qwa"]
+
+[node name="CardPileOpener" type="TextureButton"]
+custom_minimum_size = Vector2(116, 160)
+offset_right = 116.0
+offset_bottom = 160.0
+texture_normal = ExtResource("1_06dca")
+ignore_texture_size = true
+stretch_mode = 5
+script = ExtResource("2_h2qwa")
+
+[connection signal="pressed" from="." to="." method="_on_pressed"]

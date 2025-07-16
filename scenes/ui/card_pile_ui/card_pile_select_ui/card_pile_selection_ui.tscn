@@ -1,0 +1,111 @@
+[gd_scene load_steps=4 format=3 uid="uid://die3pf2loyo36"]
+
+[ext_resource type="Script" path="res://scenes/ui/card_pile_ui/card_pile_select_ui/card_pile_selection_ui.gd" id="1_rb61d"]
+[ext_resource type="PackedScene" uid="uid://b6rg5is8oqwys" path="res://scenes/ui/card_ui/card_selection_ui/card_selection_ui.tscn" id="3_c33ly"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_ibu26"]
+font_size = 80
+
+[node name="CardPileSelection" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_rb61d")
+
+[node name="Background" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 0.560784)
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 50
+theme_override_constants/margin_top = 50
+theme_override_constants/margin_right = 50
+theme_override_constants/margin_bottom = 120
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer"]
+layout_mode = 2
+theme_override_constants/separation = 20
+
+[node name="Title" type="Label" parent="MarginContainer/VBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+text = "Discard Pile"
+label_settings = SubResource("LabelSettings_ibu26")
+horizontal_alignment = 1
+
+[node name="ScrollContainer" type="ScrollContainer" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+horizontal_scroll_mode = 3
+
+[node name="MarginContainer" type="MarginContainer" parent="MarginContainer/VBoxContainer/ScrollContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_constants/margin_top = 20
+theme_override_constants/margin_bottom = 20
+
+[node name="CardsContainer" type="GridContainer" parent="MarginContainer/VBoxContainer/ScrollContainer/MarginContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_constants/v_separation = 10
+columns = 7
+
+[node name="CardSelectionUI" parent="MarginContainer/VBoxContainer/ScrollContainer/MarginContainer/CardsContainer" instance=ExtResource("3_c33ly")]
+layout_mode = 2
+script = null
+
+[node name="CardSelectionUI2" parent="MarginContainer/VBoxContainer/ScrollContainer/MarginContainer/CardsContainer" instance=ExtResource("3_c33ly")]
+layout_mode = 2
+script = null
+
+[node name="CardSelectionUI3" parent="MarginContainer/VBoxContainer/ScrollContainer/MarginContainer/CardsContainer" instance=ExtResource("3_c33ly")]
+layout_mode = 2
+script = null
+
+[node name="CardSelectionUI4" parent="MarginContainer/VBoxContainer/ScrollContainer/MarginContainer/CardsContainer" instance=ExtResource("3_c33ly")]
+layout_mode = 2
+script = null
+
+[node name="CardSelectionUI5" parent="MarginContainer/VBoxContainer/ScrollContainer/MarginContainer/CardsContainer" instance=ExtResource("3_c33ly")]
+layout_mode = 2
+script = null
+
+[node name="CardSelectionUI6" parent="MarginContainer/VBoxContainer/ScrollContainer/MarginContainer/CardsContainer" instance=ExtResource("3_c33ly")]
+layout_mode = 2
+script = null
+
+[node name="CardSelectionUI7" parent="MarginContainer/VBoxContainer/ScrollContainer/MarginContainer/CardsContainer" instance=ExtResource("3_c33ly")]
+layout_mode = 2
+script = null
+
+[node name="CardSelectionUI8" parent="MarginContainer/VBoxContainer/ScrollContainer/MarginContainer/CardsContainer" instance=ExtResource("3_c33ly")]
+layout_mode = 2
+script = null
+
+[node name="SubmitButton" type="Button" parent="."]
+layout_mode = 0
+offset_left = 814.0
+offset_top = 973.0
+offset_right = 1065.0
+offset_bottom = 1053.0
+theme_override_font_sizes/font_size = 50
+text = "Submit 10"
+
+[connection signal="pressed" from="SubmitButton" to="." method="_on_submit_button_pressed"]
