@@ -1,7 +1,7 @@
 [gd_resource type="Resource" script_class="Card" load_steps=3 format=3 uid="uid://cms3twjj0cg80"]
 
-[ext_resource type="Texture2D" uid="uid://mchyhd7qqlud" path="res://cards/images/110-Base-ViciousWolf.png" id="1_cbe1o"]
-[ext_resource type="Script" path="res://custom_resources/card.gd" id="1_hnhm3"]
+[ext_resource type="Texture2D" uid="uid://mchyhd7qqlud" path="res://cards/images/ViciousWolf.png" id="1_cbe1o"]
+[ext_resource type="Script" uid="uid://bmur1pagjicpt" path="res://custom_resources/card.gd" id="1_hnhm3"]
 
 [resource]
 script = ExtResource("1_hnhm3")

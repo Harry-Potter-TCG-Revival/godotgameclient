@@ -2,7 +2,6 @@ extends Node2D
 
 @export var local_player_stats: PlayerStats
 @export var remote_player_stats: PlayerStats
-@export var battle_startup: BattleStartup
 
 @onready var turn_indicator_animation = $TurnandPhaseInfo/TurnIndicator/TurnIndicatorAnimation
 @onready var local_player = %LocalPlayer
@@ -10,13 +9,12 @@ extends Node2D
 
 
 func _ready() -> void:
-	if not battle_startup:
-		return
 	
-	var new_local_player_stats: PlayerStats = local_player_stats.create_instance()
+	var new_local_player_stats: PlayerStats = Global.local_player_stats.create_instance()
 	local_player.player_stats = new_local_player_stats
-	# Need to call RPC to tell other client to setup the instanced player stats
-	# Need to accept RPC to setup remote player stats
+	
+	# Tell the server this peer has loaded, and provide the players stats
+	player_loaded.rpc(local_player_stats)
 	
 	# These events need to have player ID as a parameter
 	# So it only runs for the desired player
@@ -35,7 +33,14 @@ func _ready() -> void:
 	local_player.initialize_card_pile_ui()
 	local_player.set_starting_character()
 
+@rpc("any_peer","reliable")
+func player_loaded(value: PlayerStats) -> void:
+	# Save remote player stats
+	Global.remote_player_stats = value
+	
+
 func start_battle(stats: PlayerStats) -> void:
+	print("start battle func")
 	local_player.player_handler.start_battle(stats)
 
 func _start_opponent_turn() -> void:

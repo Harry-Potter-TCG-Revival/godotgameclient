@@ -1,7 +1,7 @@
 [gd_resource type="Resource" script_class="Card" load_steps=3 format=3 uid="uid://b5tujw7ynfed"]
 
-[ext_resource type="Texture2D" uid="uid://qnv5fx33663j" path="res://cards/images/035-Base-ShrinkingPotion.png" id="1_7daoj"]
-[ext_resource type="Script" path="res://custom_resources/card.gd" id="1_vp8t5"]
+[ext_resource type="Texture2D" uid="uid://qnv5fx33663j" path="res://cards/images/ShrinkingPotion.png" id="1_7daoj"]
+[ext_resource type="Script" uid="uid://bmur1pagjicpt" path="res://custom_resources/card.gd" id="1_vp8t5"]
 
 [resource]
 script = ExtResource("1_vp8t5")

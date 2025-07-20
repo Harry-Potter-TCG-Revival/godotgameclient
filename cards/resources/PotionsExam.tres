@@ -1,7 +1,7 @@
 [gd_resource type="Resource" script_class="Card" load_steps=3 format=3 uid="uid://30qqo7qibk5r"]
 
-[ext_resource type="Texture2D" uid="uid://dmghnlsk26fbe" path="res://cards/images/063-Base-PotionsExam.png" id="1_fqx2a"]
-[ext_resource type="Script" path="res://custom_resources/card.gd" id="1_l6guy"]
+[ext_resource type="Texture2D" uid="uid://dmghnlsk26fbe" path="res://cards/images/PotionsExam.png" id="1_fqx2a"]
+[ext_resource type="Script" uid="uid://bmur1pagjicpt" path="res://custom_resources/card.gd" id="1_l6guy"]
 
 [resource]
 script = ExtResource("1_l6guy")

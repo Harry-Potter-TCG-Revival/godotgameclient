@@ -1,7 +1,7 @@
 [gd_resource type="Resource" script_class="Card" load_steps=3 format=3 uid="uid://dvek3u4yirlps"]
 
-[ext_resource type="Texture2D" uid="uid://cqv7uhaycmyun" path="res://cards/images/099-Base-PewterCauldron.png" id="1_ll4tp"]
-[ext_resource type="Script" path="res://custom_resources/card.gd" id="1_sh1yf"]
+[ext_resource type="Texture2D" uid="uid://cqv7uhaycmyun" path="res://cards/images/PewterCauldron.png" id="1_ll4tp"]
+[ext_resource type="Script" uid="uid://bmur1pagjicpt" path="res://custom_resources/card.gd" id="1_sh1yf"]
 
 [resource]
 script = ExtResource("1_sh1yf")

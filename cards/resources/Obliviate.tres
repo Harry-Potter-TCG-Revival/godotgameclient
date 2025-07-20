@@ -1,6 +1,6 @@
 [gd_resource type="Resource" script_class="Card" load_steps=2 format=3 uid="uid://ctokt18he65u2"]
 
-[ext_resource type="Script" path="res://custom_resources/card.gd" id="1_woi4w"]
+[ext_resource type="Script" uid="uid://bmur1pagjicpt" path="res://custom_resources/card.gd" id="1_woi4w"]
 
 [resource]
 script = ExtResource("1_woi4w")
@@ -25,6 +25,7 @@ type_lesson = false
 type_spell = false
 subtype_bird = false
 subtype_cauldron = false
+subtype_cat = false
 subtype_deer = false
 subtype_dog = false
 subtype_dragon = false
@@ -33,6 +34,7 @@ subtype_gryffindor = false
 subtype_healing = false
 subtype_hufflepuff = false
 subtype_kelpie = false
+subtype_owl = false
 subtype_rat = false
 subtype_ravenclaw = false
 subtype_slytherin = false

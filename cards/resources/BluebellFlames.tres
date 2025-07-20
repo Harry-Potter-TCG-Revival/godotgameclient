@@ -1,7 +1,7 @@
 [gd_resource type="Resource" script_class="Card" load_steps=3 format=3 uid="uid://du3kfitisqjyy"]
 
-[ext_resource type="Texture2D" uid="uid://bimiqjileqhl7" path="res://cards/images/044-Base-BluebellFlames.png" id="1_fioam"]
-[ext_resource type="Script" path="res://custom_resources/card.gd" id="1_vnha4"]
+[ext_resource type="Texture2D" uid="uid://bimiqjileqhl7" path="res://cards/images/BluebellFlames.png" id="1_fioam"]
+[ext_resource type="Script" uid="uid://bmur1pagjicpt" path="res://custom_resources/card.gd" id="1_vnha4"]
 
 [resource]
 script = ExtResource("1_vnha4")

@@ -1,7 +1,7 @@
 [gd_resource type="Resource" script_class="Card" load_steps=3 format=3 uid="uid://b82m1hwtjn3ot"]
 
-[ext_resource type="Texture2D" uid="uid://d3cdotu66e083" path="res://cards/images/005-Base-ElixirOfLife.png" id="1_bhw2p"]
-[ext_resource type="Script" path="res://custom_resources/card.gd" id="1_s4hnh"]
+[ext_resource type="Texture2D" uid="uid://d3cdotu66e083" path="res://cards/images/ElixirOfLife.png" id="1_bhw2p"]
+[ext_resource type="Script" uid="uid://bmur1pagjicpt" path="res://custom_resources/card.gd" id="1_s4hnh"]
 
 [resource]
 script = ExtResource("1_s4hnh")
@@ -26,6 +26,7 @@ type_lesson = true
 type_spell = false
 subtype_bird = false
 subtype_cauldron = false
+subtype_cat = false
 subtype_deer = false
 subtype_dog = false
 subtype_dragon = false
@@ -34,6 +35,7 @@ subtype_gryffindor = false
 subtype_healing = true
 subtype_hufflepuff = false
 subtype_kelpie = false
+subtype_owl = false
 subtype_rat = false
 subtype_ravenclaw = false
 subtype_slytherin = false

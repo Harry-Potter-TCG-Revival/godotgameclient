@@ -1,13 +1,13 @@
 [gd_resource type="Resource" script_class="DeckList" load_steps=15 format=3 uid="uid://3g5p0h176qgi"]
 
-[ext_resource type="Script" path="res://custom_resources/deck_list.gd" id="1_l12ll"]
+[ext_resource type="Script" uid="uid://f4m354is4r4o" path="res://custom_resources/deck_list.gd" id="1_l12ll"]
 [ext_resource type="Texture2D" uid="uid://dqtdjy5jd1bd1" path="res://art/cards/card_backs/HPTCG-RevivalBack.png" id="1_ns7a3"]
-[ext_resource type="Script" path="res://custom_resources/card.gd" id="2_4b0p7"]
+[ext_resource type="Script" uid="uid://bmur1pagjicpt" path="res://custom_resources/card.gd" id="2_4b0p7"]
 [ext_resource type="Resource" uid="uid://os7ri2xtrose" path="res://cards/resources/CareOfMagicalCreatures.tres" id="3_v6gdi"]
 [ext_resource type="Resource" uid="uid://b4rdog14tyn2" path="res://cards/resources/MrsNorris.tres" id="4_wrwve"]
 [ext_resource type="Resource" uid="uid://cykx2a74ro4ve" path="res://cards/resources/ScottishStag.tres" id="5_54imv"]
 [ext_resource type="Resource" uid="uid://d0su5lmca85lt" path="res://cards/resources/Norbert.tres" id="6_5tpve"]
-[ext_resource type="Script" path="res://custom_resources/card_pile.gd" id="7_n6us5"]
+[ext_resource type="Script" uid="uid://cv7mcvflr3x7i" path="res://custom_resources/card_pile.gd" id="7_n6us5"]
 [ext_resource type="Resource" uid="uid://cxmgup8yt0hy1" path="res://cards/resources/PetRat.tres" id="9_4iavs"]
 [ext_resource type="Resource" uid="uid://chiow5e6xw6kq" path="res://cards/resources/MysteriousEgg.tres" id="10_7u6oo"]
 [ext_resource type="Resource" uid="uid://hjftfcvqa1oh" path="res://cards/resources/Nurture.tres" id="11_ugos6"]
@@ -28,3 +28,4 @@ image = ExtResource("1_ns7a3")
 main_deck = SubResource("Resource_0bey5")
 side_board = SubResource("Resource_iet0n")
 starting_character = ExtResource("12_wjte4")
+version = ""

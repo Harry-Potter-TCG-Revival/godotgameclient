@@ -1,7 +1,7 @@
 [gd_resource type="Resource" script_class="Card" load_steps=3 format=3 uid="uid://bxmamiesii0oj"]
 
-[ext_resource type="Script" path="res://custom_resources/card.gd" id="1_8738i"]
-[ext_resource type="Texture2D" uid="uid://n2ax3jdql2w0" path="res://cards/images/062-Base-PomfreysPickMeUp.png" id="1_q3ld4"]
+[ext_resource type="Script" uid="uid://bmur1pagjicpt" path="res://custom_resources/card.gd" id="1_8738i"]
+[ext_resource type="Texture2D" uid="uid://n2ax3jdql2w0" path="res://cards/images/PomfreysPickMeUp.png" id="1_q3ld4"]
 
 [resource]
 script = ExtResource("1_8738i")

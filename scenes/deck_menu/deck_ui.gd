@@ -16,4 +16,4 @@ func _set_deck(value: DeckList) -> void:
 
 func _on_open_deck_pressed():
 	# Change scene, load deck
-	Global.player_stats.selected_deck_list = deck_list
+	Global.local_player_stats.selected_deck_list = deck_list

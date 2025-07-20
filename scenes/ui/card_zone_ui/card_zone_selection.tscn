@@ -1,6 +1,6 @@
 [gd_scene load_steps=4 format=3 uid="uid://d4ah33ew645rv"]
 
-[ext_resource type="Script" path="res://scenes/ui/card_zone_ui/card_zone_selection.gd" id="1_3cgeo"]
+[ext_resource type="Script" uid="uid://bc2im1aq0c5l8" path="res://scenes/ui/card_zone_ui/card_zone_selection.gd" id="1_3cgeo"]
 [ext_resource type="FontFile" uid="uid://dvqtymqwhgi03" path="res://fonts/HARRYP__.TTF" id="1_fyd38"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_m6q4s"]

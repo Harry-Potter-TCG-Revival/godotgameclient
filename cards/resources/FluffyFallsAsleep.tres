@@ -1,7 +1,7 @@
 [gd_resource type="Resource" script_class="Card" load_steps=3 format=3 uid="uid://udfsjen6w5l7"]
 
-[ext_resource type="Script" path="res://custom_resources/card.gd" id="1_b8l7q"]
-[ext_resource type="Texture2D" uid="uid://5eql1lrhfy0o" path="res://cards/images/084-Base-FluffyFallsAsleep.png" id="1_ojany"]
+[ext_resource type="Script" uid="uid://bmur1pagjicpt" path="res://custom_resources/card.gd" id="1_b8l7q"]
+[ext_resource type="Texture2D" uid="uid://5eql1lrhfy0o" path="res://cards/images/FluffyFallsAsleep.png" id="1_ojany"]
 
 [resource]
 script = ExtResource("1_b8l7q")

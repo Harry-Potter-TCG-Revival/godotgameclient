@@ -7,7 +7,7 @@ extends HBoxContainer
 func _ready():
 	
 	# Loop through and Create DeckUI's
-	for i in Global.player_stats.deck_lists:
+	for i in Global.local_player_stats.deck_lists:
 		var new_deck_ui = deck_ui_scene.instantiate()
 		add_child(new_deck_ui)
 		

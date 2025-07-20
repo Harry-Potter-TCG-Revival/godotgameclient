@@ -1,7 +1,7 @@
 [gd_resource type="Resource" script_class="Card" load_steps=3 format=3 uid="uid://cvp0qd3mlw3y6"]
 
-[ext_resource type="Texture2D" uid="uid://cy06v3f3l5jsd" path="res://cards/images/016-Base-ProfessorSeverousSnape.png" id="1_jabue"]
-[ext_resource type="Script" path="res://custom_resources/card.gd" id="1_xayfr"]
+[ext_resource type="Texture2D" uid="uid://cy06v3f3l5jsd" path="res://cards/images/ProfessorSeverousSnape.png" id="1_jabue"]
+[ext_resource type="Script" uid="uid://bmur1pagjicpt" path="res://custom_resources/card.gd" id="1_xayfr"]
 
 [resource]
 script = ExtResource("1_xayfr")
@@ -26,6 +26,7 @@ type_lesson = false
 type_spell = false
 subtype_bird = false
 subtype_cauldron = false
+subtype_cat = false
 subtype_deer = false
 subtype_dog = false
 subtype_dragon = false
@@ -34,6 +35,7 @@ subtype_gryffindor = false
 subtype_healing = true
 subtype_hufflepuff = false
 subtype_kelpie = false
+subtype_owl = false
 subtype_rat = false
 subtype_ravenclaw = false
 subtype_slytherin = true

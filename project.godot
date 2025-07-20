@@ -12,7 +12,7 @@ config_version=5
 
 config/name="HPTCG_Nakama"
 run/main_scene="res://scenes/login_page/login_page.tscn"
-config/features=PackedStringArray("4.3", "Forward Plus")
+config/features=PackedStringArray("4.4", "Forward Plus")
 config/icon="res://art/cards/card_backs/HPTCG-RevivalBack.png"
 
 [autoload]

@@ -1,9 +1,9 @@
 [gd_scene load_steps=6 format=3 uid="uid://dduuaudy8fos5"]
 
 [ext_resource type="Texture2D" uid="uid://vpxglg6cke6i" path="res://art/backgrounds/1.47 McGonagalls Office - Wizards Chess in McGonagalls Office B1C16M2.jpg" id="1_fh7iq"]
-[ext_resource type="Script" path="res://scenes/deck_menu/deck_menu.gd" id="1_v5xwi"]
+[ext_resource type="Script" uid="uid://vv6kj2bu7os6" path="res://scenes/deck_menu/deck_menu.gd" id="1_v5xwi"]
 [ext_resource type="FontFile" uid="uid://dvqtymqwhgi03" path="res://fonts/HARRYP__.TTF" id="2_b2rvm"]
-[ext_resource type="Script" path="res://scenes/deck_menu/deck_ui_container.gd" id="4_i4egj"]
+[ext_resource type="Script" uid="uid://j27lkf88ivxq" path="res://scenes/deck_menu/deck_ui_container.gd" id="4_i4egj"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_dw5ty"]
 font = ExtResource("2_b2rvm")

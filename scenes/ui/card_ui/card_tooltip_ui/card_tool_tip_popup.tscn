@@ -1,6 +1,6 @@
 [gd_scene load_steps=3 format=3 uid="uid://dp4y6g58efx7k"]
 
-[ext_resource type="Script" path="res://scenes/ui/card_ui/card_tooltip_ui/card_tool_tip_popup.gd" id="1_wwr27"]
+[ext_resource type="Script" uid="uid://d11nnflyxjuxs" path="res://scenes/ui/card_ui/card_tooltip_ui/card_tool_tip_popup.gd" id="1_wwr27"]
 [ext_resource type="PackedScene" uid="uid://ch1v65icf50tr" path="res://scenes/ui/card_ui/card_menu_ui/card_menu_ui.tscn" id="2_yfanj"]
 
 [node name="CardTooltipPopup" type="Control"]

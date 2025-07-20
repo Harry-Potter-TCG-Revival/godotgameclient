@@ -1,7 +1,7 @@
 [gd_resource type="Resource" script_class="Card" load_steps=3 format=3 uid="uid://cpf7gecoec208"]
 
-[ext_resource type="Texture2D" uid="uid://dxp4lxm8tbyf" path="res://cards/images/040-Base-Alchemy.png" id="1_8rad4"]
-[ext_resource type="Script" path="res://custom_resources/card.gd" id="1_kf52t"]
+[ext_resource type="Texture2D" uid="uid://dxp4lxm8tbyf" path="res://cards/images/Alchemy.png" id="1_8rad4"]
+[ext_resource type="Script" uid="uid://bmur1pagjicpt" path="res://custom_resources/card.gd" id="1_kf52t"]
 
 [resource]
 script = ExtResource("1_kf52t")

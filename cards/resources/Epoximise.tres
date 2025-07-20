@@ -1,7 +1,7 @@
 [gd_resource type="Resource" script_class="Card" load_steps=3 format=3 uid="uid://cvxfx2p6d8as"]
 
-[ext_resource type="Texture2D" uid="uid://dfjprrk4eaqxd" path="res://cards/images/082-Base-Epoximise.png" id="1_57lfs"]
-[ext_resource type="Script" path="res://custom_resources/card.gd" id="1_opjda"]
+[ext_resource type="Texture2D" uid="uid://dfjprrk4eaqxd" path="res://cards/images/Epoximise.png" id="1_57lfs"]
+[ext_resource type="Script" uid="uid://bmur1pagjicpt" path="res://custom_resources/card.gd" id="1_opjda"]
 
 [resource]
 script = ExtResource("1_opjda")

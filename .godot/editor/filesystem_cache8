@@ -1,5 +1,5 @@
 ea4bc82a6ad023ab7ee23ee620429895
-::res://::1752643137
+::res://::1752981175
 CHANGELOG.md::TextFile::-1::1742104097::0::1::::<><>::
 icon.svg::CompressedTexture2D::1255812641535387210::1742103709::1742103715::1::::<><>::
 README.md::TextFile::-1::1742104097::0::1::::<><>::
@@ -309,28 +309,28 @@ player_stats.gd::GDScript::-1::1748722466::0::1::::PlayerStats<>Stats<>::
 stats.gd::GDScript::-1::1746598796::0::1::::Stats<>Resource<>::
 ::res://fonts/::1742105668
 HARRYP__.TTF::FontFile::8667454949465471982::1742105666::1742105668::1::::<><>::
-::res://global/::1751426866
-events.gd::GDScript::-1::1751426866::0::1::::<>Node<>::
+::res://global/::1752646499
+events.gd::GDScript::-1::1752646499::0::1::::<>Node<>::
 global.gd::GDScript::-1::1750717123::0::1::::<>Node<>::
 ::res://node_settings/::1748799527
 button_menu_ui.tres::Theme::1309909641430885853::1742106594::0::1::::<><>::uid://dvqtymqwhgi03::::res://fonts/HARRYP__.TTF
 label_menu_ui.tres::LabelSettings::1603987497328278757::1748799527::0::1::::<><>::uid://dvqtymqwhgi03::::res://fonts/HARRYP__.TTF
 ::res://scenes/::1748926274
-::res://scenes/battle/::1752470143
-battle.gd::GDScript::-1::1752470143::0::1::::<>Node2D<>::
-battle.tscn::PackedScene::3669092719670110455::1752459404::0::1::::<><>::res://scenes/battle/battle.gd<>uid://btrfts84g8jjb::::res://art/backgrounds/4.17 Fleur Delacour - Beauxbaton Carriage Winged Horses B4C15M1.jpg<>uid://bidslfmll6t48::::res://test_card_ui.tscn<>uid://bu6xir8f2j3bw::::res://scenes/ui/player_ui/player.tscn<>uid://blxedqt0ivo76::::res://scenes/ui/card_pile_ui/card_pile_view_ui/card_pile_view.tscn<>uid://dp4y6g58efx7k::::res://scenes/ui/card_ui/card_tooltip_ui/card_tool_tip_popup.tscn<>uid://c6a87we2jhxtp::::res://scenes/ui/confirmation_modal_ui/confirmation_modal_ui.tscn<>uid://die3pf2loyo36::::res://scenes/ui/card_pile_ui/card_pile_select_ui/card_pile_selection_ui.tscn<>uid://d4ah33ew645rv::::res://scenes/ui/card_zone_ui/card_zone_selection.tscn<>uid://dfxsr7o8sv2y2::::res://art/misc/HP_Bolt_no text.png<>uid://w38o7lmmpxib::::res://node_settings/label_menu_ui.tres
-::res://scenes/deck_menu/::1752447981
+::res://scenes/battle/::1752725744
+battle.gd::GDScript::-1::1752725462::0::1::::<>Node2D<>::
+battle.tscn::PackedScene::3669092719670110455::1752725744::0::1::::<><>::res://scenes/battle/battle.gd<>uid://btrfts84g8jjb::::res://art/backgrounds/4.17 Fleur Delacour - Beauxbaton Carriage Winged Horses B4C15M1.jpg<>uid://bu6xir8f2j3bw::::res://scenes/ui/player_ui/player.tscn<>uid://blxedqt0ivo76::::res://scenes/ui/card_pile_ui/card_pile_view_ui/card_pile_view.tscn<>uid://dp4y6g58efx7k::::res://scenes/ui/card_ui/card_tooltip_ui/card_tool_tip_popup.tscn<>uid://c6a87we2jhxtp::::res://scenes/ui/confirmation_modal_ui/confirmation_modal_ui.tscn<>uid://die3pf2loyo36::::res://scenes/ui/card_pile_ui/card_pile_select_ui/card_pile_selection_ui.tscn<>uid://d4ah33ew645rv::::res://scenes/ui/card_zone_ui/card_zone_selection.tscn<>uid://dfxsr7o8sv2y2::::res://art/misc/HP_Bolt_no text.png<>uid://w38o7lmmpxib::::res://node_settings/label_menu_ui.tres
+::res://scenes/deck_menu/::1752725744
 deck_menu.gd::GDScript::-1::1748799984::0::1::::DeckMenu<>Control<>::
-deck_menu.tscn::PackedScene::7412331533166103858::1752447981::0::1::::<><>::uid://vpxglg6cke6i::::res://art/backgrounds/1.47 McGonagalls Office - Wizards Chess in McGonagalls Office B1C16M2.jpg<>res://scenes/deck_menu/deck_menu.gd<>uid://dvqtymqwhgi03::::res://fonts/HARRYP__.TTF<>res://scenes/deck_menu/deck_ui_container.gd
+deck_menu.tscn::PackedScene::7412331533166103858::1752725744::0::1::::<><>::uid://vpxglg6cke6i::::res://art/backgrounds/1.47 McGonagalls Office - Wizards Chess in McGonagalls Office B1C16M2.jpg<>res://scenes/deck_menu/deck_menu.gd<>uid://dvqtymqwhgi03::::res://fonts/HARRYP__.TTF<>res://scenes/deck_menu/deck_ui_container.gd
 deck_ui.gd::GDScript::-1::1748846278::0::1::::DeckUI<>VBoxContainer<>::
-deck_ui.tscn::PackedScene::540015594248748114::1752447981::0::1::::<><>::res://scenes/deck_menu/deck_ui.gd<>uid://c0s3ux6f51oq2::::res://cards/images/Transfiguration.png
+deck_ui.tscn::PackedScene::540015594248748114::1752725744::0::1::::<><>::res://scenes/deck_menu/deck_ui.gd<>uid://c0s3ux6f51oq2::::res://cards/images/Transfiguration.png
 deck_ui_container.gd::GDScript::-1::1748845749::0::1::::DeckUIContainer<>HBoxContainer<>::
 ::res://scenes/login_page/::1752431289
 login_page.gd::GDScript::-1::1748836120::0::1::::LoginPage<>Control<>::
 login_page.tscn::PackedScene::5882557158950593733::1752431289::0::1::::<><>::res://scenes/login_page/login_page.gd<>uid://dxon5laic0j5m::::res://art/backgrounds/1.20 B1C7M2 The Sorting Ceremony.jpg<>uid://dvqtymqwhgi03::::res://fonts/HARRYP__.TTF<>uid://w38o7lmmpxib::::res://node_settings/label_menu_ui.tres<>uid://swsaxumgur54::::res://node_settings/button_menu_ui.tres
-::res://scenes/main_menu/::1752447981
-main_menu.gd::GDScript::-1::1748927415::0::1::::MainMenu<>Control<>::
-main_menu.tscn::PackedScene::5936699371848873826::1752447981::0::1::::<><>::res://scenes/main_menu/main_menu.gd<>uid://bufc67ltc4c0y::::res://art/backgrounds/4.09 Quidditch World Cup - Ireland VS Bulgaria Quidditch Stadium B4C8M1.jpg<>uid://w38o7lmmpxib::::res://node_settings/label_menu_ui.tres<>uid://b2gpjjuukdubm::::res://art/misc/under_construction.png
+::res://scenes/main_menu/::1752731065
+main_menu.gd::GDScript::-1::1752731065::0::1::::MainMenu<>Control<>::
+main_menu.tscn::PackedScene::5936699371848873826::1752731065::0::1::::<><>::res://scenes/main_menu/main_menu.gd<>uid://bufc67ltc4c0y::::res://art/backgrounds/4.09 Quidditch World Cup - Ireland VS Bulgaria Quidditch Stadium B4C8M1.jpg<>uid://w38o7lmmpxib::::res://node_settings/label_menu_ui.tres<>uid://b2gpjjuukdubm::::res://art/misc/under_construction.png
 ::res://scenes/ui/::1752448720
 ::res://scenes/ui/card_pile_ui/::1752448720
 ::res://scenes/ui/card_pile_ui/card_pile_select_ui/::1752448790
@@ -380,7 +380,7 @@ confirmation_modal_ui.tscn::PackedScene::6950757489263462681::1752448411::0::1::
 ::res://scenes/ui/match_ui/::1748926274
 match_selection_ui.gd::GDScript::-1::1742366550::0::1::::MatchSelectionUI<>CenterContainer<>::
 match_selection_ui.tscn::PackedScene::1745137857193572725::1748926274::0::1::::<><>::res://scenes/ui/match_ui/match_selection_ui.gd
-::res://scenes/ui/player_ui/::1752473657
+::res://scenes/ui/player_ui/::1752725744
 action_stats_ui.gd::GDScript::-1::1735074176::0::1::::ActionStatsUI<>VBoxContainer<>::
 card_draw_button.gd::GDScript::-1::1751426866::0::1::::CardDrawButton<>Button<>::
 card_pile_opener.gd::GDScript::-1::1734902098::0::1::::CardPileOpener<>TextureButton<>::
@@ -391,8 +391,8 @@ hand.gd::GDScript::-1::1751169592::0::1::::Hand<>ColorRect<>::
 in_play_card_arrangement_update.gd::GDScript::-1::1751253565::0::1::::<>ColorRect<>::
 in_play_lessons.gd::GDScript::-1::1740872984::0::1::::InPlayLessons<>HBoxContainer<>::
 in_play_lessons.tscn::PackedScene::8526901502444455796::1752431290::0::1::::<><>::res://scenes/ui/player_ui/in_play_lessons.gd<>res://scenes/ui/player_ui/in_play_card_arrangement_update.gd
-player.gd::GDScript::-1::1751256416::0::1::::Player<>Panel<>::
-player.tscn::PackedScene::3855604988153612160::1752473657::0::1::::<><>::res://scenes/ui/player_ui/player.gd<>res://scenes/ui/player_ui/player_handler.gd<>res://scenes/ui/player_ui/in_play_card_arrangement_update.gd<>res://scenes/ui/player_ui/player_stats_ui.gd<>res://scenes/ui/player_ui/power_stats_ui.gd<>uid://ccx3sbsddxbrm::::res://art/player_avatars/owl_head.png<>uid://ckwneqr762wcy::::res://art/icons/Icon_Transfiguration.webp<>uid://dpj28dvgg510i::::res://art/icons/Icon_Charms.webp<>uid://segffe5suyky::::res://art/icons/Icon_Potions.webp<>uid://dgf1ebta1d35b::::res://art/icons/Icon_Care_Of_Magical_Creatures.webp<>uid://e2k7y2h45qky::::res://art/icons/Icon_Quidditch.webp<>res://scenes/ui/player_ui/action_stats_ui.gd<>uid://cb6wsdhiwk8xk::::res://art/icons/Icon_Lightning_Bolt.webp<>uid://bphcyyafso7w4::::res://scenes/ui/player_ui/card_pile_opener.tscn<>uid://cv8a7p2ct54ic::::res://scenes/ui/player_ui/card_ui_starting_character.tscn<>uid://0hpeofrccrjo::::res://art/card_piles/DiscardPile.png<>res://scenes/ui/player_ui/card_draw_button.gd<>uid://dtqq27f5rwlw3::::res://scenes/ui/player_ui/in_play_lessons.tscn<>res://scenes/ui/player_ui/hand.gd
-player_handler.gd::GDScript::-1::1751428929::0::1::::PlayerHandler<>Node<>::
+player.gd::GDScript::-1::1752646239::0::1::::Player<>Panel<>::
+player.tscn::PackedScene::3855604988153612160::1752725744::0::1::::<><>::res://scenes/ui/player_ui/player.gd<>res://scenes/ui/player_ui/player_handler.gd<>res://scenes/ui/player_ui/in_play_card_arrangement_update.gd<>res://scenes/ui/player_ui/player_stats_ui.gd<>res://scenes/ui/player_ui/power_stats_ui.gd<>uid://ccx3sbsddxbrm::::res://art/player_avatars/owl_head.png<>uid://ckwneqr762wcy::::res://art/icons/Icon_Transfiguration.webp<>uid://dpj28dvgg510i::::res://art/icons/Icon_Charms.webp<>uid://segffe5suyky::::res://art/icons/Icon_Potions.webp<>uid://dgf1ebta1d35b::::res://art/icons/Icon_Care_Of_Magical_Creatures.webp<>uid://e2k7y2h45qky::::res://art/icons/Icon_Quidditch.webp<>res://scenes/ui/player_ui/action_stats_ui.gd<>uid://cb6wsdhiwk8xk::::res://art/icons/Icon_Lightning_Bolt.webp<>uid://bphcyyafso7w4::::res://scenes/ui/player_ui/card_pile_opener.tscn<>uid://cv8a7p2ct54ic::::res://scenes/ui/player_ui/card_ui_starting_character.tscn<>uid://0hpeofrccrjo::::res://art/card_piles/DiscardPile.png<>res://scenes/ui/player_ui/card_draw_button.gd<>uid://dtqq27f5rwlw3::::res://scenes/ui/player_ui/in_play_lessons.tscn<>res://scenes/ui/player_ui/hand.gd
+player_handler.gd::GDScript::-1::1752644201::0::1::::PlayerHandler<>Node<>::
 player_stats_ui.gd::GDScript::-1::1751175268::0::1::::PlayerStatsUI<>ColorRect<>::
 power_stats_ui.gd::GDScript::-1::1735245409::0::1::::PowerStatsUI<>VBoxContainer<>::

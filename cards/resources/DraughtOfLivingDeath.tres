@@ -1,7 +1,7 @@
 [gd_resource type="Resource" script_class="Card" load_steps=3 format=3 uid="uid://b258sntwn53ev"]
 
-[ext_resource type="Texture2D" uid="uid://c3qx8phku4ggr" path="res://cards/images/022-Base-DraughtOfLivingDeath.png" id="1_n4b32"]
-[ext_resource type="Script" path="res://custom_resources/card.gd" id="1_nsj87"]
+[ext_resource type="Texture2D" uid="uid://c3qx8phku4ggr" path="res://cards/images/DraughtOfLivingDeath.png" id="1_n4b32"]
+[ext_resource type="Script" uid="uid://bmur1pagjicpt" path="res://custom_resources/card.gd" id="1_nsj87"]
 
 [resource]
 script = ExtResource("1_nsj87")
@@ -26,6 +26,7 @@ type_lesson = true
 type_spell = false
 subtype_bird = false
 subtype_cauldron = false
+subtype_cat = false
 subtype_deer = false
 subtype_dog = false
 subtype_dragon = false

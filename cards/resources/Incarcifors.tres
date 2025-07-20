@@ -1,7 +1,7 @@
 [gd_resource type="Resource" script_class="Card" load_steps=3 format=3 uid="uid://deufvhj7xm4qt"]
 
-[ext_resource type="Script" path="res://custom_resources/card.gd" id="1_n34tx"]
-[ext_resource type="Texture2D" uid="uid://cptrr8buywohd" path="res://cards/images/093-Base-Incarcifors.png" id="1_vdcv3"]
+[ext_resource type="Script" uid="uid://bmur1pagjicpt" path="res://custom_resources/card.gd" id="1_n34tx"]
+[ext_resource type="Texture2D" uid="uid://cptrr8buywohd" path="res://cards/images/Incarcifors.png" id="1_vdcv3"]
 
 [resource]
 script = ExtResource("1_n34tx")

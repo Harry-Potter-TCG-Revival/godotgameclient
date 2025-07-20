@@ -1,7 +1,7 @@
 [gd_scene load_steps=3 format=3 uid="uid://dtqq27f5rwlw3"]
 
-[ext_resource type="Script" path="res://scenes/ui/player_ui/in_play_lessons.gd" id="1_sktw5"]
-[ext_resource type="Script" path="res://scenes/ui/player_ui/in_play_card_arrangement_update.gd" id="2_7mfeo"]
+[ext_resource type="Script" uid="uid://c8bntys5oj6xk" path="res://scenes/ui/player_ui/in_play_lessons.gd" id="1_sktw5"]
+[ext_resource type="Script" uid="uid://e15upyrd65wh" path="res://scenes/ui/player_ui/in_play_card_arrangement_update.gd" id="2_7mfeo"]
 
 [node name="InPlayLessons" type="HBoxContainer"]
 custom_minimum_size = Vector2(0, 177)

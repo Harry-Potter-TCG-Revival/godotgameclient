@@ -101,15 +101,17 @@ func _on_peer_connected(id):
 	# This is used for validating the owner/controller of cards
 	Global.player_id = multiplayer.get_unique_id()
 	
-	# If ther are two players connecte in the match start it
+	# If ther are two players connected in the match start it
 	if multiplayer.is_server():
 		if Global.players_in_match.size() == 2:
+			# do rpc to send and receive player stats before starting match
+			# example - https://docs.godotengine.org/en/stable/tutorials/networking/high_level_multiplayer.html#example-lobby-implementation
 			start_match.rpc()
 
 func _on_peer_disconnected(id):
 	print("Peer disconnected id : " + str(id))
 
-@rpc("any_peer","call_local")
+@rpc("any_peer","call_local", "reliable")
 func start_match():
 	# Move players to battle scene
 	get_tree().change_scene_to_packed(BATTLE_SCENE)

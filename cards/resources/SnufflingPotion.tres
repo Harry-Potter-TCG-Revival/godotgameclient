@@ -1,7 +1,7 @@
 [gd_resource type="Resource" script_class="Card" load_steps=3 format=3 uid="uid://cxuk437m8h1mi"]
 
-[ext_resource type="Texture2D" uid="uid://tnt03o2y3lol" path="res://cards/images/066-Base-SnufflingPotion.png" id="1_awgnq"]
-[ext_resource type="Script" path="res://custom_resources/card.gd" id="1_j1fb1"]
+[ext_resource type="Texture2D" uid="uid://tnt03o2y3lol" path="res://cards/images/SnufflingPotion.png" id="1_awgnq"]
+[ext_resource type="Script" uid="uid://bmur1pagjicpt" path="res://custom_resources/card.gd" id="1_j1fb1"]
 
 [resource]
 script = ExtResource("1_j1fb1")

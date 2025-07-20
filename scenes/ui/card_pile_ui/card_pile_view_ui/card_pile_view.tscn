@@ -1,6 +1,6 @@
 [gd_scene load_steps=4 format=3 uid="uid://blxedqt0ivo76"]
 
-[ext_resource type="Script" path="res://scenes/ui/card_pile_ui/card_pile_view_ui/card_pile_view.gd" id="1_3t7ib"]
+[ext_resource type="Script" uid="uid://ci1bnpb2862b3" path="res://scenes/ui/card_pile_ui/card_pile_view_ui/card_pile_view.gd" id="1_3t7ib"]
 [ext_resource type="PackedScene" uid="uid://ch1v65icf50tr" path="res://scenes/ui/card_ui/card_menu_ui/card_menu_ui.tscn" id="1_vdvu0"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_ibu26"]

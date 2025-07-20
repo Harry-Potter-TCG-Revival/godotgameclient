@@ -1,8 +1,8 @@
 [gd_scene load_steps=4 format=3 uid="uid://b6rg5is8oqwys"]
 
-[ext_resource type="Script" path="res://scenes/ui/card_ui/card_selection_ui/card_selection_ui.gd" id="1_7mflm"]
+[ext_resource type="Script" uid="uid://beanm7k128b7x" path="res://scenes/ui/card_ui/card_selection_ui/card_selection_ui.gd" id="1_7mflm"]
 [ext_resource type="Texture2D" uid="uid://dg5cfj35i0glt" path="res://cards/images/BorrowedWand.png" id="3_bry7a"]
-[ext_resource type="StyleBox" path="res://scenes/ui/card_ui/card_ui_standard_stylebox.tres" id="3_irmto"]
+[ext_resource type="StyleBox" uid="uid://p25ieou8wyuu" path="res://scenes/ui/card_ui/card_ui_standard_stylebox.tres" id="3_irmto"]
 
 [node name="CardSelectionUI" type="CenterContainer"]
 offset_right = 202.0

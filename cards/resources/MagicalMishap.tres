@@ -1,7 +1,7 @@
 [gd_resource type="Resource" script_class="Card" load_steps=3 format=3 uid="uid://ct4b1osdh3jb0"]
 
-[ext_resource type="Texture2D" uid="uid://c522yl3mnkbd3" path="res://cards/images/095-Base-MagicalMishap.png" id="1_boeo2"]
-[ext_resource type="Script" path="res://custom_resources/card.gd" id="1_fuiv7"]
+[ext_resource type="Texture2D" uid="uid://c522yl3mnkbd3" path="res://cards/images/MagicalMishap.png" id="1_boeo2"]
+[ext_resource type="Script" uid="uid://bmur1pagjicpt" path="res://custom_resources/card.gd" id="1_fuiv7"]
 
 [resource]
 script = ExtResource("1_fuiv7")

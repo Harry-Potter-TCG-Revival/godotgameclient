@@ -1,7 +1,7 @@
 [gd_resource type="Resource" script_class="Card" load_steps=3 format=3 uid="uid://bl7slpmuy3eba"]
 
-[ext_resource type="Texture2D" uid="uid://cf2g0dstq26j0" path="res://cards/images/026-Base-MalevolentMixture.png" id="1_7726a"]
-[ext_resource type="Script" path="res://custom_resources/card.gd" id="1_d1qud"]
+[ext_resource type="Texture2D" uid="uid://cf2g0dstq26j0" path="res://cards/images/MalevolentMixture.png" id="1_7726a"]
+[ext_resource type="Script" uid="uid://bmur1pagjicpt" path="res://custom_resources/card.gd" id="1_d1qud"]
 
 [resource]
 script = ExtResource("1_d1qud")

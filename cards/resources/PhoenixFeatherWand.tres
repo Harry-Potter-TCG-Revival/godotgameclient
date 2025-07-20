@@ -1,7 +1,7 @@
 [gd_resource type="Resource" script_class="Card" load_steps=3 format=3 uid="uid://cspacbq6r6itq"]
 
-[ext_resource type="Texture2D" uid="uid://lo20sqf56wbm" path="res://cards/images/031-Base-PhoenixFeatherWand.png" id="1_54qju"]
-[ext_resource type="Script" path="res://custom_resources/card.gd" id="1_vyn3c"]
+[ext_resource type="Texture2D" uid="uid://lo20sqf56wbm" path="res://cards/images/PhoenixFeatherWand.png" id="1_54qju"]
+[ext_resource type="Script" uid="uid://bmur1pagjicpt" path="res://custom_resources/card.gd" id="1_vyn3c"]
 
 [resource]
 script = ExtResource("1_vyn3c")

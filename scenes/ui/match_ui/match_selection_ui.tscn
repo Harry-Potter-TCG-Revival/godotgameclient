@@ -1,6 +1,6 @@
 [gd_scene load_steps=3 format=3 uid="uid://y4mfvmni0aef"]
 
-[ext_resource type="Script" path="res://scenes/ui/match_ui/match_selection_ui.gd" id="1_jauv3"]
+[ext_resource type="Script" uid="uid://blannq5oc7xy4" path="res://scenes/ui/match_ui/match_selection_ui.gd" id="1_jauv3"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_kmtbh"]
 font_size = 8

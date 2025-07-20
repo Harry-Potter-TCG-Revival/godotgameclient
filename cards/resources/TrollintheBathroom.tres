@@ -1,7 +1,7 @@
 [gd_resource type="Resource" script_class="Card" load_steps=3 format=3 uid="uid://dteq1r17owte2"]
 
-[ext_resource type="Texture2D" uid="uid://lonwy52ly6ge" path="res://cards/images/019-Base-TrollintheBathroom.png" id="1_jk3mu"]
-[ext_resource type="Script" path="res://custom_resources/card.gd" id="1_y7n8q"]
+[ext_resource type="Texture2D" uid="uid://lonwy52ly6ge" path="res://cards/images/TrollintheBathroom.png" id="1_jk3mu"]
+[ext_resource type="Script" uid="uid://bmur1pagjicpt" path="res://custom_resources/card.gd" id="1_y7n8q"]
 
 [resource]
 script = ExtResource("1_y7n8q")
@@ -26,6 +26,7 @@ type_lesson = false
 type_spell = false
 subtype_bird = false
 subtype_cauldron = false
+subtype_cat = false
 subtype_deer = false
 subtype_dog = false
 subtype_dragon = false
@@ -34,6 +35,7 @@ subtype_gryffindor = false
 subtype_healing = false
 subtype_hufflepuff = false
 subtype_kelpie = false
+subtype_owl = false
 subtype_rat = false
 subtype_ravenclaw = false
 subtype_slytherin = false

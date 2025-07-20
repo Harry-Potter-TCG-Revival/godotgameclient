@@ -1,7 +1,7 @@
 [gd_resource type="Resource" script_class="Card" load_steps=3 format=3 uid="uid://dsrkle5ewbi76"]
 
-[ext_resource type="Script" path="res://custom_resources/card.gd" id="1_k22o8"]
-[ext_resource type="Texture2D" uid="uid://y36ykxuw5rqm" path="res://cards/images/021-Base-DeliveryOwl.png" id="1_ln5s0"]
+[ext_resource type="Script" uid="uid://bmur1pagjicpt" path="res://custom_resources/card.gd" id="1_k22o8"]
+[ext_resource type="Texture2D" uid="uid://y36ykxuw5rqm" path="res://cards/images/DeliveryOwl.png" id="1_ln5s0"]
 
 [resource]
 script = ExtResource("1_k22o8")
@@ -26,6 +26,7 @@ type_lesson = false
 type_spell = false
 subtype_bird = false
 subtype_cauldron = false
+subtype_cat = false
 subtype_deer = false
 subtype_dog = false
 subtype_dragon = false

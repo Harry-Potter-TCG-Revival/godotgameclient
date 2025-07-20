@@ -1,7 +1,7 @@
 [gd_resource type="Resource" script_class="Card" load_steps=3 format=3 uid="uid://dgnnuc6un7x3t"]
 
-[ext_resource type="Script" path="res://custom_resources/card.gd" id="1_1he7l"]
-[ext_resource type="Texture2D" uid="uid://khr4wpwxuf5a" path="res://cards/images/104-Base-SnapesQuestion.png" id="1_4wyvh"]
+[ext_resource type="Script" uid="uid://bmur1pagjicpt" path="res://custom_resources/card.gd" id="1_1he7l"]
+[ext_resource type="Texture2D" uid="uid://khr4wpwxuf5a" path="res://cards/images/SnapesQuestion.png" id="1_4wyvh"]
 
 [resource]
 script = ExtResource("1_1he7l")

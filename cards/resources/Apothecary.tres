@@ -1,7 +1,7 @@
 [gd_resource type="Resource" script_class="Card" load_steps=3 format=3 uid="uid://r3auyv337ud0"]
 
-[ext_resource type="Script" path="res://custom_resources/card.gd" id="1_jkfj4"]
-[ext_resource type="Texture2D" uid="uid://651k7w47deh6" path="res://cards/images/041-Base-Apothecary.png" id="1_rs6tu"]
+[ext_resource type="Script" uid="uid://bmur1pagjicpt" path="res://custom_resources/card.gd" id="1_jkfj4"]
+[ext_resource type="Texture2D" uid="uid://651k7w47deh6" path="res://cards/images/Apothecary.png" id="1_rs6tu"]
 
 [resource]
 script = ExtResource("1_jkfj4")

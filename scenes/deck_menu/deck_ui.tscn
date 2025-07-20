@@ -1,6 +1,6 @@
 [gd_scene load_steps=3 format=3 uid="uid://hxt8iq7pb3de"]
 
-[ext_resource type="Script" path="res://scenes/deck_menu/deck_ui.gd" id="1_pbsvf"]
+[ext_resource type="Script" uid="uid://cafsgph23w1ry" path="res://scenes/deck_menu/deck_ui.gd" id="1_pbsvf"]
 [ext_resource type="Texture2D" uid="uid://c0s3ux6f51oq2" path="res://cards/images/Transfiguration.png" id="2_3utpu"]
 
 [node name="DeckUI" type="VBoxContainer"]

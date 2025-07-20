@@ -1,7 +1,7 @@
 [gd_resource type="Resource" script_class="Card" load_steps=3 format=3 uid="uid://bjl2ju5it43w2"]
 
-[ext_resource type="Texture2D" uid="uid://bsl3jn3htg1jc" path="res://cards/images/083-Base-ErumpentPotion.png" id="1_51ax0"]
-[ext_resource type="Script" path="res://custom_resources/card.gd" id="1_q4xdp"]
+[ext_resource type="Texture2D" uid="uid://bsl3jn3htg1jc" path="res://cards/images/ErumpentPotion.png" id="1_51ax0"]
+[ext_resource type="Script" uid="uid://bmur1pagjicpt" path="res://custom_resources/card.gd" id="1_q4xdp"]
 
 [resource]
 script = ExtResource("1_q4xdp")

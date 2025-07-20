@@ -129,7 +129,7 @@ func _on_successfull_login() -> void:
 	# Change this to pull from the nakama storage
 	New_Player_Stats.player_avatar = load("res://art/player_avatars/owl_brown.jpg")
 	
-	Global.player_stats = New_Player_Stats
+	Global.local_player_stats = New_Player_Stats
 	
 	get_tree().change_scene_to_packed(MAIN_MENU_SCENE)
 

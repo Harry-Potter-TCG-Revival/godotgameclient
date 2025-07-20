@@ -1,7 +1,7 @@
 [gd_resource type="Resource" script_class="Card" load_steps=3 format=3 uid="uid://ciyahfq4ym7b1"]
 
-[ext_resource type="Script" path="res://custom_resources/card.gd" id="1_rfdd2"]
-[ext_resource type="Texture2D" uid="uid://c1q66jkmabooa" path="res://cards/images/027-Base-MeetTheCentaurs.png" id="1_uhn2m"]
+[ext_resource type="Script" uid="uid://bmur1pagjicpt" path="res://custom_resources/card.gd" id="1_rfdd2"]
+[ext_resource type="Texture2D" uid="uid://c1q66jkmabooa" path="res://cards/images/MeetTheCentaurs.png" id="1_uhn2m"]
 
 [resource]
 script = ExtResource("1_rfdd2")

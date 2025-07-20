@@ -1,7 +1,7 @@
 [gd_resource type="Resource" script_class="Card" load_steps=3 format=3 uid="uid://6poipbvf8fx5"]
 
-[ext_resource type="Texture2D" uid="uid://c8r7liqtmpgaf" path="res://cards/images/024-Base-HistoryOfMagic.png" id="1_ckylv"]
-[ext_resource type="Script" path="res://custom_resources/card.gd" id="1_ugvfr"]
+[ext_resource type="Texture2D" uid="uid://c8r7liqtmpgaf" path="res://cards/images/HistoryOfMagic.png" id="1_ckylv"]
+[ext_resource type="Script" uid="uid://bmur1pagjicpt" path="res://custom_resources/card.gd" id="1_ugvfr"]
 
 [resource]
 script = ExtResource("1_ugvfr")
@@ -26,6 +26,7 @@ type_lesson = false
 type_spell = true
 subtype_bird = false
 subtype_cauldron = false
+subtype_cat = false
 subtype_deer = false
 subtype_dog = false
 subtype_dragon = false

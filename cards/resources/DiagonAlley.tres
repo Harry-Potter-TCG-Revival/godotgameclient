@@ -1,7 +1,7 @@
 [gd_resource type="Resource" script_class="Card" load_steps=3 format=3 uid="uid://dcusw0pcyxyxi"]
 
-[ext_resource type="Texture2D" uid="uid://dl2huj3l4wxyl" path="res://cards/images/048-Base-DiagonAlley.png" id="1_1f66t"]
-[ext_resource type="Script" path="res://custom_resources/card.gd" id="1_3k2cm"]
+[ext_resource type="Texture2D" uid="uid://dl2huj3l4wxyl" path="res://cards/images/DiagonAlley.png" id="1_1f66t"]
+[ext_resource type="Script" uid="uid://bmur1pagjicpt" path="res://custom_resources/card.gd" id="1_3k2cm"]
 
 [resource]
 script = ExtResource("1_3k2cm")

@@ -1,7 +1,7 @@
 [gd_resource type="Resource" script_class="Card" load_steps=3 format=3 uid="uid://c07wfw0h4jy08"]
 
-[ext_resource type="Script" path="res://custom_resources/card.gd" id="1_t60xw"]
-[ext_resource type="Texture2D" uid="uid://brcwqu0x12hv8" path="res://cards/images/079-Base-CauldronToSieve.png" id="1_tsf3u"]
+[ext_resource type="Script" uid="uid://bmur1pagjicpt" path="res://custom_resources/card.gd" id="1_t60xw"]
+[ext_resource type="Texture2D" uid="uid://brcwqu0x12hv8" path="res://cards/images/CauldronToSieve.png" id="1_tsf3u"]
 
 [resource]
 script = ExtResource("1_t60xw")

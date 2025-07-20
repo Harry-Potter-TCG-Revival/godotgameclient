@@ -1,7 +1,7 @@
 [gd_resource type="Resource" script_class="Card" load_steps=3 format=3 uid="uid://dpsy2sr5krtgw"]
 
-[ext_resource type="Script" path="res://custom_resources/card.gd" id="1_clvvq"]
-[ext_resource type="Texture2D" uid="uid://cf52bgbmoq8r7" path="res://cards/images/089-Base-HagridAndTheStranger.png" id="1_g4ad2"]
+[ext_resource type="Script" uid="uid://bmur1pagjicpt" path="res://custom_resources/card.gd" id="1_clvvq"]
+[ext_resource type="Texture2D" uid="uid://cf52bgbmoq8r7" path="res://cards/images/HagridAndTheStranger.png" id="1_g4ad2"]
 
 [resource]
 script = ExtResource("1_clvvq")

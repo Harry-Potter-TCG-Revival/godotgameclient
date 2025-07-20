@@ -1,7 +1,7 @@
 [gd_resource type="Resource" script_class="Card" load_steps=3 format=3 uid="uid://b1c77acrc80xm"]
 
-[ext_resource type="Script" path="res://custom_resources/card.gd" id="1_bu5r3"]
-[ext_resource type="Texture2D" uid="uid://baq6xj3kca2fp" path="res://cards/images/061-Base-PetToad.png" id="1_vj3ni"]
+[ext_resource type="Script" uid="uid://bmur1pagjicpt" path="res://custom_resources/card.gd" id="1_bu5r3"]
+[ext_resource type="Texture2D" uid="uid://baq6xj3kca2fp" path="res://cards/images/PetToad.png" id="1_vj3ni"]
 
 [resource]
 script = ExtResource("1_bu5r3")

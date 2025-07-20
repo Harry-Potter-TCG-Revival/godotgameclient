@@ -1,7 +1,7 @@
 [gd_resource type="Resource" script_class="Card" load_steps=3 format=3 uid="uid://cfpvf84scuuiv"]
 
-[ext_resource type="Texture2D" uid="uid://cckijhqf174jn" path="res://cards/images/105-Base-SquiggleQuill.png" id="1_2foxf"]
-[ext_resource type="Script" path="res://custom_resources/card.gd" id="1_y76j5"]
+[ext_resource type="Texture2D" uid="uid://cckijhqf174jn" path="res://cards/images/SquiggleQuill.png" id="1_2foxf"]
+[ext_resource type="Script" uid="uid://bmur1pagjicpt" path="res://custom_resources/card.gd" id="1_y76j5"]
 
 [resource]
 script = ExtResource("1_y76j5")

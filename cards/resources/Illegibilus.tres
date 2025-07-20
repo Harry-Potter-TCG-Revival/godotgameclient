@@ -1,7 +1,7 @@
 [gd_resource type="Resource" script_class="Card" load_steps=3 format=3 uid="uid://c08ck646kk0sp"]
 
-[ext_resource type="Script" path="res://custom_resources/card.gd" id="1_nvfsg"]
-[ext_resource type="Texture2D" uid="uid://cqeyct2kfwyh0" path="res://cards/images/092-Base-Illegibilus.png" id="1_ygsx7"]
+[ext_resource type="Script" uid="uid://bmur1pagjicpt" path="res://custom_resources/card.gd" id="1_nvfsg"]
+[ext_resource type="Texture2D" uid="uid://cqeyct2kfwyh0" path="res://cards/images/Illegibilus.png" id="1_ygsx7"]
 
 [resource]
 script = ExtResource("1_nvfsg")

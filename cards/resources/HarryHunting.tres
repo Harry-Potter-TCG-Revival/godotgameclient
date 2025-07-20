@@ -1,7 +1,7 @@
 [gd_resource type="Resource" script_class="Card" load_steps=3 format=3 uid="uid://djcdq70ywnsap"]
 
-[ext_resource type="Script" path="res://custom_resources/card.gd" id="1_i7s4b"]
-[ext_resource type="Texture2D" uid="uid://c8wbo72piuwwi" path="res://cards/images/023-Base-HarryHunting.png" id="1_pcrus"]
+[ext_resource type="Script" uid="uid://bmur1pagjicpt" path="res://custom_resources/card.gd" id="1_i7s4b"]
+[ext_resource type="Texture2D" uid="uid://c8wbo72piuwwi" path="res://cards/images/HarryHunting.png" id="1_pcrus"]
 
 [resource]
 script = ExtResource("1_i7s4b")
@@ -26,6 +26,7 @@ type_lesson = false
 type_spell = false
 subtype_bird = false
 subtype_cauldron = false
+subtype_cat = false
 subtype_deer = false
 subtype_dog = false
 subtype_dragon = false

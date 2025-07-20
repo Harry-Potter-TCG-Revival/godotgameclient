@@ -1,6 +1,6 @@
 [gd_scene load_steps=16 format=3 uid="uid://bsjlokyh741yx"]
 
-[ext_resource type="Script" path="res://scenes/battle/battle.gd" id="1_2csfe"]
+[ext_resource type="Script" uid="uid://cmxi4ipd8betv" path="res://scenes/battle/battle.gd" id="1_2csfe"]
 [ext_resource type="Texture2D" uid="uid://btrfts84g8jjb" path="res://art/backgrounds/4.17 Fleur Delacour - Beauxbaton Carriage Winged Horses B4C15M1.jpg" id="1_crh7g"]
 [ext_resource type="PackedScene" uid="uid://bu6xir8f2j3bw" path="res://scenes/ui/player_ui/player.tscn" id="4_l0wvf"]
 [ext_resource type="PackedScene" uid="uid://blxedqt0ivo76" path="res://scenes/ui/card_pile_ui/card_pile_view_ui/card_pile_view.tscn" id="5_3g8tf"]
@@ -243,9 +243,9 @@ tracks/5/keys = {
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_ay4by"]
 _data = {
-"RESET": SubResource("Animation_r7w8t"),
-"show_and_hide_opponents_turn": SubResource("Animation_yt0l7"),
-"show_and_hide_your_turn": SubResource("Animation_ivwk5")
+&"RESET": SubResource("Animation_r7w8t"),
+&"show_and_hide_opponents_turn": SubResource("Animation_yt0l7"),
+&"show_and_hide_your_turn": SubResource("Animation_ivwk5")
 }
 
 [node name="Battle" type="Node2D"]
@@ -371,5 +371,5 @@ label_settings = ExtResource("11_8anqb")
 [node name="TurnIndicatorAnimation" type="AnimationPlayer" parent="TurnandPhaseInfo/TurnIndicator"]
 root_node = NodePath("../OpponentTurnLabel")
 libraries = {
-"": SubResource("AnimationLibrary_ay4by")
+&"": SubResource("AnimationLibrary_ay4by")
 }

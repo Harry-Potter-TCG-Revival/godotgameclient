@@ -1,24 +1,24 @@
 [gd_scene load_steps=36 format=3 uid="uid://bu6xir8f2j3bw"]
 
-[ext_resource type="Script" path="res://scenes/ui/player_ui/player.gd" id="1_cx6v1"]
-[ext_resource type="Script" path="res://scenes/ui/player_ui/player_handler.gd" id="2_7ibms"]
-[ext_resource type="Script" path="res://scenes/ui/player_ui/in_play_card_arrangement_update.gd" id="2_of2ir"]
-[ext_resource type="Script" path="res://scenes/ui/player_ui/player_stats_ui.gd" id="4_nr21q"]
-[ext_resource type="Script" path="res://scenes/ui/player_ui/power_stats_ui.gd" id="5_f7oqb"]
+[ext_resource type="Script" uid="uid://47qmqjrcynap" path="res://scenes/ui/player_ui/player.gd" id="1_cx6v1"]
+[ext_resource type="Script" uid="uid://b7vl30h7n28q2" path="res://scenes/ui/player_ui/player_handler.gd" id="2_7ibms"]
+[ext_resource type="Script" uid="uid://e15upyrd65wh" path="res://scenes/ui/player_ui/in_play_card_arrangement_update.gd" id="2_of2ir"]
+[ext_resource type="Script" uid="uid://cqyicv4soqc0d" path="res://scenes/ui/player_ui/player_stats_ui.gd" id="4_nr21q"]
+[ext_resource type="Script" uid="uid://bkrlp2xubq1um" path="res://scenes/ui/player_ui/power_stats_ui.gd" id="5_f7oqb"]
 [ext_resource type="Texture2D" uid="uid://ccx3sbsddxbrm" path="res://art/player_avatars/owl_head.png" id="6_127my"]
 [ext_resource type="Texture2D" uid="uid://ckwneqr762wcy" path="res://art/icons/Icon_Transfiguration.webp" id="6_qfo6v"]
 [ext_resource type="Texture2D" uid="uid://dpj28dvgg510i" path="res://art/icons/Icon_Charms.webp" id="7_pxfxp"]
 [ext_resource type="Texture2D" uid="uid://segffe5suyky" path="res://art/icons/Icon_Potions.webp" id="8_44hhi"]
 [ext_resource type="Texture2D" uid="uid://dgf1ebta1d35b" path="res://art/icons/Icon_Care_Of_Magical_Creatures.webp" id="9_2wsty"]
 [ext_resource type="Texture2D" uid="uid://e2k7y2h45qky" path="res://art/icons/Icon_Quidditch.webp" id="10_t7jfa"]
-[ext_resource type="Script" path="res://scenes/ui/player_ui/action_stats_ui.gd" id="11_4hv46"]
+[ext_resource type="Script" uid="uid://bbaky85jeamv5" path="res://scenes/ui/player_ui/action_stats_ui.gd" id="11_4hv46"]
 [ext_resource type="Texture2D" uid="uid://cb6wsdhiwk8xk" path="res://art/icons/Icon_Lightning_Bolt.webp" id="12_kfwxw"]
 [ext_resource type="PackedScene" uid="uid://bphcyyafso7w4" path="res://scenes/ui/player_ui/card_pile_opener.tscn" id="13_e1hfq"]
 [ext_resource type="PackedScene" uid="uid://cv8a7p2ct54ic" path="res://scenes/ui/player_ui/card_ui_starting_character.tscn" id="14_8pfr6"]
 [ext_resource type="Texture2D" uid="uid://0hpeofrccrjo" path="res://art/card_piles/DiscardPile.png" id="14_owobt"]
-[ext_resource type="Script" path="res://scenes/ui/player_ui/card_draw_button.gd" id="17_0tk7g"]
+[ext_resource type="Script" uid="uid://c02gd2xora3oi" path="res://scenes/ui/player_ui/card_draw_button.gd" id="17_0tk7g"]
 [ext_resource type="PackedScene" uid="uid://dtqq27f5rwlw3" path="res://scenes/ui/player_ui/in_play_lessons.tscn" id="17_8qfk7"]
-[ext_resource type="Script" path="res://scenes/ui/player_ui/hand.gd" id="18_cgv32"]
+[ext_resource type="Script" uid="uid://d3umfnxw3s3ha" path="res://scenes/ui/player_ui/hand.gd" id="18_cgv32"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_hksab"]
 font_color = Color(0, 0, 0, 1)
@@ -67,7 +67,7 @@ _data = [Vector2(0, 1), 0.0, -5.134, 0, 0, Vector2(0.5, 0), 0.0, 0.0, 0, 0, Vect
 point_count = 3
 
 [sub_resource type="Curve" id="Curve_nuva3"]
-min_value = -1.0
+_limits = [-1.0, 1.0, 0.0, 1.0]
 _data = [Vector2(0, -1), 0.0, 2.0, 0, 1, Vector2(1, 1), 2.0, 0.0, 1, 0]
 point_count = 2
 

@@ -1,7 +1,7 @@
 [gd_resource type="Resource" script_class="Card" load_steps=3 format=3 uid="uid://bkdh1xk6j48k1"]
 
-[ext_resource type="Texture2D" uid="uid://tw5lsjpxtpii" path="res://cards/images/038-Base-TransfigurationTest.png" id="1_vuv2s"]
-[ext_resource type="Script" path="res://custom_resources/card.gd" id="1_ymxxk"]
+[ext_resource type="Texture2D" uid="uid://tw5lsjpxtpii" path="res://cards/images/TransfigurationTest.png" id="1_vuv2s"]
+[ext_resource type="Script" uid="uid://bmur1pagjicpt" path="res://custom_resources/card.gd" id="1_ymxxk"]
 
 [resource]
 script = ExtResource("1_ymxxk")
