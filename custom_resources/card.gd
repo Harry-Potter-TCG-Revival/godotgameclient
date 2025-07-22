@@ -7,6 +7,9 @@ signal update_card_is_valid_choice_requested(value: bool)
 enum SetName {BASE}
 enum Rarity {RARE, UNCOMMON, COMMON}
 
+var once_per_game_ability_used: bool = false
+var card_ui : CardUI
+
 @export_group("Card Attributes")
 @export var setname: SetName
 @export var setnumber: int

@@ -16,6 +16,7 @@ var remote_player_stats: PlayerStats
 
 # Testing Variables
 var auto_login : bool
+var auto_join_match : bool
 
 # Card Variables
 var active_card: Card : set = _set_active_card

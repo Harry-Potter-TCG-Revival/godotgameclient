@@ -10,6 +10,7 @@ const HAND_DISCARD_INTERVAL := 0.25
 #@onready var turn_indicator_animation = %TurnIndicatorAnimation
 @onready var player = $".."
 
+
 var player_stats = PlayerStats
 
 func _ready() -> void:
@@ -22,9 +23,11 @@ func _ready() -> void:
 
 func start_battle(value: PlayerStats) -> void:
 	player_stats = value
-	player_stats.deck = player.selected_deck.duplicate(true)
-	player_stats.deck.shuffle()
-	player_stats.discard = CardPile.new()
+	hand.player_stats = value
+	#player_stats.deck = 
+	#player_stats.deck
+	#player_stats.deck.shuffle()
+	#player_stats.discard = CardPile.new()
 	draw_opening_hand()
 
 func draw_opening_hand():
@@ -40,21 +43,24 @@ func draw_card() -> void:
 	hand.add_card(player_stats.deck.draw_card())
 
 func draw_cards(amount: int) -> void:
-	var tween := create_tween()
+	#var tween := create_tween()
 	for i in range(amount):
+		var tween := create_tween()
 		tween.tween_callback(draw_card)
 		tween.tween_interval(HAND_DRAW_INTERVAL)
+		await get_tree().create_timer(HAND_DRAW_INTERVAL)
 	
 
 func draw_cards_in_draw_step(amount: int) -> void:
-	var tween := create_tween()
+	#var tween := create_tween()
 	for i in range(amount):
+		var tween := create_tween()
 		tween.tween_callback(draw_card)
 		tween.tween_interval(HAND_DRAW_INTERVAL)
 	
-	tween.finished.connect(
-		func(): Events.draw_step_completed.emit()
-	)
+	#tween.finished.connect(
+	#	func(): Events.draw_step_completed.emit()
+	#)
 
 func draw_specific_card(card_to_draw: Card) -> void:
 	hand.add_card(player_stats.deck.draw_specific_card(card_to_draw))

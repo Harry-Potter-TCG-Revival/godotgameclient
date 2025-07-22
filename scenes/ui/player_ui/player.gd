@@ -66,7 +66,7 @@ func initialize_card_pile_ui() -> void:
 
 
 func set_starting_character() -> void:
-	card_ui_starting_character.Starting_Character = player_stats.deck.starting_character
+	card_ui_starting_character.Starting_Character = player_stats.selected_deck_list.starting_character
 
 
 func take_damage(_damage: int) -> void:

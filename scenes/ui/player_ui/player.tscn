@@ -241,21 +241,27 @@ player_stats = SubResource("Resource_yvd06")
 
 [node name="DeckButton" parent="LeftPlayArea/PlayerStats/PlayerStatsUI" instance=ExtResource("13_e1hfq")]
 unique_name_in_owner = true
-layout_mode = 2
+layout_mode = 0
 offset_left = 10.0
 offset_top = 5.0
 offset_right = 126.0
 offset_bottom = 165.0
-script = null
 
 [node name="CardDrawButton" type="Button" parent="LeftPlayArea/PlayerStats/PlayerStatsUI/DeckButton"]
 unique_name_in_owner = true
 custom_minimum_size = Vector2(75, 50)
-layout_mode = 2
-offset_left = 14.0
-offset_top = 38.0
-offset_right = 104.0
-offset_bottom = 88.0
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -45.0
+offset_top = -37.0
+offset_right = 45.0
+offset_bottom = 13.0
+grow_horizontal = 2
+grow_vertical = 2
 size_flags_horizontal = 0
 size_flags_vertical = 4
 text = "Draw Card"
@@ -263,13 +269,12 @@ script = ExtResource("17_0tk7g")
 
 [node name="DiscardButton" parent="LeftPlayArea/PlayerStats/PlayerStatsUI" instance=ExtResource("13_e1hfq")]
 unique_name_in_owner = true
-layout_mode = 2
+layout_mode = 0
 offset_left = 136.0
 offset_top = 5.0
 offset_right = 252.0
 offset_bottom = 165.0
 texture_normal = ExtResource("14_owobt")
-script = null
 
 [node name="StatsUIContainer" type="VBoxContainer" parent="LeftPlayArea/PlayerStats/PlayerStatsUI"]
 layout_mode = 2
@@ -426,8 +431,7 @@ script = ExtResource("11_4hv46")
 [node name="Actions" type="Label" parent="LeftPlayArea/PlayerStats/PlayerStatsUI/StatsUIContainer/ActionStatsUIContainer/ActionStatsUI"]
 layout_mode = 2
 size_flags_horizontal = 4
-text = "Actions Remaining
-"
+text = "Actions Remaining"
 label_settings = SubResource("LabelSettings_ubokq")
 horizontal_alignment = 1
 vertical_alignment = 1

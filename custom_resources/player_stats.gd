@@ -9,7 +9,7 @@ extends Stats
 
 # These three settings need to get inherited from the game manager
 # This allows different game modes to exist
-@export var cards_per_turn: int
+@export var cards_per_turn: int = 7
 @export var cards_in_opening_hand: int
 @export var max_action_count := 2
 
@@ -89,5 +89,6 @@ func create_instance() -> Resource:
 	instance.reset_action_count()
 	# This is just doing main deck, need to figure out sideboard
 	instance.deck = instance.selected_deck_list.main_deck.duplicate()
+	instance.deck.shuffle()
 	instance.discard = CardPile.new()
 	return instance

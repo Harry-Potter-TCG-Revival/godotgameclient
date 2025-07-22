@@ -19,12 +19,22 @@ var is_importing_decklist : bool = false
 @onready var file_dialog_load_deck = $DeckImport/FileDialogLoadDeck
 
 func _ready():
+	# Set Auto Join Match to help with Testing
+	Global.auto_join_match = true
+	if Global.auto_join_match :
+		auto_join_match()
+	
 	# Setup UI
 	host_game_ui_container.show()
 	cancel_game_ui_container.hide()
 	deck_import.hide()
 	file_dialog_load_deck.hide()
 	Global.player_is_host = false
+
+func auto_join_match() -> void:
+	Global.local_player_stats.selected_deck_list = Global.local_player_stats.deck_lists[0]
+	custom_match_name.text = "Test_Match"
+	_on_host_game_button_pressed()
 
 func _on_host_game_button_pressed():
 	# Create the multiplayer bridge
