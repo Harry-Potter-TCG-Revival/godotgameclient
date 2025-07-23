@@ -321,6 +321,7 @@ visible = false
 
 [node name="TurnandPhaseInfo" type="CanvasLayer" parent="."]
 layer = 3
+visible = false
 
 [node name="TurnIndicator" type="ColorRect" parent="TurnandPhaseInfo"]
 offset_left = 660.0

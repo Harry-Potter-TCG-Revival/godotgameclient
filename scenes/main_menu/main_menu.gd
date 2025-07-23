@@ -32,7 +32,10 @@ func _ready():
 	Global.player_is_host = false
 
 func auto_join_match() -> void:
-	Global.local_player_stats.selected_deck_list = Global.local_player_stats.deck_lists[0]
+	# Select random deck list
+	var random_deck_list_number = RandomNumberGenerator.new().randi_range(0,9)
+	print("random deck chosen is ", random_deck_list_number)
+	Global.local_player_stats.selected_deck_list = Global.local_player_stats.deck_lists[random_deck_list_number]
 	custom_match_name.text = "Test_Match"
 	_on_host_game_button_pressed()
 
@@ -334,7 +337,7 @@ func download_deck_list(downloaded_deck_list,downloaded_deck_version):
 	# Check if decklist is already downloaded
 	var deck_list_exists : bool = false
 	
-	for i in Global.player_stats.deck_lists:
+	for i in Global.local_player_stats.deck_lists:
 		# Check if Deck and Version Match, if any match set deck_list_exists to true
 		if (downloaded_deck_list.Deck_Info.Name == i.name) and (downloaded_deck_version == i.version):
 			deck_list_exists = true
@@ -365,7 +368,7 @@ func download_deck_list(downloaded_deck_list,downloaded_deck_version):
 		new_deck_list.side_board.cards.append(load(downloaded_deck_list.Side_Board[i]))
 	
 	# Add the newly imported deck to the player stats
-	Global.player_stats.deck_lists.append(new_deck_list)
+	Global.local_player_stats.deck_lists.append(new_deck_list)
 	
 
 func save_deck_list(deck_dictionary: Dictionary):

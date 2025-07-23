@@ -24,5 +24,5 @@ func _set_card(value: Card) -> void:
 
 func on_gui_input(event: InputEvent) -> void:
 	if event.is_action_pressed("right_mouse"):
-		Events.card_tooltip_popup_requested.emit(self.card)
+		Events.card_tooltip_popup_requested.emit(self.Starting_Character)
 	

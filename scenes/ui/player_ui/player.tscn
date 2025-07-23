@@ -622,7 +622,7 @@ text = "End Turn"
 
 [node name="Hand" type="ColorRect" parent="." groups=["player_hand"]]
 unique_name_in_owner = true
-self_modulate = Color(1, 0.258824, 0.266667, 0.152941)
+self_modulate = Color(1, 0.258824, 0.266667, 0)
 z_index = 1
 layout_mode = 1
 anchors_preset = 7

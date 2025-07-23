@@ -13,9 +13,6 @@ func _ready() -> void:
 	var new_local_player_stats: PlayerStats = Global.local_player_stats.create_instance()
 	local_player.player_stats = new_local_player_stats
 	
-	# Tell the server this peer has loaded, and provide the players stats
-	player_loaded.rpc(local_player_stats)
-	
 	# These events need to have player ID as a parameter
 	# So it only runs for the desired player
 	Events.player_end_of_turn_start.connect(local_player.player_handler.end_turn)
@@ -31,12 +28,15 @@ func _ready() -> void:
 	# have start_battle be an RPC and run from host
 	start_battle(new_local_player_stats)
 	local_player.initialize_card_pile_ui()
-	local_player.set_starting_character()
+	local_player.set_starting_character(local_player.player_stats.selected_deck_list.starting_character)
+	# Tell the other peer that this peer has loaded
+	player_loaded.rpc(local_player.player_stats.selected_deck_list.starting_character.resource_path)
 
 @rpc("any_peer","reliable")
-func player_loaded(value: PlayerStats) -> void:
-	# Save remote player stats
-	Global.remote_player_stats = value
+func player_loaded(starting_character_path: String) -> void:
+	# load starting character card
+	var remote_player_starting_character = load(starting_character_path)
+	remote_player.set_starting_character(remote_player_starting_character)
 	
 
 func start_battle(stats: PlayerStats) -> void:
