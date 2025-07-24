@@ -27,6 +27,7 @@ signal discard_cards_requested(card_pile: CardPile)
 signal player_end_of_turn_start
 signal player_end_of_turn_finished
 signal on_card_draw_button_pressed
+signal card_drawn(card: Card)
 
 # Confirmation Events
 signal confirmation_modal_ui_customize(header: String, message: String, confirm_text: String, cancel_text: String)

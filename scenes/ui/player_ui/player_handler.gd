@@ -5,21 +5,22 @@ const HAND_DRAW_INTERVAL := 0.25
 const HAND_DISCARD_INTERVAL := 0.25
 
 @export var hand: Hand
+@export var player_stats: PlayerStats
 
 # turned off until it gets moved and setup as a signal
 #@onready var turn_indicator_animation = %TurnIndicatorAnimation
 @onready var player = $".."
 
 
-var player_stats = PlayerStats
-
 func _ready() -> void:
-	Events.draw_cards_requested.connect(draw_cards)
-	Events.draw_specific_cards_requested.connect(draw_specific_cards)
-	Events.discard_card_requested.connect(_discard_card)
-	Events.discard_cards_requested.connect(_discard_cards)
-	Events.on_card_draw_button_pressed.connect(_on_card_draw_button_pressed)
-	Events.card_resolved.connect(_on_card_resolved)
+	# Only connect events if controlling local player
+	if player.is_local_player:
+		Events.draw_cards_requested.connect(draw_cards)
+		Events.draw_specific_cards_requested.connect(draw_specific_cards)
+		Events.discard_card_requested.connect(_discard_card)
+		Events.discard_cards_requested.connect(_discard_cards)
+		Events.on_card_draw_button_pressed.connect(_on_card_draw_button_pressed)
+		Events.card_resolved.connect(_on_card_resolved)
 
 func start_battle(value: PlayerStats) -> void:
 	player_stats = value
@@ -48,7 +49,6 @@ func draw_cards(amount: int) -> void:
 		var tween := create_tween()
 		tween.tween_callback(draw_card)
 		tween.tween_interval(HAND_DRAW_INTERVAL)
-		await get_tree().create_timer(HAND_DRAW_INTERVAL)
 	
 
 func draw_cards_in_draw_step(amount: int) -> void:
@@ -72,6 +72,7 @@ func draw_specific_cards(cards_to_draw: CardPile) -> void:
 
 func _on_card_draw_button_pressed():
 	player_stats.action_count -= 1
+	#player_stats.action_count -= 1
 	draw_cards(1)
 
 func _on_card_resolved(resolved_card: Card) -> void:

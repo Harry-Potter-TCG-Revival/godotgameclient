@@ -124,7 +124,7 @@ func _on_peer_connected(id):
 func _on_peer_disconnected(id):
 	print("Peer disconnected id : " + str(id))
 
-@rpc("any_peer","call_local", "reliable")
+@rpc("any_peer","call_local", "reliable",0)
 func start_match():
 	# Move players to battle scene
 	get_tree().change_scene_to_packed(BATTLE_SCENE)
@@ -374,7 +374,7 @@ func download_deck_list(downloaded_deck_list,downloaded_deck_version):
 func save_deck_list(deck_dictionary: Dictionary):
 	var deck_dictionary_json = JSON.stringify(deck_dictionary)
 	
-	var deck_list_stoarge = await  Global.client.write_storage_objects_async(
+	var _deck_list_stoarge = await  Global.client.write_storage_objects_async(
 			Global.session,[
 				NakamaWriteStorageObject.new(
 					"Deck_List",

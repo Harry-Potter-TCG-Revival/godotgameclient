@@ -294,6 +294,7 @@ offset_top = 537.0
 offset_right = 1920.0
 offset_bottom = 1077.0
 grow_horizontal = 1
+is_local_player = true
 
 [node name="InspectionViews" type="CanvasLayer" parent="."]
 layer = 2

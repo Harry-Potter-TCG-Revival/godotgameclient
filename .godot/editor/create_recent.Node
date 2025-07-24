@@ -1,3 +1,4 @@
+Button
 AnimationPlayer
 Label
 TextureRect
@@ -6,7 +7,6 @@ CanvasLayer
 Node
 CollisionShape2D
 Area2D
-Button
 PanelContainer
 HBoxContainer
 Panel

@@ -4,6 +4,8 @@ extends Panel
 # Get the player stats
 @export var player_stats: PlayerStats : set = _set_player_stats
 
+# Set if this is controlling the remote or local player
+@export var is_local_player: bool
 
 # Non Play Area
 @onready var player_handler = $PlayerHandler
@@ -30,7 +32,9 @@ extends Panel
 
 
 func _ready() -> void:
-	Events.draw_step_completed.connect(_on_draw_step_completed)
+	# Only connect events if controlling local player
+	if is_local_player:
+		Events.draw_step_completed.connect(_on_draw_step_completed)
 
 
 func _set_player_stats(value: PlayerStats) -> void:

@@ -32,6 +32,17 @@ func add_card(card: Card) -> void:
 	new_card_ui.player_stats = player_stats
 	_update_cards()
 	print("Added Card to Hand: ", new_card_ui.card.cardname, " ", new_card_ui.card)
+	# Tell game that you drew a card
+	Events.card_drawn.emit(card)
+
+@rpc("any_peer","call_remote","reliable",0)
+func add_remote_card(card_path: String) -> void:
+	var card : Card = load(card_path)
+	var new_card_ui := CARD_UI_SCENE.instantiate() as CardUI
+	add_child(new_card_ui)
+	new_card_ui.card = card.duplicate()
+	new_card_ui.parent = self
+	_update_cards()
 
 func discard_card(card_ui_to_discard: CardUI) -> void:
 	card_ui_to_discard.queue_free()
