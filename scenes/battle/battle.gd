@@ -3,12 +3,15 @@ extends Node2D
 @export var local_player_stats: PlayerStats
 @export var remote_player_stats: PlayerStats
 
+@onready var turn_indicator = $TurnandPhaseInfo/TurnIndicator
 @onready var turn_indicator_animation = $TurnandPhaseInfo/TurnIndicator/TurnIndicatorAnimation
 @onready var local_player = %LocalPlayer
 @onready var remote_player = %RemotePlayer
 
 
 func _ready() -> void:
+	# Set visibility of battle items
+	turn_indicator.visible = false
 	
 	var new_local_player_stats: PlayerStats = Global.local_player_stats.create_instance()
 	local_player.player_stats = new_local_player_stats
@@ -53,6 +56,8 @@ func _start_opponent_turn() -> void:
 func _opponent_turn_ended(animation_name) -> void:
 	if animation_name == "show_and_hide_opponents_turn":
 		local_player.player_handler.start_turn()
+		turn_indicator_animation.play("show_and_hide_your_turn")
+	
 
 func _on_mouse_entered() -> void:
 	var hand_hover_tween := create_tween()

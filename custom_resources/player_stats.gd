@@ -9,8 +9,8 @@ extends Stats
 
 # These three settings need to get inherited from the game manager
 # This allows different game modes to exist
-@export var cards_per_turn: int = 7
-@export var cards_in_opening_hand: int
+@export var cards_per_turn: int = 1
+@export var cards_in_opening_hand: int = 7
 @export var max_action_count := 2
 
 

@@ -14,7 +14,8 @@ func enter() -> void:
 	if not card_ui.card_drop_area.is_empty():
 		played = true
 		
-		card_ui.play()
+		# Commented out to change this to run aftercard has been reparnted to play or discard
+		#card_ui.play()
 		
 		# A timer is used so that the enter() function finishes and we properly enter the state
 		if card_ui.card.goes_in_play():

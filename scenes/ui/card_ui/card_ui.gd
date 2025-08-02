@@ -85,6 +85,7 @@ func enter_play() -> void:
 	#card_image.scale = Vector2(.5,.5)
 	#card_image.position = Vector2(140,0)
 	Events.reparent_card_to_play_requested.emit(self)
+	play()
 	card.enter_play(player_stats)
 	card.enter_play_update_power(player_stats)
 
@@ -148,7 +149,7 @@ func _on_card_drag_started(used_card: CardUI) -> void:
 	disabled = true
 
 func _on_card_drag_ended(_card: CardUI) -> void:
-	# Enabled Cards again when drag ends
+	# Enable Cards again when drag ends
 	disabled = false
 	check_playability()
 
@@ -158,4 +159,6 @@ func _on_player_stats_changed() -> void:
 		check_playability()
 
 func check_playability() -> void:
-	self.playable = player_stats.can_play_card(card)
+	# Only run if the card_ui is for the local player by checking the player owner
+	if self.card.player_owner == Global.session.username:
+		self.playable = player_stats.can_play_card(card)

@@ -36,7 +36,6 @@ func _ready():
 	
 	# Set Auto Login to help with Testing
 	# Need to setup auto login for a 2nd account
-	Global.auto_login = true
 	if Global.auto_login :
 		auto_login()
 

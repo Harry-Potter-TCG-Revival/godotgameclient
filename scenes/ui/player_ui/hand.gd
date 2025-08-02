@@ -3,6 +3,8 @@ extends ColorRect
 
 const CARD_UI_SCENE := preload("res://scenes/ui/card_ui/card_ui.tscn")
 
+@onready var player = $".."
+
 @export var player_stats: PlayerStats : set = _set_player_stats
 @export var hand_curve: Curve
 @export var rotation_curve: Curve
@@ -10,6 +12,7 @@ const CARD_UI_SCENE := preload("res://scenes/ui/card_ui/card_ui.tscn")
 @export var x_sep := -10
 @export var y_min := 0
 @export var y_max : int
+@export var hand_disabled : bool = false
 
 var card_ui_reference: CardUI = Global.card_ui_reference
 # Used to restore hand after tween
@@ -18,6 +21,10 @@ var start_position: Vector2
 func _ready() -> void:
 	# When a card is played the cards in hand need to be updated
 	Events.card_played.connect(_on_card_played)
+	
+	# When a card is being dragged the hand needs 
+	Events.card_drag_started.connect(_disable_hand)
+	Events.card_drag_ended.connect(_enable_hand)
 	
 	start_position = self.position
 
@@ -29,7 +36,13 @@ func add_card(card: Card) -> void:
 	new_card_ui.card = card.duplicate()
 	new_card_ui.card.card_ui = new_card_ui
 	new_card_ui.parent = self
-	new_card_ui.player_stats = player_stats
+	# Only set player stats for the card if its for the local player
+	# Signals and other functions run when player stats are connected
+	if player.is_local_player:
+		new_card_ui.player_stats = player_stats
+		new_card_ui.card.player_owner = Global.session.username
+		new_card_ui.card.player_controller = Global.session.username
+		new_card_ui.check_playability()
 	_update_cards()
 	print("Added Card to Hand: ", new_card_ui.card.cardname, " ", new_card_ui.card)
 	# Tell game that you drew a card
@@ -53,6 +66,7 @@ func _on_card_played(_card: Card) -> void:
 
 func _update_cards() -> void:
 	var hand_size := get_child_count()
+	print("Hand size is ", hand_size)
 	max_rotation_degrees = clamp(hand_size,0,15)
 	y_max = clamp(hand_size * 5,0,50)
 	var total_hand_width := card_ui_reference.card_size.x * hand_size + x_sep * (hand_size - 1)
@@ -104,9 +118,12 @@ func _check_cards_in_hand_playability():
 
 
 func _on_mouse_entered():
+	# If the hand is disabled just return
+	if hand_disabled or !player.is_local_player:
+		return
+	
 	var hand_scale_factor = 1.3
 	var target_x_position = (size.x * (1 - hand_scale_factor))/2
-	
 	var target_position = position + Vector2(target_x_position,-100)
 	var tween_position = get_tree().create_tween()
 	var tween_scale = get_tree().create_tween()
@@ -116,8 +133,20 @@ func _on_mouse_entered():
 
 
 func _on_mouse_exited():
+	# If the hand is disabled just return
+	if hand_disabled or !player.is_local_player:
+		return
+	
 	var tween_position = get_tree().create_tween()
 	var tween_scale = get_tree().create_tween()
 	tween_scale.tween_property(self,"scale",Vector2(1,1),0.2)
 	tween_position.tween_property(self,"position",start_position,0.2)
 	
+
+func _disable_hand(_value: CardUI):
+	# Shrink the hand because a card is selected
+	_on_mouse_exited()
+	hand_disabled = true
+
+func _enable_hand(_value: CardUI):
+	hand_disabled = false

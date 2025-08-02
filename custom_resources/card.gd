@@ -69,8 +69,11 @@ var card_ui : CardUI
 @export_group("Card Visuals")
 @export var card_image: Texture
 @export var card_back_image: Texture
-
 @export var is_valid_choice: bool : set = _set_is_valid_choice
+
+@export_group("Player Data")
+@export var player_owner: String
+@export var player_controller: String
 
 func _init():
 	# This is make each resource unique and not be shared
@@ -117,7 +120,7 @@ func leave_play(_player_stats: PlayerStats):
 
 func leave_play_upate_power(player_stats: PlayerStats):
 	# Update Power for All Types
-	# Power is set at each cards so this one function works for all cards
+	# Power is set at the card class so this one function works for all cards
 	player_stats.care_of_magical_creatures_power_count -= care_of_magical_creatures_power_provided_amount
 	player_stats.charms_power_count -= charms_power_provided_amount
 	player_stats.potions_power_count -= potions_power_provided_amount

@@ -22,7 +22,6 @@ func enter() -> void:
 	Events.card_drag_started.emit(card_ui)
 	
 	card_ui.statetext.text = "Dragging"
-
 	
 	# Creating a  timer to ensure that a left mouse quick click and release 
 	# are treated as one action. This is to prevent a user from clicking on a card

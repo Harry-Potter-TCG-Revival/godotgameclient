@@ -28,7 +28,7 @@ func enter():
 	# The parent CardUI is saved as a variable card_ui in the card state script
 	if not card_ui.is_node_ready():
 		await card_ui.ready
-	
+	 
 	Events.card_drag_started.connect(card_ui._on_card_drag_started)
 	Events.card_drag_ended.connect(card_ui._on_card_drag_ended)
 	
@@ -112,6 +112,12 @@ func reset_selectable_state() -> void:
 	_on_card_hand_state_transition_requested(current_hand_state, CardHandState.HandState.BASE)
 
 func exit():
-	Events.card_drag_started.disconnect(card_ui._on_card_drag_started)
-	Events.card_drag_ended.disconnect(card_ui._on_card_drag_ended)
+	# Disconnect the signal thats set when entering the state
+	if Events.card_drag_started.is_connected(card_ui._on_card_drag_started):
+		Events.card_drag_started.disconnect(card_ui._on_card_drag_started)
+	
+	# Disconnect the signal thats set when entering the state
+	if Events.card_drag_ended.is_connected(card_ui._on_card_drag_ended):
+		Events.card_drag_ended.disconnect(card_ui._on_card_drag_ended)
+	
 	card_ui.card_in_hand = false

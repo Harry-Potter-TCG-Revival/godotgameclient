@@ -20,7 +20,6 @@ var is_importing_decklist : bool = false
 
 func _ready():
 	# Set Auto Join Match to help with Testing
-	Global.auto_join_match = true
 	if Global.auto_join_match :
 		auto_join_match()
 	

@@ -1,7 +1,7 @@
 class_name PlayerHandler
 extends Node
 
-const HAND_DRAW_INTERVAL := 0.25
+const HAND_DRAW_INTERVAL := 1
 const HAND_DISCARD_INTERVAL := 0.25
 
 @export var hand: Hand
@@ -10,7 +10,17 @@ const HAND_DISCARD_INTERVAL := 0.25
 # turned off until it gets moved and setup as a signal
 #@onready var turn_indicator_animation = %TurnIndicatorAnimation
 @onready var player = $".."
+@onready var in_play_adventure = %InPlayAdventure
+@onready var in_play_match = %InPlayMatch
+@onready var in_play_location = %InPlayLocation
+@onready var in_play_creatures = %InPlayCreatures
+@onready var in_play_items = %InPlayItems
+@onready var in_play_lessons = %InPlayLessons
+@onready var in_play_events = %InPlayEvents
+@onready var in_play_characters = %InPlayCharacters
 
+# This array will hold all cards in play for the player
+var cards_in_play : Array[Card]
 
 func _ready() -> void:
 	# Only connect events if controlling local player
@@ -21,6 +31,7 @@ func _ready() -> void:
 		Events.discard_cards_requested.connect(_discard_cards)
 		Events.on_card_draw_button_pressed.connect(_on_card_draw_button_pressed)
 		Events.card_resolved.connect(_on_card_resolved)
+		Events.reparent_card_to_play_requested.connect(reparent_card_to_play)
 
 func start_battle(value: PlayerStats) -> void:
 	player_stats = value
@@ -52,15 +63,14 @@ func draw_cards(amount: int) -> void:
 	
 
 func draw_cards_in_draw_step(amount: int) -> void:
-	#var tween := create_tween()
+	var tween := create_tween()
 	for i in range(amount):
-		var tween := create_tween()
 		tween.tween_callback(draw_card)
 		tween.tween_interval(HAND_DRAW_INTERVAL)
 	
-	#tween.finished.connect(
-	#	func(): Events.draw_step_completed.emit()
-	#)
+	tween.finished.connect(
+		func(): Events.draw_step_completed.emit()
+	)
 
 func draw_specific_card(card_to_draw: Card) -> void:
 	hand.add_card(player_stats.deck.draw_specific_card(card_to_draw))
@@ -72,8 +82,30 @@ func draw_specific_cards(cards_to_draw: CardPile) -> void:
 
 func _on_card_draw_button_pressed():
 	player_stats.action_count -= 1
-	#player_stats.action_count -= 1
 	draw_cards(1)
+
+func reparent_card_to_play(child: CardUI) -> void:
+	# Check Card Type and reparent it to its appropriate spot
+	# Since some cards can have multiple types the order here is important
+	if child.card.type_character:
+		child.reparent(in_play_characters)
+		in_play_characters.update_cards_grid()
+	elif child.card.type_creature:
+		child.reparent(in_play_creatures)
+		in_play_creatures.update_cards_grid()
+	elif child.card.type_item:
+		child.reparent(in_play_items)
+		in_play_items.update_cards_grid()
+	elif child.card.type_lesson:
+		in_play_lessons.reparent_card_to_in_play_lessons(child)
+	elif child.card.type_adventure:
+		child.reparent(in_play_adventure)
+		in_play_adventure.update_cards_grid()
+	else:
+		child.reparent_requested_hand.emit(self)
+		return
+	
+
 
 func _on_card_resolved(resolved_card: Card) -> void:
 	if resolved_card.type_spell:

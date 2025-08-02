@@ -34,13 +34,17 @@ func enter() -> void:
 	# Clear the current card_drop_area so only new valid card_drop_area exist
 	card_ui.card_drop_area.clear()
 	
+	# Connect the card ability signal since it can only be used in play
 	card_ui.card.update_once_per_game_ability_state.connect(_update_update_once_per_game_ability_state)
 	
+	# Debugging print and label
 	print("entered In Play state")
 	card_ui.statetext.text = "In Play"
 	
+	# Call the cards enter play function if it has one
 	card_ui.enter_play()
 	
+	# Update the glow to be standard
 	card_ui.glow_effect.set("theme_override_styles/panel", STANDARD_STYLEBOX)
 	
 	# Set the card_in_play bool to true. 
