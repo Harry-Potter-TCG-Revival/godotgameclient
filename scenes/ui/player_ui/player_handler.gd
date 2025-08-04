@@ -31,7 +31,8 @@ func _ready() -> void:
 		Events.discard_cards_requested.connect(_discard_cards)
 		Events.on_card_draw_button_pressed.connect(_on_card_draw_button_pressed)
 		Events.card_resolved.connect(_on_card_resolved)
-		Events.reparent_card_to_play_requested.connect(reparent_card_to_play)
+		Events.reparent_card_to_play_from_hand_requested.connect(reparent_card_to_play_from_hand)
+	
 
 func start_battle(value: PlayerStats) -> void:
 	player_stats = value
@@ -84,28 +85,51 @@ func _on_card_draw_button_pressed():
 	player_stats.action_count -= 1
 	draw_cards(1)
 
-func reparent_card_to_play(child: CardUI) -> void:
+
+func reparent_card_to_play_from_hand(child: CardUI) -> void:
+	# Add and remove groups
+	if player.is_local_player:
+		child.remove_from_group("local_hand")
+		child.add_to_group("local_inplay")
+	else:
+		child.remove_from_group("remote_hand")
+		child.add_to_group("remote_inplay")
+		child.card_back_image.visible = false
 	# Check Card Type and reparent it to its appropriate spot
 	# Since some cards can have multiple types the order here is important
 	if child.card.type_character:
 		child.reparent(in_play_characters)
-		in_play_characters.update_cards_grid()
+		in_play_characters.update_cards_grid(player.is_local_player)
 	elif child.card.type_creature:
 		child.reparent(in_play_creatures)
-		in_play_creatures.update_cards_grid()
+		in_play_creatures.update_cards_grid(player.is_local_player)
 	elif child.card.type_item:
 		child.reparent(in_play_items)
-		in_play_items.update_cards_grid()
+		in_play_items.update_cards_grid(player.is_local_player)
 	elif child.card.type_lesson:
-		in_play_lessons.reparent_card_to_in_play_lessons(child)
+		in_play_lessons.reparent_card_to_in_play_lessons(child,player.is_local_player)
 	elif child.card.type_adventure:
 		child.reparent(in_play_adventure)
-		in_play_adventure.update_cards_grid()
+		in_play_adventure.update_cards_grid(player.is_local_player)
 	else:
 		child.reparent_requested_hand.emit(self)
 		return
 	
 
+@rpc("any_peer","call_remote","reliable",0)
+func reparent_remote_card_to_play_from_hand(card_name: String) -> void:
+	var remote_card_ui: CardUI
+	var cards_in_remote_hand = get_tree().get_nodes_in_group("remote_hand")
+	
+	# Loop through each card and find the correct name
+	for card in cards_in_remote_hand:
+		if card.name == card_name:
+			remote_card_ui = card
+	
+	# Reparent the cardUI
+	reparent_card_to_play_from_hand(remote_card_ui)
+	# Update the cards in hand layout now that the card is no longer a child of the hand
+	hand._update_cards()
 
 func _on_card_resolved(resolved_card: Card) -> void:
 	if resolved_card.type_spell:

@@ -13,7 +13,7 @@ var child_scale_factor_tight : float = .34
 var child_scaled_size : Vector2
 var card_ui_reference = Global.card_ui_reference
 
-func update_cards_tight() -> void:
+func update_cards_tight(is_local_player: bool) -> void:
 	# Get all children and reset index
 	var child_count := get_child_count()
 	child_array = get_children()
@@ -40,7 +40,11 @@ func update_cards_tight() -> void:
 		i.scale = Vector2(child_scale_factor_tight,child_scale_factor_tight)
 		
 		# Rotate the card 90 degrees. Because card is rotated X and Y are swapped now
-		i.rotation_degrees = 90
+		# Set the card to -90 if its not the local player this points the card to the local player
+		if is_local_player:
+			i.rotation_degrees = 90
+		else:
+			i.rotation_degrees = -90
 		
 		# The pivot offset is always half the card size
 		var child_pivot_offset = card_ui_reference.card_size / 2
@@ -70,7 +74,7 @@ func update_cards_tight() -> void:
 		child_index += 1
 	
 
-func update_cards_grid() -> void:
+func update_cards_grid(is_local_player: bool) -> void:
 	# Get all children and reset index
 	child_array = get_children()
 	child_index = 0
@@ -119,7 +123,11 @@ func update_cards_grid() -> void:
 		i.scale = Vector2(child_scale_factor,child_scale_factor)
 		
 		# Rotate the card 90 degrees. Because card is rotated X and Y are swapped now
-		i.rotation_degrees = 90
+		# Set the card to -90 if its not the local player this points the card to the local player
+		if is_local_player:
+			i.rotation_degrees = 90
+		else:
+			i.rotation_degrees = -90
 		
 		# Find grid position. Column and Row
 		var row : int = child_index / column_count

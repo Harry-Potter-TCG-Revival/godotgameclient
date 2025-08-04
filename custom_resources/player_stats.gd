@@ -7,11 +7,11 @@ extends Stats
 @export var player_avatar: Texture
 @export var card_back: Texture
 
-# These three settings need to get inherited from the game manager
+# Refactor These three settings need to get inherited from the game manager
 # This allows different game modes to exist
 @export var cards_per_turn: int = 1
 @export var cards_in_opening_hand: int = 7
-@export var max_action_count := 2
+@export var max_action_count := 99
 
 
 var action_count: int : set = set_action_count
@@ -23,6 +23,8 @@ var quidditch_power_count: int : set = set_quidditch_power_count
 var total_power_count : int : set = set_total_power_count
 var deck: CardPile
 var discard: CardPile
+
+var cardui_id: int = 0
 
 func set_action_count(value: int) -> void:
 	action_count = value
@@ -80,15 +82,20 @@ func can_play_card(card: Card) -> bool:
 		power_needed_type = quidditch_power_count > 0
 	else : # This is set to true so cards that dont have a power type needed can still be played.
 		power_needed_type = true
-
 	return actions_needed and power_needed and power_needed_type
 	
 
 func create_instance() -> Resource:
 	var instance: PlayerStats = self.duplicate()
 	instance.reset_action_count()
-	# This is just doing main deck, need to figure out sideboard
+	# Refactor This is just doing main deck, need to figure out sideboard
 	instance.deck = instance.selected_deck_list.main_deck.duplicate()
 	instance.deck.shuffle()
 	instance.discard = CardPile.new()
 	return instance
+
+# This function needs to be called whenever a card UI is instantiated to build a unique name
+# Potential Refactor to have name be set in ready function of cardui and not when instantiated
+func request_cardui_id() -> String:
+	cardui_id += 1
+	return str(cardui_id)

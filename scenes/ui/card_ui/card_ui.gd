@@ -24,6 +24,7 @@ var card_size: Vector2 = Vector2(202,280)
 
 @onready var card_visuals = $CardVisuals
 @onready var card_image = $CardVisuals/CardImage
+@onready var card_back_image = $CardVisuals/CardBackImage
 @onready var glow_effect = $CardVisuals/GlowEffect
 @onready var statetext = $CardVisuals/CardImage/StateText
 @onready var drop_point_detector = $CardVisuals/CardImage/DropPointDetector
@@ -37,6 +38,7 @@ var card_size: Vector2 = Vector2(202,280)
 func _ready():
 	# This is temporary code to set to initiate the card state machine, this will happen on battle start
 	card_state_machine.init(self)
+	self.add_to_group("all_card_ui")
 	
 func _on_mouse_entered():
 	card_state_machine.on_mouse_entered()
@@ -50,11 +52,12 @@ func _input(event: InputEvent) -> void:
 func _on_gui_input(event: InputEvent) -> void:
 	card_state_machine.on_gui_input(event)
 
-func animate_to_position(new_position: Vector2, duration: float) -> void:
+func animate_to_position(new_position: Vector2, duration: float,new_rotation) -> void:
 	tween = create_tween().set_trans(Tween.TRANS_CUBIC).set_ease(Tween.EASE_OUT)
+	tween.set_parallel(true)
 	tween.tween_property(self, "global_position", new_position, duration)
+	tween.tween_property(self,"rotation_degrees",new_rotation,duration)
 	await tween.finished
-	
 
 func _set_card(value: Card) -> void:
 	if not is_node_ready():
@@ -79,12 +82,11 @@ func enter_play() -> void:
 	if card.type_spell:
 		return
 	
-	rotation_degrees = 90
 	#custom_minimum_size = size/2
 	#card_image.rotation_degrees = 90
 	#card_image.scale = Vector2(.5,.5)
 	#card_image.position = Vector2(140,0)
-	Events.reparent_card_to_play_requested.emit(self)
+	Events.reparent_card_to_play_from_hand_requested.emit(self)
 	play()
 	card.enter_play(player_stats)
 	card.enter_play_update_power(player_stats)
@@ -111,6 +113,9 @@ func _set_playable(value: bool) -> void:
 	else:
 		glow_effect.set("theme_override_styles/panel", HIGHLIGHT_STYLEBOX)
 	
+
+func set_visuals_for_remote_cardui() -> void:
+	glow_effect.set("theme_override_styles/panel",STANDARD_STYLEBOX)
 
 func _set_player_stats(value: PlayerStats) -> void:
 	player_stats = value

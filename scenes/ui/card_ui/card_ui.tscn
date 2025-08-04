@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=3 uid="uid://cehgiridxlgsn"]
+[gd_scene load_steps=20 format=3 uid="uid://cehgiridxlgsn"]
 
 [ext_resource type="Script" uid="uid://dfnmj7wfkkwiy" path="res://scenes/ui/card_ui/card_ui.gd" id="1_08l4y"]
 [ext_resource type="StyleBox" uid="uid://bqlqn0uoa8lso" path="res://scenes/ui/card_ui/card_ui_selected_stylebox.tres" id="2_nkn0u"]
@@ -6,6 +6,7 @@
 [ext_resource type="Script" uid="uid://e4rygx6v6lg" path="res://scenes/ui/card_ui/card_states/card_state_machine.gd" id="3_vi33c"]
 [ext_resource type="Script" uid="uid://dpc0vaqk2vs8t" path="res://scenes/ui/card_ui/card_states/card_hand_state.gd" id="4_1q5d5"]
 [ext_resource type="Script" uid="uid://nu72cd0eh1ti" path="res://scenes/ui/card_ui/card_states/card_clicked_state.gd" id="5_0cr8k"]
+[ext_resource type="Texture2D" uid="uid://dqtdjy5jd1bd1" path="res://art/cards/card_backs/HPTCG-RevivalBack.png" id="5_o58qg"]
 [ext_resource type="Script" uid="uid://50n1t8fwgots" path="res://scenes/ui/card_ui/card_states/card_dragging_state.gd" id="6_xbgkg"]
 [ext_resource type="Script" uid="uid://i8abfk0o4gc6" path="res://scenes/ui/card_ui/card_hand_base_state.gd" id="7_ssy0k"]
 [ext_resource type="Script" uid="uid://bln0rqlkv028v" path="res://scenes/ui/card_ui/card_states/card_released_state.gd" id="8_eit6f"]
@@ -94,6 +95,16 @@ visible = false
 layout_mode = 1
 rotation = -1.0472
 mouse_filter = 2
+
+[node name="CardBackImage" type="TextureRect" parent="CardVisuals"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("5_o58qg")
+expand_mode = 1
 
 [node name="CardStateMachine" type="Node" parent="." node_paths=PackedStringArray("initial_state")]
 script = ExtResource("3_vi33c")

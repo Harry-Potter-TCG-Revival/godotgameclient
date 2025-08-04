@@ -35,6 +35,7 @@ func enter() -> void:
 	card_ui.card_drop_area.clear()
 	
 	# Connect the card ability signal since it can only be used in play
+	# Refactor This is not needed as a signal anymore since cardui has a pointer to its card.
 	card_ui.card.update_once_per_game_ability_state.connect(_update_update_once_per_game_ability_state)
 	
 	# Debugging print and label
@@ -49,9 +50,11 @@ func enter() -> void:
 	
 	# Set the card_in_play bool to true. 
 	# This is used to identify cards in play without using the state machine
+	# Refactor not sure if this is needed
 	card_ui.card_in_play = true
 	
 	# Add the card to the global "cards_in_play" array
+	# Refactor This could be changed to use a group, each zone could have a group
 	Global.cards_in_play.append(card_ui.card)
 	
 	# Call the initial in play states enter function 
@@ -97,7 +100,7 @@ func _on_card_inplay_state_transition_requested(frominplaystate: CardInPlayState
 	if not new_inplay_state:
 		return
 	
-	# Now that both fromstate and tohandstate are valid, we can begin the transition.
+	# Now that both fromstate and tostate are valid, we can begin the transition.
 	# We must exist the current state first
 	if current_inplay_state:
 		current_inplay_state.exit()

@@ -5,7 +5,7 @@ signal card_drag_started(card_ui: CardUI)
 signal card_drag_ended(card_ui: CardUI)
 signal card_played(card: Card)
 signal card_resolved(card: Card)
-signal reparent_card_to_play_requested(card_ui: CardUI)
+signal reparent_card_to_play_from_hand_requested(card_ui: CardUI)
 signal card_tooltip_popup_requested(card: Card)
 signal card_zone_selection_requested(targets: Array[CardZone.Zone],new_card_played:Card,new_title:String)
 signal card_zone_selection_finished(card_pile: CardPile)
@@ -27,7 +27,9 @@ signal discard_cards_requested(card_pile: CardPile)
 signal player_end_of_turn_start
 signal player_end_of_turn_finished
 signal on_card_draw_button_pressed
-signal card_drawn(card: Card)
+# The card_name is passed here so the RPC can set the same name for the remote node
+# This allows for easier management of remote cards using get_node and card_name.
+signal card_drawn(card: Card,card_name: String)
 
 # Confirmation Events
 signal confirmation_modal_ui_customize(header: String, message: String, confirm_text: String, cancel_text: String)

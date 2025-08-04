@@ -70,6 +70,9 @@ func initialize_card_pile_ui() -> void:
 
 
 func set_starting_character(new_starting_character: Card) -> void:
+	# Rotate the starting character to point to the local player
+	if !is_local_player:
+		card_ui_starting_character.rotation_degrees = -90
 	card_ui_starting_character.Starting_Character = new_starting_character
 
 

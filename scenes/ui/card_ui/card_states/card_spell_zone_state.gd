@@ -11,7 +11,7 @@ func enter() -> void:
 	card_ui.card_drop_area.clear()
 	
 	# Animate Card to Spell Zone
-	await card_ui.animate_to_position(Vector2(1600,400),.6)
+	await card_ui.animate_to_position(Vector2(1600,400),.6,0)
 	
 	# Start resolving the spell
 	card_ui.card.spell_effect(card_ui.player_stats)

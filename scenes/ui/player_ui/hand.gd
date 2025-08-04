@@ -38,23 +38,29 @@ func add_card(card: Card) -> void:
 	new_card_ui.parent = self
 	# Only set player stats for the card if its for the local player
 	# Signals and other functions run when player stats are connected
-	if player.is_local_player:
-		new_card_ui.player_stats = player_stats
-		new_card_ui.card.player_owner = Global.session.username
-		new_card_ui.card.player_controller = Global.session.username
-		new_card_ui.check_playability()
+	new_card_ui.add_to_group("local_hand")
+	new_card_ui.name = Global.session.username + "cardUI" + player_stats.request_cardui_id()
+	print("local card added is named ", new_card_ui.name)
+	new_card_ui.player_stats = player_stats
+	new_card_ui.card.player_owner = Global.session.username
+	new_card_ui.card.player_controller = Global.session.username
+	new_card_ui.card_back_image.visible = false
+	new_card_ui.check_playability()
 	_update_cards()
-	print("Added Card to Hand: ", new_card_ui.card.cardname, " ", new_card_ui.card)
 	# Tell game that you drew a card
-	Events.card_drawn.emit(card)
+	Events.card_drawn.emit(card,new_card_ui.name)
 
 @rpc("any_peer","call_remote","reliable",0)
-func add_remote_card(card_path: String) -> void:
+func add_remote_card(card_path: String,new_card_name: String) -> void:
 	var card : Card = load(card_path)
 	var new_card_ui := CARD_UI_SCENE.instantiate() as CardUI
 	add_child(new_card_ui)
 	new_card_ui.card = card.duplicate()
 	new_card_ui.parent = self
+	new_card_ui.name = new_card_name
+	new_card_ui.add_to_group("remote_hand")
+	new_card_ui.disabled = true
+	new_card_ui.set_visuals_for_remote_cardui()
 	_update_cards()
 
 func discard_card(card_ui_to_discard: CardUI) -> void:
@@ -66,7 +72,6 @@ func _on_card_played(_card: Card) -> void:
 
 func _update_cards() -> void:
 	var hand_size := get_child_count()
-	print("Hand size is ", hand_size)
 	max_rotation_degrees = clamp(hand_size,0,15)
 	y_max = clamp(hand_size * 5,0,50)
 	var total_hand_width := card_ui_reference.card_size.x * hand_size + x_sep * (hand_size - 1)
