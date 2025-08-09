@@ -19,6 +19,7 @@ func _set_player_stats(value: PlayerStats) -> void:
 	player_stats = value
 	
 	if not player_stats.stats_changed.is_connected(_on_stats_changed):
+		# Refactor the player can call this function
 		player_stats.stats_changed.connect(_on_stats_changed)
 	
 	if not is_node_ready():
@@ -49,4 +50,25 @@ func _on_stats_changed() -> void:
 	+ (player_stats.quidditch_power_count)
 	
 	total_power_count.text = "Total Power :" + str(player_stats.total_power_count)
+	total_power_count.visible = totalpower > 0
+
+func update_remote_player_stats(t_power: int,c_power: int,p_power: int,mc_power: int,q_power: int) -> void:
+	transfiguration_power_count.text = str(t_power)
+	transfiguration_power_image.visible = t_power > 0
+	
+	charms_power_count.text = str(c_power)
+	charms_power_image.visible = c_power > 0
+	
+	potions_power_count.text = str(p_power)
+	potions_power_image.visible = p_power > 0
+	
+	care_of_magical_creatures_power_count.text = str(mc_power)
+	care_of_magical_creatures_power_image.visible = mc_power > 0
+	
+	quidditch_power_count.text = str(q_power)
+	quidditch_power_image.visible = q_power > 0
+	
+	var totalpower = (t_power) + (c_power) + (p_power) + (mc_power) + (q_power)
+	
+	total_power_count.text = "Total Power :" + str(totalpower)
 	total_power_count.visible = totalpower > 0

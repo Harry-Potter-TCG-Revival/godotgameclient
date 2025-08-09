@@ -14,3 +14,12 @@ func _set_player_stats(value: PlayerStats) -> void:
 	player_stats = value
 	action_stats_ui.player_stats = player_stats
 	power_stats_ui.player_stats = player_stats
+
+@rpc("any_peer","call_remote","reliable",0)
+func update_remote_player_stats(t_power: int,c_power: int,p_power: int,mc_power: int,q_power: int,
+	max_action_count: int,action_count: int) -> void:
+		# Tell the action stats UI to update the visuals this runs even if the number is the same
+		action_stats_ui.update_remote_player_stats(max_action_count,action_count)
+		
+		# Tell the power stats UI to update the visuals this runs even if the numbers are the same
+		power_stats_ui.update_remote_player_stats(t_power,c_power,p_power,mc_power,q_power)

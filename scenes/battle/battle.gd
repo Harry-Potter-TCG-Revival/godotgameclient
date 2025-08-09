@@ -23,6 +23,7 @@ func _ready() -> void:
 	Events.opponent_turn_ended.connect(_opponent_turn_ended)
 	Events.card_drawn.connect(_on_card_drawn)
 	Events.reparent_card_to_play_from_hand_requested.connect(_on_reparent_card_to_play_from_hand_requested)
+	Events.update_remote_player_stats.connect(_on_update_remote_player_stats_requested)
 	
 	# This is temporary to make the opponents turn not end immediately
 	turn_indicator_animation.connect("animation_finished",_opponent_turn_ended)
@@ -72,3 +73,9 @@ func _on_card_drawn(value: Card,card_name: String):
 func _on_reparent_card_to_play_from_hand_requested(value: CardUI):
 	# Pass the node name to allow the remote player to find the name by name and move it
 	remote_player.player_handler.reparent_remote_card_to_play_from_hand.rpc(value.name)
+
+func _on_update_remote_player_stats_requested(t_power: int,c_power: int,p_power: int,mc_power: int,q_power: int,
+	max_action_count: int,action_count: int) -> void:
+	# Tell the remote player to update the stats, this updates the visuals
+	remote_player.player_stats_ui.update_remote_player_stats.rpc(t_power,c_power,p_power,mc_power,q_power,
+	max_action_count,action_count)

@@ -60,8 +60,14 @@ func update_player() -> void:
 
 
 func update_player_stats() -> void:
-	# This might not be needed since a setter function is being used to update player stats
-	pass
+	Events.update_remote_player_stats.emit(
+		player_stats.transfiguration_power_count,
+		player_stats.charms_power_count,
+		player_stats.potions_power_count,
+		player_stats.care_of_magical_creatures_power_count,
+		player_stats.quidditch_power_count,
+		player_stats.max_action_count,
+		player_stats.action_count)
 
 
 func initialize_card_pile_ui() -> void:

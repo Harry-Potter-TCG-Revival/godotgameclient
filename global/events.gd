@@ -30,6 +30,15 @@ signal on_card_draw_button_pressed
 # The card_name is passed here so the RPC can set the same name for the remote node
 # This allows for easier management of remote cards using get_node and card_name.
 signal card_drawn(card: Card,card_name: String)
+signal update_remote_player_stats(
+	transfiguration_power_count: int,
+	charms_power_count: int,
+	potions_power_count: int,
+	care_of_magical_creatures_power_count: int,
+	quidditch_power_count: int,
+	max_action_count: int,
+	action_count: int
+)
 
 # Confirmation Events
 signal confirmation_modal_ui_customize(header: String, message: String, confirm_text: String, cancel_text: String)

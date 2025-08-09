@@ -108,6 +108,7 @@ func _on_card_ui_reparent_requested_hand(child: CardUI) -> void:
 func _set_player_stats(value: PlayerStats):
 	player_stats = value
 	if not player_stats.stats_changed.is_connected(_on_player_stats_changed):
+		# Refactor the player can call this function
 		player_stats.stats_changed.connect(_on_player_stats_changed)
 
 func _on_player_stats_changed():

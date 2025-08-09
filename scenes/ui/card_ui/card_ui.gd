@@ -160,6 +160,7 @@ func _on_card_drag_ended(_card: CardUI) -> void:
 
 func _on_player_stats_changed() -> void:
 	# Only need to check the playability of cards that are in the hand
+	# Refactor use node group not card_in_hand bool
 	if self.card_in_hand:
 		check_playability()
 

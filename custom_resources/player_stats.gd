@@ -11,7 +11,7 @@ extends Stats
 # This allows different game modes to exist
 @export var cards_per_turn: int = 1
 @export var cards_in_opening_hand: int = 7
-@export var max_action_count := 99
+@export var max_action_count : int = 99
 
 
 var action_count: int : set = set_action_count

@@ -14,6 +14,7 @@ func _set_player_stats(value: PlayerStats) -> void:
 	player_stats = value
 	
 	if not player_stats.stats_changed.is_connected(_on_action_stats_changed):
+		# Refactor the player can call this function
 		player_stats.stats_changed.connect(_on_action_stats_changed)
 	
 	if not is_node_ready():
@@ -32,3 +33,6 @@ func _on_action_stats_changed() -> void:
 	if out_of_actions and player_stats.action_count >= 1:
 		out_of_actions = false
 		Events.not_out_of_actions.emit()
+
+func update_remote_player_stats(max_action_count:int,action_count:int) -> void:
+	action_label.text = "%s / %s" % [action_count, max_action_count]
