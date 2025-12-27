@@ -1,7 +1,13 @@
+res://
+res://art/backgrounds
+res://scenes/battle/PlayerReadyCheck
+res://custom_resources/Themes
+res://scenes/ui/player_ui/player_turn_ui
+res://cards/images
+C:/Users/Griffin/Godot/hptcg_nakama/godotgameclient/export/web
 res://scenes/ui/card_pile_ui/card_pile_view_ui
 res://scenes/ui/card_pile_ui/card_pile_select_ui
 res://scenes/ui/card_zone_ui
-res://cards/images
 res://scenes/ui/card_ui/card_selection_ui
 res://scenes/ui/confirmation_modal_ui
 res://scenes/ui/card_ui/card_tooltip_ui
@@ -11,12 +17,6 @@ res://art/card_piles
 res://art/player_avatars
 res://scenes/ui/card_ui/card_states
 res://scenes/ui
-res://
 res://scenes/deck_menu
 res://custom_resources
 res://global
-res://scenes
-res://scenes/battle
-res://node_settings
-res://scenes/main_menu
-res://fonts

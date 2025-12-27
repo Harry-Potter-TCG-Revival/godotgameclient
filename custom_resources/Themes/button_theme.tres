@@ -1,0 +1,35 @@
+[gd_resource type="Theme" load_steps=4 format=3 uid="uid://c2pq1yklfe7an"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_hdcg2"]
+bg_color = Color(0.180392, 0.160784, 0.168627, 1)
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_kbbfr"]
+bg_color = Color(0.172549, 0.305882, 0.352941, 1)
+border_width_left = 5
+border_width_top = 5
+border_width_right = 5
+border_width_bottom = 5
+border_color = Color(0.87451, 0.741176, 0.411765, 1)
+border_blend = true
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
+shadow_color = Color(0.572549, 0.435294, 0.203922, 1)
+shadow_size = 5
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_us63m"]
+bg_color = Color(0.172549, 0.305882, 0.352941, 1)
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
+
+[resource]
+Button/styles/disabled = SubResource("StyleBoxFlat_hdcg2")
+Button/styles/hover = SubResource("StyleBoxFlat_kbbfr")
+Button/styles/normal = SubResource("StyleBoxFlat_us63m")

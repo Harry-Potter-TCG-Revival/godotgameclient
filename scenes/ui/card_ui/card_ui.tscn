@@ -23,7 +23,7 @@
 size = Vector2(202, 280)
 
 [node name="CardUI" type="Panel"]
-custom_minimum_size = Vector2(202, 280)
+custom_minimum_size = Vector2(101, 140)
 offset_right = 202.0
 offset_bottom = 280.0
 pivot_offset = Vector2(101, 140)

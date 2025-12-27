@@ -1,7 +1,7 @@
 [gd_resource type="Resource" script_class="Card" load_steps=3 format=3 uid="uid://dhw0m76dnyia1"]
 
 [ext_resource type="Script" uid="uid://bmur1pagjicpt" path="res://custom_resources/card.gd" id="1_2jy58"]
-[ext_resource type="Texture2D" uid="uid://bw6nq5t8035rh" path="res://cards/images/RubeusHagrid.png" id="1_7wnk7"]
+[ext_resource type="Texture2D" uid="uid://c6oabaaeye2ie" path="res://cards/images/018-Base-RubeusHagrid-min.png" id="1_17ahw"]
 
 [resource]
 script = ExtResource("1_2jy58")
@@ -52,5 +52,7 @@ rulestexteffect = "Whenever 1 of your Creatures does 3 or more damage to your op
 rulestexttoSolve = ""
 rulestextreward = ""
 flavortext = "'Hagrid's beard twitched and they could tell he was smiling.'"
-card_image = ExtResource("1_7wnk7")
+card_image = ExtResource("1_17ahw")
 is_valid_choice = false
+player_owner = ""
+player_controller = ""

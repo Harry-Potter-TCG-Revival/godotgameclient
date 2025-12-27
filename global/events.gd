@@ -1,4 +1,8 @@
+# Events
 extends Node
+
+# Battle Related Events
+signal increment_turn_count
 
 # Card Related Events
 signal card_drag_started(card_ui: CardUI)
@@ -16,16 +20,17 @@ signal card_pile_selection_requested(new_card_played: Card, new_card_pile: CardP
 signal card_pile_selection_finished(card_pile: CardPile)
 
 # Player Related Events
-# need to adjust each signal to include playerid
-signal draw_step_completed
+# need to adjust each signal to include playerid (maybe)
+signal player_turn_ended
+signal ready_to_start_match(id,turn_order_roll: int)
+signal current_turn_step_changed(new_state: TurnStepState)
+signal initial_turn_step_entered(initial_state: TurnStepState)
 signal out_of_actions
 signal not_out_of_actions
 signal draw_cards_requested(amount: int)
 signal draw_specific_cards_requested(card_pile: CardPile)
 signal discard_card_requested(card: Card)
 signal discard_cards_requested(card_pile: CardPile)
-signal player_end_of_turn_start
-signal player_end_of_turn_finished
 signal on_card_draw_button_pressed
 # The card_name is passed here so the RPC can set the same name for the remote node
 # This allows for easier management of remote cards using get_node and card_name.
@@ -44,9 +49,6 @@ signal update_remote_player_stats(
 signal confirmation_modal_ui_customize(header: String, message: String, confirm_text: String, cancel_text: String)
 signal confirmation_modal_ui_prompt(pause: bool)
 signal confirmation_modal_ui_response(answer: bool)
-
-# Opponent Related Events
-signal opponent_turn_ended
 
 # Card Selection Related Events
 #signal selected_cards_updated

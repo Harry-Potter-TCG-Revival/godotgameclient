@@ -1,0 +1,205 @@
+[gd_scene load_steps=9 format=3 uid="uid://cvlglqs5k5bf0"]
+
+[ext_resource type="FontFile" uid="uid://dvqtymqwhgi03" path="res://fonts/HARRYP__.TTF" id="1_le1xi"]
+[ext_resource type="Script" uid="uid://67jev2aj4avm" path="res://scenes/battle/PlayerReadyCheck/player_ready_check.gd" id="1_us63m"]
+[ext_resource type="Texture2D" uid="uid://db0motjj8si61" path="res://art/icons/Icon_D20.png" id="2_kbbfr"]
+[ext_resource type="Texture2D" uid="uid://btrfts84g8jjb" path="res://art/backgrounds/4.17 Fleur Delacour - Beauxbaton Carriage Winged Horses B4C15M1.jpg" id="2_wvckg"]
+[ext_resource type="Theme" uid="uid://c2pq1yklfe7an" path="res://custom_resources/Themes/button_theme.tres" id="3_us63m"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_le1xi"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+border_width_left = 5
+border_width_top = 5
+border_width_right = 5
+border_width_bottom = 5
+border_color = Color(0.172549, 0.305882, 0.352941, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_wvckg"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+border_width_left = 5
+border_width_top = 5
+border_width_right = 5
+border_width_bottom = 5
+border_color = Color(0.172549, 0.305882, 0.352941, 1)
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
+
+[sub_resource type="LabelSettings" id="LabelSettings_kbbfr"]
+font = ExtResource("1_le1xi")
+font_size = 50
+
+[node name="PlayerReadyCheck" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_us63m")
+
+[node name="Background" type="TextureRect" parent="."]
+layout_mode = 1
+offset_left = -316.0
+offset_top = -23.0
+offset_right = 2456.0
+offset_bottom = 1119.0
+texture = ExtResource("2_wvckg")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="Overlay" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 0.560784)
+
+[node name="Title" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -243.5
+offset_top = 100.0
+offset_right = 243.5
+offset_bottom = 228.0
+grow_horizontal = 2
+theme_override_fonts/font = ExtResource("1_le1xi")
+theme_override_font_sizes/font_size = 126
+text = "Match Lobby"
+
+[node name="ChosenDeckContainer" type="Panel" parent="."]
+custom_minimum_size = Vector2(540, 500)
+layout_mode = 0
+offset_left = 87.0
+offset_top = 321.0
+offset_right = 627.0
+offset_bottom = 821.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_le1xi")
+
+[node name="Label" type="Label" parent="ChosenDeckContainer"]
+custom_minimum_size = Vector2(540, 500)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -270.5
+offset_top = -250.0
+offset_right = 270.5
+offset_bottom = 250.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("1_le1xi")
+theme_override_font_sizes/font_size = 80
+text = "Deck Chosen
+ (in progress)"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="DieRollContainer" type="Panel" parent="."]
+layout_mode = 2
+offset_left = 688.0
+offset_top = 325.0
+offset_right = 1228.0
+offset_bottom = 825.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_wvckg")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="DieRollContainer"]
+custom_minimum_size = Vector2(540, 500)
+layout_mode = 0
+offset_right = 540.0
+offset_bottom = 500.0
+
+[node name="DiceImage" type="TextureRect" parent="DieRollContainer/VBoxContainer"]
+custom_minimum_size = Vector2(300, 350)
+layout_mode = 2
+size_flags_horizontal = 4
+texture = ExtResource("2_kbbfr")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="DieResult" type="Label" parent="DieRollContainer/VBoxContainer/DiceImage"]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -35.0
+offset_top = -63.0
+offset_right = 35.0
+offset_bottom = 42.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "?"
+label_settings = SubResource("LabelSettings_kbbfr")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="ButtonRollDie" type="Button" parent="DieRollContainer/VBoxContainer"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(300, 70)
+layout_mode = 2
+size_flags_horizontal = 4
+theme = ExtResource("3_us63m")
+theme_override_fonts/font = ExtResource("1_le1xi")
+theme_override_font_sizes/font_size = 45
+text = "Roll To Go First"
+
+[node name="OpponentContainer" type="Panel" parent="."]
+custom_minimum_size = Vector2(540, 500)
+layout_mode = 0
+offset_left = 1287.0
+offset_top = 321.0
+offset_right = 1827.0
+offset_bottom = 821.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_le1xi")
+
+[node name="Label" type="Label" parent="OpponentContainer"]
+custom_minimum_size = Vector2(540, 500)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -270.5
+offset_top = -250.0
+offset_right = 270.5
+offset_bottom = 250.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("1_le1xi")
+theme_override_font_sizes/font_size = 80
+text = "Opponent
+ (in progress)"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="ButtonReady" type="Button" parent="."]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -287.0
+offset_top = -188.0
+offset_right = 287.0
+offset_bottom = -34.0
+grow_horizontal = 2
+grow_vertical = 0
+theme = ExtResource("3_us63m")
+theme_override_fonts/font = ExtResource("1_le1xi")
+theme_override_font_sizes/font_size = 126
+text = "Ready"
+
+[connection signal="pressed" from="DieRollContainer/VBoxContainer/ButtonRollDie" to="." method="_on_button_roll_die_pressed"]
+[connection signal="pressed" from="ButtonReady" to="." method="_on_button_ready_pressed"]

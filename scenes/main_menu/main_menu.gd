@@ -65,6 +65,7 @@ func setupMutilplayerBridge():
 		
 		var created_bridge_properties_json = JSON.stringify(created_bridge_properties)
 		
+		# Create public storage object for match
 		var _created_bridge_storage = await  Global.client.write_storage_objects_async(
 			Global.session,[
 				NakamaWriteStorageObject.new(
@@ -99,14 +100,18 @@ func _on_peer_connected(id):
 		
 		Global.players_in_match[id] = {
 			"player_id" : id,
-			"player_username" : connected_peer_info.username
+			"player_username" : connected_peer_info.username,
+			"ready_status" : 0,
+			"turn_order_roll" : 0
 		}
 	
 	# Check for and add the host
 	if !Global.players_in_match.has(multiplayer.get_unique_id()):
 		Global.players_in_match[multiplayer.get_unique_id()] = {
 			"player_id" : multiplayer.get_unique_id(),
-			"player_username" : Global.session.username
+			"player_username" : Global.session.username,
+			"ready_status" : 0,
+			"turn_order_roll" : 0
 		}
 	
 	# Set the Nakama Unique ID to the Player ID
@@ -118,13 +123,13 @@ func _on_peer_connected(id):
 		if Global.players_in_match.size() == 2:
 			# do rpc to send and receive player stats before starting match
 			# example - https://docs.godotengine.org/en/stable/tutorials/networking/high_level_multiplayer.html#example-lobby-implementation
-			start_match.rpc()
+			go_to_battle_scene.rpc()
 
 func _on_peer_disconnected(id):
 	print("Peer disconnected id : " + str(id))
 
 @rpc("any_peer","call_local", "reliable",0)
-func start_match():
+func go_to_battle_scene():
 	# Move players to battle scene
 	get_tree().change_scene_to_packed(BATTLE_SCENE)
 

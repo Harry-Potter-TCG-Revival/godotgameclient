@@ -1,7 +1,8 @@
-[gd_scene load_steps=16 format=3 uid="uid://bsjlokyh741yx"]
+[gd_scene load_steps=17 format=3 uid="uid://bsjlokyh741yx"]
 
 [ext_resource type="Script" uid="uid://cmxi4ipd8betv" path="res://scenes/battle/battle.gd" id="1_2csfe"]
 [ext_resource type="Texture2D" uid="uid://btrfts84g8jjb" path="res://art/backgrounds/4.17 Fleur Delacour - Beauxbaton Carriage Winged Horses B4C15M1.jpg" id="1_crh7g"]
+[ext_resource type="PackedScene" uid="uid://cvlglqs5k5bf0" path="res://scenes/battle/PlayerReadyCheck/player_ready_check.tscn" id="4_fisqk"]
 [ext_resource type="PackedScene" uid="uid://bu6xir8f2j3bw" path="res://scenes/ui/player_ui/player.tscn" id="4_l0wvf"]
 [ext_resource type="PackedScene" uid="uid://blxedqt0ivo76" path="res://scenes/ui/card_pile_ui/card_pile_view_ui/card_pile_view.tscn" id="5_3g8tf"]
 [ext_resource type="PackedScene" uid="uid://dp4y6g58efx7k" path="res://scenes/ui/card_ui/card_tooltip_ui/card_tool_tip_popup.tscn" id="6_b47nt"]
@@ -273,9 +274,9 @@ debug_color = Color(0, 0.6, 0.701961, 0.152941)
 [node name="RemotePlayer" parent="." instance=ExtResource("4_l0wvf")]
 unique_name_in_owner = true
 offset_left = 0.0
-offset_top = 168.0
+offset_top = 170.0
 offset_right = 1920.0
-offset_bottom = 708.0
+offset_bottom = 710.0
 rotation = 3.14159
 
 [node name="PlayerDivider" type="ColorRect" parent="."]
@@ -295,6 +296,11 @@ offset_right = 1920.0
 offset_bottom = 1077.0
 grow_horizontal = 1
 is_local_player = true
+
+[node name="PlayerReadyCheck" type="CanvasLayer" parent="."]
+
+[node name="PlayerReadyCheck" parent="PlayerReadyCheck" instance=ExtResource("4_fisqk")]
+visible = false
 
 [node name="InspectionViews" type="CanvasLayer" parent="."]
 layer = 2
@@ -320,10 +326,11 @@ script = null
 [node name="CardZoneSelection" parent="ConfirmationViews" instance=ExtResource("9_hc0u0")]
 visible = false
 
-[node name="TurnandPhaseInfo" type="CanvasLayer" parent="."]
+[node name="TurnandPhaseAnimations" type="CanvasLayer" parent="."]
 layer = 3
 
-[node name="TurnIndicator" type="ColorRect" parent="TurnandPhaseInfo"]
+[node name="TurnIndicator" type="ColorRect" parent="TurnandPhaseAnimations"]
+unique_name_in_owner = true
 offset_left = 660.0
 offset_top = 514.0
 offset_right = 1380.0
@@ -331,13 +338,13 @@ offset_bottom = 594.0
 scale = Vector2(1, 0.1)
 color = Color(0, 0, 0, 0.772549)
 
-[node name="Bolts" type="TextureRect" parent="TurnandPhaseInfo/TurnIndicator"]
+[node name="Bolts" type="TextureRect" parent="TurnandPhaseAnimations/TurnIndicator"]
 layout_mode = 0
 offset_right = 40.0
 offset_bottom = 40.0
 texture = ExtResource("10_nu2is")
 
-[node name="YourTurnLabel" type="Label" parent="TurnandPhaseInfo/TurnIndicator"]
+[node name="YourTurnLabel" type="Label" parent="TurnandPhaseAnimations/TurnIndicator"]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -353,7 +360,7 @@ grow_vertical = 2
 text = "Your Turn"
 label_settings = ExtResource("11_8anqb")
 
-[node name="OpponentTurnLabel" type="Label" parent="TurnandPhaseInfo/TurnIndicator"]
+[node name="OpponentTurnLabel" type="Label" parent="TurnandPhaseAnimations/TurnIndicator"]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -369,7 +376,8 @@ grow_vertical = 2
 text = "Opponents Turn"
 label_settings = ExtResource("11_8anqb")
 
-[node name="TurnIndicatorAnimation" type="AnimationPlayer" parent="TurnandPhaseInfo/TurnIndicator"]
+[node name="TurnIndicatorAnimation" type="AnimationPlayer" parent="TurnandPhaseAnimations/TurnIndicator"]
+unique_name_in_owner = true
 root_node = NodePath("../OpponentTurnLabel")
 libraries = {
 &"": SubResource("AnimationLibrary_ay4by")

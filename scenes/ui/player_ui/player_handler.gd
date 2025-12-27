@@ -4,8 +4,12 @@ extends Node
 const HAND_DRAW_INTERVAL := 1
 const HAND_DISCARD_INTERVAL := 0.25
 
+var is_local_player : bool
+
 @export var hand: Hand
 @export var player_stats: PlayerStats
+@onready var turn_step_ui = %TurnStepUI
+
 
 # turned off until it gets moved and setup as a signal
 #@onready var turn_indicator_animation = %TurnIndicatorAnimation
@@ -25,6 +29,8 @@ var cards_in_play : Array[Card]
 func _ready() -> void:
 	# Only connect events if controlling local player
 	if player.is_local_player:
+		Events.initial_turn_step_entered.connect(_on_initial_turn_step_entered)
+		Events.current_turn_step_changed.connect(_on_current_turn_step_changed)
 		Events.draw_cards_requested.connect(draw_cards)
 		Events.draw_specific_cards_requested.connect(draw_specific_cards)
 		Events.discard_card_requested.connect(_discard_card)
@@ -37,20 +43,104 @@ func _ready() -> void:
 func start_battle(value: PlayerStats) -> void:
 	player_stats = value
 	hand.player_stats = value
-	#player_stats.deck = 
-	#player_stats.deck
-	#player_stats.deck.shuffle()
-	#player_stats.discard = CardPile.new()
 	draw_opening_hand()
 
 func draw_opening_hand():
 	draw_cards(player_stats.cards_in_opening_hand)
-	start_turn()
+	# Setup mulligan function
+	#start_turn()
+
+func _on_initial_turn_step_entered(initial_state: TurnStepState) -> void:
+	# Depending on what state we are in, call the correct function
+	match initial_state.state:
+		TurnStepState.State.BEFOREYOURTURN:
+			_on_before_your_turn_step_started()
+		TurnStepState.State.OPPONENTSTURN:
+			# Both players have already entered into their initial state, no need to pass that info over the network
+			pass
+		
+	
+
+func _on_current_turn_step_changed(new_state: TurnStepState) -> void:
+	# Depending on what state we are in, call the correct function
+	match new_state.state:
+		TurnStepState.State.BEFOREYOURTURN:
+			_on_before_your_turn_step_started()
+		TurnStepState.State.DRAW:
+			_on_draw_step_started()
+		TurnStepState.State.CREATUREDAMAGE:
+			_on_creature_damage_step_started()
+		TurnStepState.State.ACTION:
+			_on_action_step_started()
+		TurnStepState.State.ENDOFYOURTURN:
+			_on_end_of_your_turn_step_started()
+		TurnStepState.State.OPPONENTSTURN:
+			# Tell the battle manager this player has ended their turn
+			Events.player_turn_ended.emit()
+		
+	
+
+@rpc("any_peer","call_remote","reliable",0)
+func _on_remote_current_turn_step_changed(new_state_int: TurnStepState.State) -> void:
+	# Convert the integer to the actual state
+	print("the remotely called new state is ", new_state_int)
+	var new_state = TurnStepState.State.keys()[new_state_int]
+	print("the remotely called index state is ", new_state_int)
+	_on_current_turn_step_changed(new_state)
+
+func _on_before_your_turn_step_started() -> void:
+	# Reset Player Action Count to 2
+	player_stats.reset_action_count()
+	
+	# Check registered cards for before your turn effects
+	# Set Action Count to 1 if less than 1
+	# Now that this step is done let the UI know
+	turn_step_ui.current_state_ready_to_exit()
+
+func _on_draw_step_started() -> void:
+	# Draw for draw step
+	draw_cards_in_draw_step(player_stats.cards_per_turn)
+	# Check registered cards for draw step effects
+	# Now that this step is done let the UI know
+	turn_step_ui.current_state_ready_to_exit()
+
+func _on_creature_damage_step_started() -> void:
+	# Let the player use abilities that don't require actions
+	player_stats.can_activate_abilities = true
+	
+	# Need to have cards in play re-check playability at this point
+	# Creatures do damage (one at a time)
+	# Check registered cards for creature damage step effects
+	# Now that this step is done let the UI know
+	turn_step_ui.current_state_ready_to_exit()
+
+func _on_action_step_started() -> void:
+	# Let the player use actions
+	player_stats.can_use_actions = true
+	
+	# Check what cards in hand can be played now
+	hand.check_cards_in_hand_playability()
+	
+	# Check registered cards for action step effects
+	# Now that this step is done let the UI know
+	turn_step_ui.current_state_ready_to_exit()
+
+func _on_end_of_your_turn_step_started() -> void:
+	# Block the player from using actions or activating abilities
+	player_stats.can_activate_abilities = false
+	player_stats.can_use_actions = false
+	
+	# Check what cards in hand can be played now
+	hand.check_cards_in_hand_playability()
+	# Need to have cards in play re-check playability at this point
+	
+	# Check registered cards for end of your turn effects
+	# Now that this step is done let the UI know
+	turn_step_ui.current_state_ready_to_exit()
 
 func start_turn() -> void:
-	#turn_indicator_animation.play("show_and_hide_your_turn")
-	player_stats.reset_action_count()
-	draw_cards_in_draw_step(player_stats.cards_per_turn)
+	pass
+	
 
 func draw_card() -> void:
 	hand.add_card(player_stats.deck.draw_card())
@@ -69,9 +159,6 @@ func draw_cards_in_draw_step(amount: int) -> void:
 		tween.tween_callback(draw_card)
 		tween.tween_interval(HAND_DRAW_INTERVAL)
 	
-	tween.finished.connect(
-		func(): Events.draw_step_completed.emit()
-	)
 
 func draw_specific_card(card_to_draw: Card) -> void:
 	hand.add_card(player_stats.deck.draw_specific_card(card_to_draw))
@@ -157,7 +244,4 @@ func _discard_cards(cards_to_discard: CardPile):
 	for card_to_discard in cards_to_discard.cards:
 		_discard_card(card_to_discard)
 		await get_tree().create_timer(HAND_DISCARD_INTERVAL).timeout
-
-func end_turn() -> void:
-	# Have end of turn effects be coded here
-	Events.player_end_of_turn_finished.emit()
+	

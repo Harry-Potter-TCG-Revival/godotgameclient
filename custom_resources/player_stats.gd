@@ -13,7 +13,8 @@ extends Stats
 @export var cards_in_opening_hand: int = 7
 @export var max_action_count : int = 99
 
-
+var can_activate_abilities : bool
+var can_use_actions : bool
 var action_count: int : set = set_action_count
 var transfiguration_power_count: int : set = set_transifiguration_power_count
 var potions_power_count: int : set = set_potions_power_count
@@ -82,7 +83,7 @@ func can_play_card(card: Card) -> bool:
 		power_needed_type = quidditch_power_count > 0
 	else : # This is set to true so cards that dont have a power type needed can still be played.
 		power_needed_type = true
-	return actions_needed and power_needed and power_needed_type
+	return actions_needed and power_needed and power_needed_type and can_use_actions
 	
 
 func create_instance() -> Resource:

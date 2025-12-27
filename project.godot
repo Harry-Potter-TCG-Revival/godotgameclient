@@ -24,12 +24,19 @@ Events="*res://global/events.gd"
 [debug]
 
 gdscript/warnings/unused_signal=0
+gdscript/warnings/integer_division=0
 
 [display]
 
 window/size/viewport_width=1920
 window/size/viewport_height=1080
 window/size/mode=3
+
+[importer_defaults]
+
+texture={
+&"mipmaps/generate": true
+}
 
 [input]
 
@@ -48,3 +55,8 @@ right_mouse={
 
 2d_physics/layer_1="card_ui"
 2d_physics/layer_2="card_drop_area"
+
+[rendering]
+
+renderer/rendering_method="gl_compatibility"
+renderer/rendering_method.mobile="gl_compatibility"

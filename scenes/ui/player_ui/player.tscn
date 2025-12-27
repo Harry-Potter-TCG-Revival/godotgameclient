@@ -1,4 +1,4 @@
-[gd_scene load_steps=36 format=3 uid="uid://bu6xir8f2j3bw"]
+[gd_scene load_steps=37 format=3 uid="uid://bu6xir8f2j3bw"]
 
 [ext_resource type="Script" uid="uid://47qmqjrcynap" path="res://scenes/ui/player_ui/player.gd" id="1_cx6v1"]
 [ext_resource type="Script" uid="uid://b7vl30h7n28q2" path="res://scenes/ui/player_ui/player_handler.gd" id="2_7ibms"]
@@ -19,6 +19,7 @@
 [ext_resource type="Script" uid="uid://c02gd2xora3oi" path="res://scenes/ui/player_ui/card_draw_button.gd" id="17_0tk7g"]
 [ext_resource type="PackedScene" uid="uid://dtqq27f5rwlw3" path="res://scenes/ui/player_ui/in_play_lessons.tscn" id="17_8qfk7"]
 [ext_resource type="Script" uid="uid://d3umfnxw3s3ha" path="res://scenes/ui/player_ui/hand.gd" id="18_cgv32"]
+[ext_resource type="PackedScene" uid="uid://b0y0wl0v7a7jd" path="res://scenes/ui/player_ui/player_turn_ui/turn_step_ui.tscn" id="19_8cjni"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_hksab"]
 font_color = Color(0, 0, 0, 1)
@@ -277,11 +278,13 @@ offset_bottom = 165.0
 texture_normal = ExtResource("14_owobt")
 
 [node name="StatsUIContainer" type="VBoxContainer" parent="LeftPlayArea/PlayerStats/PlayerStatsUI"]
+unique_name_in_owner = true
 layout_mode = 2
 offset_left = 262.0
 offset_top = 4.0
 offset_right = 412.0
 offset_bottom = 166.0
+pivot_offset = Vector2(108, 81)
 size_flags_vertical = 4
 alignment = 1
 
@@ -612,13 +615,14 @@ self_modulate = Color(1, 1, 1, 0)
 custom_minimum_size = Vector2(430, 100)
 layout_mode = 2
 
-[node name="EndTurnButton" type="Button" parent="BottomPlayArea/TurnPhaseContainer"]
+[node name="VBoxContainer" type="VBoxContainer" parent="BottomPlayArea/TurnPhaseContainer"]
+layout_mode = 2
+size_flags_horizontal = 8
+
+[node name="TurnStepUI" parent="BottomPlayArea/TurnPhaseContainer/VBoxContainer" instance=ExtResource("19_8cjni")]
 unique_name_in_owner = true
-custom_minimum_size = Vector2(200, 50)
 layout_mode = 2
 size_flags_horizontal = 4
-size_flags_vertical = 4
-text = "End Turn"
 
 [node name="Hand" type="ColorRect" parent="." groups=["player_hand"]]
 unique_name_in_owner = true
@@ -641,6 +645,5 @@ hand_curve = SubResource("Curve_bhrry")
 rotation_curve = SubResource("Curve_nuva3")
 
 [connection signal="pressed" from="LeftPlayArea/PlayerStats/PlayerStatsUI/DeckButton/CardDrawButton" to="." method="_on_card_draw_button_pressed"]
-[connection signal="pressed" from="BottomPlayArea/TurnPhaseContainer/EndTurnButton" to="." method="_on_end_turn_button_pressed"]
 [connection signal="mouse_entered" from="Hand" to="Hand" method="_on_mouse_entered"]
 [connection signal="mouse_exited" from="Hand" to="Hand" method="_on_mouse_exited"]

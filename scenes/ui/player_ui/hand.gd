@@ -32,7 +32,7 @@ func add_card(card: Card) -> void:
 	var new_card_ui := CARD_UI_SCENE.instantiate() as CardUI
 	add_child(new_card_ui)
 	new_card_ui.reparent_requested_hand.connect(_on_card_ui_reparent_requested_hand)
-	# The card here is duplicated to make the same cards do not share the same resource
+	# The card here is duplicated to make sure the same cards do not share the same resource
 	new_card_ui.card = card.duplicate()
 	new_card_ui.card.card_ui = new_card_ui
 	new_card_ui.parent = self
@@ -112,9 +112,9 @@ func _set_player_stats(value: PlayerStats):
 		player_stats.stats_changed.connect(_on_player_stats_changed)
 
 func _on_player_stats_changed():
-	_check_cards_in_hand_playability()
+	check_cards_in_hand_playability()
 
-func _check_cards_in_hand_playability():
+func check_cards_in_hand_playability():
 	# This will set the cards playable border
 	for child in get_children():
 		if child is CardUI:

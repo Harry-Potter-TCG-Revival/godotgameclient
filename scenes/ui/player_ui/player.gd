@@ -7,16 +7,16 @@ extends Panel
 # Set if this is controlling the remote or local player
 @export var is_local_player: bool
 
-# Non Play Area
+# Non Play Areas
 @onready var player_handler = $PlayerHandler
 @onready var hand = %Hand
 @onready var player_avatar = %PlayerAvatar
 @onready var player_name = %PlayerName
 @onready var player_stats_ui = %PlayerStatsUI
-@onready var end_turn_button = %EndTurnButton
 @onready var card_draw_button = %CardDrawButton
 @onready var deck_button = %DeckButton
 @onready var discard_button = %DiscardButton
+@onready var turn_step_ui = %TurnStepUI
 
 
 # Play Area
@@ -34,8 +34,12 @@ extends Panel
 func _ready() -> void:
 	# Only connect events if controlling local player
 	if is_local_player:
-		Events.draw_step_completed.connect(_on_draw_step_completed)
-
+		player_handler.is_local_player = true
+		# Maybe set is_local_plater turn turnstepui here, instead of parameter as part of initialize state machine
+	else:
+		# Setup visuals for remote player
+		player_stats_ui.set_remote_player_visuals()
+	
 
 func _set_player_stats(value: PlayerStats) -> void:
 	player_stats = value
@@ -68,6 +72,7 @@ func update_player_stats() -> void:
 		player_stats.quidditch_power_count,
 		player_stats.max_action_count,
 		player_stats.action_count)
+	
 
 
 func initialize_card_pile_ui() -> void:
@@ -83,6 +88,7 @@ func set_starting_character(new_starting_character: Card) -> void:
 
 
 func take_damage(_damage: int) -> void:
+	# This is not being used and needs to be re-done
 	player_stats.take_damage()
 
 
@@ -106,17 +112,6 @@ func discard_card(card_ui_to_discard: CardUI) -> void:
 		
 	
 
-
-func _on_end_turn_button_pressed() -> void:
-	end_turn_button.disabled = true
-	Events.player_end_of_turn_start.emit()
-
-
 func _on_card_draw_button_pressed() -> void:
+	# move to turn step ui
 	Events.on_card_draw_button_pressed.emit()
-
-
-func _on_draw_step_completed() -> void:
-	end_turn_button.disabled = false
-	# Need to add more pieces to this
-	# More than the button gets enabled, like action usage
