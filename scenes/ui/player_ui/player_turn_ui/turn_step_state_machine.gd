@@ -21,6 +21,7 @@ func init(turn_step_ui:TurnStepUI) -> void:
 	# Call the initial states enter function
 	# Have to index into the enum here because zero can be a value and zero is a false truthy value
 	if states[initial_state]:
+		# A special enter state is used for start of battle logic
 		states[initial_state].enter_as_initial_state()
 		current_state = states[initial_state]
 	

@@ -4,12 +4,3 @@ res://scenes/ui/player_ui/player.tscn
 res://scenes/ui/player_ui/player_turn_ui/turn_step_ui.tscn
 res://scenes/battle/PlayerReadyCheck/player_ready_check.tscn
 res://testing.tscn
-res://scenes/battle/battle.gd
-res://scenes/ui/player_ui/player_handler.gd
-res://global/events.gd
-res://scenes/ui/player_ui/player.gd
-res://scenes/ui/player_ui/player_turn_ui/opponents_turn_state.gd
-res://scenes/ui/player_ui/player_turn_ui/turn_step_active.tres
-res://scenes/battle/PlayerReadyCheck/player_ready_check.gd
-res://scenes/ui/player_ui/player_turn_ui/turn_step_state_machine.gd
-res://scenes/ui/player_ui/player_turn_ui/before_your_turn_state.gd

@@ -1,11 +1,11 @@
 ea4bc82a6ad023ab7ee23ee620429895
-::res://::1766821232
+::res://::1766860963
 CHANGELOG.md::TextFile/TextFile::-1::1742104097::0::1::::<><><>0<>0<><>::
 export_presets.cfg::TextFile/TextFile::-1::1761112571::0::1::::<><><>0<>0<><>::
 icon.svg::CompressedTexture2D/CompressedTexture2D::1255812641535387210::1742103709::1752987710::1::::<><><>0<>0<>26785ace174a32ee7971f91b1c0251ea<>res://.godot/imported/icon.svg-218a8f2b3041327d8a5756f3a245f83b.ctex::
 README.md::TextFile/TextFile::-1::1742104097::0::1::::<><><>0<>0<><>::
 testing.gd::GDScript/GDScript::6941853891541587999::1766645255::0::1::::<>Node2D<><>0<>0<><>::
-testing.tscn::PackedScene::2531315359878277579::1766821232::0::1::::<><><>0<>0<><>::uid://c55xk4g03q10f::::res://testing.gd
+testing.tscn::PackedScene::2531315359878277579::1766824973::0::1::::<><><>0<>0<><>::uid://c55xk4g03q10f::::res://testing.gd
 test_card_ui.gd::GDScript/GDScript::2931258366988446168::1743743290::0::1::::<>Panel<><>0<>0<><>::
 test_card_ui.tscn::PackedScene/PackedScene::2955237397332424143::1752987755::0::1::::<><><>0<>0<><>::uid://bh06nq8lv275u::::res://test_card_ui.gd<>uid://dqtdjy5jd1bd1::::res://art/cards/card_backs/HPTCG-RevivalBack.png
 test_deck_list.tres::Resource/DeckList::1979523510203538188::1752987755::0::1::::<><><>0<>0<><>::uid://f4m354is4r4o::::res://custom_resources/deck_list.gd<>uid://dqtdjy5jd1bd1::::res://art/cards/card_backs/HPTCG-RevivalBack.png<>uid://bmur1pagjicpt::::res://custom_resources/card.gd<>uid://os7ri2xtrose::::res://cards/resources/CareOfMagicalCreatures.tres<>uid://b4rdog14tyn2::::res://cards/resources/MrsNorris.tres<>uid://cykx2a74ro4ve::::res://cards/resources/ScottishStag.tres<>uid://d0su5lmca85lt::::res://cards/resources/Norbert.tres<>uid://cv7mcvflr3x7i::::res://custom_resources/card_pile.gd<>uid://cxmgup8yt0hy1::::res://cards/resources/PetRat.tres<>uid://chiow5e6xw6kq::::res://cards/resources/MysteriousEgg.tres<>uid://hjftfcvqa1oh::::res://cards/resources/Nurture.tres<>uid://b48baerxcku05::::res://cards/resources/DracoMalfoy.tres
@@ -49,13 +49,15 @@ hp_tcg_cardback_proxy_bleed.png::CompressedTexture2D/CompressedTexture2D::410524
 ::res://art/card_piles/::1752987714
 DeckPile.png::CompressedTexture2D/CompressedTexture2D::6738193498595292457::1734813911::1752987713::1::::<><><>0<>0<>afa07557e233cec34ef2ff5c199201d9<>res://.godot/imported/DeckPile.png-0b4b7e446b3b1979c495bc664b896744.ctex::
 DiscardPile.png::CompressedTexture2D/CompressedTexture2D::1770090377122442132::1734813884::1752987713::1::::<><><>0<>0<>74cb7b6daf6c76d1cb6502636ca054f6<>res://.godot/imported/DiscardPile.png-c1ec26d7307a2ae235c545e375334e5a.ctex::
-::res://art/icons/::1766821295
-Icon_Action.png::CompressedTexture2D::4794234724023241293::1766821295::1766821296::1::::<><><>0<>0<>dabef9f036e0969799d000bac05cb2c4<>res://.godot/imported/Icon_Action.png-1074a3f7b5886d890e70dd4a5d8b1bbd.ctex::
+::res://art/icons/::1766824947
+Icon_Action.png::CompressedTexture2D/CompressedTexture2D::1399949076754960603::1766824787::1766824787::1::::<><><>0<>0<>6005b405d691837b2de624cc38422ec8<>res://.godot/imported/Icon_Action.png-1074a3f7b5886d890e70dd4a5d8b1bbd.ctex::
+Icon_BYTS.png::CompressedTexture2D/CompressedTexture2D::4830845689619424362::1766824946::1766824947::1::::<><><>0<>0<>624d97bd14223958e2296719ceece57d<>res://.godot/imported/Icon_BYTS.png-d5786e07cfe1c599cab24d699d8a6bb7.ctex::
 Icon_Care_Of_Magical_Creatures.webp::CompressedTexture2D/CompressedTexture2D::7592302868574874085::1742107293::1752987714::1::::<><><>0<>0<>e2ab721a3b6b20084f27cb79d172846b<>res://.godot/imported/Icon_Care_Of_Magical_Creatures.webp-2a9b6bf4194deab326199b4f2e6c759c.ctex::
 Icon_Charms.webp::CompressedTexture2D/CompressedTexture2D::8232372585732666770::1742107293::1752987714::1::::<><><>0<>0<>86da57d880da39cbbe2c191c394b4fad<>res://.godot/imported/Icon_Charms.webp-acf459e1518320cbec12ccd9b24a8fff.ctex::
 Icon_Creature_Damage.png::CompressedTexture2D/CompressedTexture2D::998681746948155238::1766260660::1766555408::1::::<><><>0<>0<>e77c3e4ed4ee53167ea467d25a297ed2<>res://.godot/imported/Icon_Creature_Damage.png-7a878f668f350bd4b49869ef6d544555.ctex::
 Icon_D20.png::CompressedTexture2D/CompressedTexture2D::7281814955897324248::1766534147::1766534205::1::::<><><>0<>0<>28aa6d6f15424c50bbe8a78dece4fd40<>res://.godot/imported/Icon_D20.png-bc6a279e114cbb13fe92eecc6dc6c8ce.ctex::
-Icon_Draw.png::CompressedTexture2D::7501036799448110323::1766821295::1766821296::1::::<><><>0<>0<>7f4edf97f8cf3933a6f51b45fc5590b5<>res://.godot/imported/Icon_Draw.png-d32b091351e19adbeb22c3ab24187212.ctex::
+Icon_Draw.png::CompressedTexture2D/CompressedTexture2D::7501036799448110323::1766821295::1766821296::1::::<><><>0<>0<>7f4edf97f8cf3933a6f51b45fc5590b5<>res://.godot/imported/Icon_Draw.png-d32b091351e19adbeb22c3ab24187212.ctex::
+Icon_EOYTS.png::CompressedTexture2D/CompressedTexture2D::2775976285017329065::1766824946::1766824947::1::::<><><>0<>0<>d9e47b7e130813797713badfe42a7bb3<>res://.godot/imported/Icon_EOYTS.png-894666c280e4b487f6da3d2cc4f9cab9.ctex::
 Icon_Lightning_Bolt.webp::CompressedTexture2D/CompressedTexture2D::4908394008308233996::1742107293::1752987714::1::::<><><>0<>0<>bd792d40bd4e203039e41b081c230f6c<>res://.godot/imported/Icon_Lightning_Bolt.webp-38221a2c40d9edd27beebefb7f2d111a.ctex::
 Icon_Potions.webp::CompressedTexture2D/CompressedTexture2D::1272030197610844620::1742107293::1752987714::1::::<><><>0<>0<>7bb809b3b18885b068c7374f4165f4ff<>res://.godot/imported/Icon_Potions.webp-c6dd354647fc11803ff2f0f393005d00.ctex::
 Icon_Quidditch.webp::CompressedTexture2D/CompressedTexture2D::337159191872487180::1742107293::1752987714::1::::<><><>0<>0<>db5e8c4fa6eb9ddc4fa2a8ee77d57690<>res://.godot/imported/Icon_Quidditch.webp-3f00f2b6047ca08dcbc0de74d30bfcf6.ctex::
@@ -318,25 +320,22 @@ stats.gd::GDScript/GDScript::162339509230103262::1746598796::0::1::::Stats<>Reso
 ::res://custom_resources/Themes/::1766794159
 button_theme.tres::Theme::6699924990964877021::1766794159::0::1::::<><><>0<>0<><>::
 ::res://export/::1761112529
-::res://export/web/::1761112580
-index.apple-touch-icon.png::CompressedTexture2D/CompressedTexture2D::6703208640203126740::1761112577::1761112579::1::::<><><>0<>0<>a86952d6077e328ed295e2e0d119a846<>res://.godot/imported/index.apple-touch-icon.png-aebfb1e41ce4a993e231d731c37e24be.ctex::
-index.icon.png::CompressedTexture2D/CompressedTexture2D::8666815036367546883::1761112577::1761112580::1::::<><><>0<>0<>86b9acc1d01a59c32423b2e280d32963<>res://.godot/imported/index.icon.png-71c9d3338695ba24c45c706011eaad77.ctex::
-index.png::CompressedTexture2D/CompressedTexture2D::6376775159529078998::1761112576::1761112579::1::::<><><>0<>0<>ea39a8058536ec7f418711a10debaeda<>res://.godot/imported/index.png-c2d8175aa2006ac735a751c5803e019d.ctex::
+::res://export/web/::1766823355
 ::res://fonts/::1752987708
 HARRYP__.TTF::FontFile/FontFile::8667454949465471982::1742105666::1752987708::1::::<><><>0<>0<>dcd49122c70dec48314e682ee86c052c<>res://.godot/imported/HARRYP__.TTF-5501078d4c713fcf0490fb38190af052.fontdata::
-::res://global/::1766818894
-events.gd::GDScript::6961164112426680682::1766818894::0::1::::<>Node<><>0<>0<><>::
-global.gd::GDScript::8863313732252850576::1766776258::0::1::::<>Node<><>0<>0<><>::
+::res://global/::1766822049
+events.gd::GDScript::6961164112426680682::1766822049::0::1::::<>Node<><>0<>0<><>::
+global.gd::GDScript/GDScript::8863313732252850576::1766776258::0::1::::<>Node<><>0<>0<><>::
 ::res://node_settings/::1748799527
 button_menu_ui.tres::Theme/Theme::1309909641430885853::1742106594::0::1::::<><><>0<>0<><>::uid://dvqtymqwhgi03::::res://fonts/HARRYP__.TTF
 label_menu_ui.tres::LabelSettings/LabelSettings::1603987497328278757::1748799527::0::1::::<><><>0<>0<><>::uid://dvqtymqwhgi03::::res://fonts/HARRYP__.TTF
 ::res://scenes/::1748926274
-::res://scenes/battle/::1766821232
-battle.gd::GDScript::5663126146890656611::1766819062::0::1::::<>Node2D<><>0<>0<><>::
-battle.tscn::PackedScene::3669092719670110455::1766821232::0::1::::<><><>0<>0<><>::uid://cmxi4ipd8betv::::res://scenes/battle/battle.gd<>uid://btrfts84g8jjb::::res://art/backgrounds/4.17 Fleur Delacour - Beauxbaton Carriage Winged Horses B4C15M1.jpg<>uid://cvlglqs5k5bf0::::res://scenes/battle/PlayerReadyCheck/player_ready_check.tscn<>uid://bu6xir8f2j3bw::::res://scenes/ui/player_ui/player.tscn<>uid://blxedqt0ivo76::::res://scenes/ui/card_pile_ui/card_pile_view_ui/card_pile_view.tscn<>uid://dp4y6g58efx7k::::res://scenes/ui/card_ui/card_tooltip_ui/card_tool_tip_popup.tscn<>uid://c6a87we2jhxtp::::res://scenes/ui/confirmation_modal_ui/confirmation_modal_ui.tscn<>uid://die3pf2loyo36::::res://scenes/ui/card_pile_ui/card_pile_select_ui/card_pile_selection_ui.tscn<>uid://d4ah33ew645rv::::res://scenes/ui/card_zone_ui/card_zone_selection.tscn<>uid://dfxsr7o8sv2y2::::res://art/misc/HP_Bolt_no text.png<>uid://w38o7lmmpxib::::res://node_settings/label_menu_ui.tres
-::res://scenes/battle/PlayerReadyCheck/::1766821232
-player_ready_check.gd::GDScript/GDScript::2242468981732674318::1766562791::0::1::::PlayerReadyCheck<>Control<><>0<>0<><>::
-player_ready_check.tscn::PackedScene::6269900054326780695::1766821232::0::1::::<><><>0<>0<><>::uid://dvqtymqwhgi03::::res://fonts/HARRYP__.TTF<>uid://67jev2aj4avm::::res://scenes/battle/PlayerReadyCheck/player_ready_check.gd<>uid://db0motjj8si61::::res://art/icons/Icon_D20.png<>uid://btrfts84g8jjb::::res://art/backgrounds/4.17 Fleur Delacour - Beauxbaton Carriage Winged Horses B4C15M1.jpg<>uid://c2pq1yklfe7an::::res://custom_resources/Themes/button_theme.tres
+::res://scenes/battle/::1766824973
+battle.gd::GDScript::5663126146890656611::1766823172::0::1::::<>Node2D<><>0<>0<><>::
+battle.tscn::PackedScene::3669092719670110455::1766824973::0::1::::<><><>0<>0<><>::uid://cmxi4ipd8betv::::res://scenes/battle/battle.gd<>uid://btrfts84g8jjb::::res://art/backgrounds/4.17 Fleur Delacour - Beauxbaton Carriage Winged Horses B4C15M1.jpg<>uid://cvlglqs5k5bf0::::res://scenes/battle/PlayerReadyCheck/player_ready_check.tscn<>uid://bu6xir8f2j3bw::::res://scenes/ui/player_ui/player.tscn<>uid://blxedqt0ivo76::::res://scenes/ui/card_pile_ui/card_pile_view_ui/card_pile_view.tscn<>uid://dp4y6g58efx7k::::res://scenes/ui/card_ui/card_tooltip_ui/card_tool_tip_popup.tscn<>uid://c6a87we2jhxtp::::res://scenes/ui/confirmation_modal_ui/confirmation_modal_ui.tscn<>uid://die3pf2loyo36::::res://scenes/ui/card_pile_ui/card_pile_select_ui/card_pile_selection_ui.tscn<>uid://d4ah33ew645rv::::res://scenes/ui/card_zone_ui/card_zone_selection.tscn<>uid://dfxsr7o8sv2y2::::res://art/misc/HP_Bolt_no text.png<>uid://w38o7lmmpxib::::res://node_settings/label_menu_ui.tres
+::res://scenes/battle/PlayerReadyCheck/::1766824973
+player_ready_check.gd::GDScript::2242468981732674318::1766821546::0::1::::PlayerReadyCheck<>Control<><>0<>0<><>::
+player_ready_check.tscn::PackedScene::6269900054326780695::1766824973::0::1::::<><><>0<>0<><>::uid://dvqtymqwhgi03::::res://fonts/HARRYP__.TTF<>uid://67jev2aj4avm::::res://scenes/battle/PlayerReadyCheck/player_ready_check.gd<>uid://db0motjj8si61::::res://art/icons/Icon_D20.png<>uid://btrfts84g8jjb::::res://art/backgrounds/4.17 Fleur Delacour - Beauxbaton Carriage Winged Horses B4C15M1.jpg<>uid://c2pq1yklfe7an::::res://custom_resources/Themes/button_theme.tres
 ::res://scenes/deck_menu/::1752987827
 deck_menu.gd::GDScript/GDScript::1519218248442051931::1748799984::0::1::::DeckMenu<>Control<><>0<>0<><>::
 deck_menu.tscn::PackedScene/PackedScene::7412331533166103858::1752987752::0::1::::<><><>0<>0<><>::uid://vpxglg6cke6i::::res://art/backgrounds/1.47 McGonagalls Office - Wizards Chess in McGonagalls Office B1C16M2.jpg<>uid://vv6kj2bu7os6::::res://scenes/deck_menu/deck_menu.gd<>uid://dvqtymqwhgi03::::res://fonts/HARRYP__.TTF<>uid://j27lkf88ivxq::::res://scenes/deck_menu/deck_ui_container.gd
@@ -398,7 +397,7 @@ confirmation_modal_ui.tscn::PackedScene/PackedScene::6950757489263462681::175298
 ::res://scenes/ui/match_ui/::1752987754
 match_selection_ui.gd::GDScript/GDScript::3159311387295973513::1742366550::0::1::::MatchSelectionUI<>CenterContainer<><>0<>0<><>::
 match_selection_ui.tscn::PackedScene/PackedScene::1745137857193572725::1752987754::0::1::::<><><>0<>0<><>::uid://blannq5oc7xy4::::res://scenes/ui/match_ui/match_selection_ui.gd
-::res://scenes/ui/player_ui/::1766821232
+::res://scenes/ui/player_ui/::1766824973
 action_stats_ui.gd::GDScript/GDScript::2457261336341481592::1754724613::0::1::::ActionStatsUI<>VBoxContainer<><>0<>0<><>::
 card_draw_button.gd::GDScript/GDScript::6583671771354741092::1751426866::0::1::::CardDrawButton<>Button<><>0<>0<><>::
 card_pile_opener.gd::GDScript/GDScript::8370704572923189799::1734898498::0::1::::CardPileOpener<>TextureButton<><>0<>0<><>::
@@ -410,19 +409,19 @@ in_play_card_arrangement_update.gd::GDScript/GDScript::336287247521998771::17615
 in_play_lessons.gd::GDScript/GDScript::7091962125934532348::1754275235::0::1::::InPlayLessons<>HBoxContainer<><>0<>0<><>::
 in_play_lessons.tscn::PackedScene/PackedScene::8526901502444455796::1752987755::0::1::::<><><>0<>0<><>::uid://c8bntys5oj6xk::::res://scenes/ui/player_ui/in_play_lessons.gd<>uid://e15upyrd65wh::::res://scenes/ui/player_ui/in_play_card_arrangement_update.gd
 player.gd::GDScript::2102530310096849411::1766796503::0::1::::Player<>Panel<><>0<>0<><>::
-player.tscn::PackedScene::3855604988153612160::1766821232::0::1::::<><><>0<>0<><>::uid://47qmqjrcynap::::res://scenes/ui/player_ui/player.gd<>uid://b7vl30h7n28q2::::res://scenes/ui/player_ui/player_handler.gd<>uid://e15upyrd65wh::::res://scenes/ui/player_ui/in_play_card_arrangement_update.gd<>uid://cqyicv4soqc0d::::res://scenes/ui/player_ui/player_stats_ui.gd<>uid://bkrlp2xubq1um::::res://scenes/ui/player_ui/power_stats_ui.gd<>uid://ccx3sbsddxbrm::::res://art/player_avatars/owl_head.png<>uid://ckwneqr762wcy::::res://art/icons/Icon_Transfiguration.webp<>uid://dpj28dvgg510i::::res://art/icons/Icon_Charms.webp<>uid://segffe5suyky::::res://art/icons/Icon_Potions.webp<>uid://dgf1ebta1d35b::::res://art/icons/Icon_Care_Of_Magical_Creatures.webp<>uid://e2k7y2h45qky::::res://art/icons/Icon_Quidditch.webp<>uid://bbaky85jeamv5::::res://scenes/ui/player_ui/action_stats_ui.gd<>uid://cb6wsdhiwk8xk::::res://art/icons/Icon_Lightning_Bolt.webp<>uid://bphcyyafso7w4::::res://scenes/ui/player_ui/card_pile_opener.tscn<>uid://cv8a7p2ct54ic::::res://scenes/ui/player_ui/card_ui_starting_character.tscn<>uid://0hpeofrccrjo::::res://art/card_piles/DiscardPile.png<>uid://c02gd2xora3oi::::res://scenes/ui/player_ui/card_draw_button.gd<>uid://dtqq27f5rwlw3::::res://scenes/ui/player_ui/in_play_lessons.tscn<>uid://d3umfnxw3s3ha::::res://scenes/ui/player_ui/hand.gd<>uid://b0y0wl0v7a7jd::::res://scenes/ui/player_ui/player_turn_ui/turn_step_ui.tscn
-player_handler.gd::GDScript::4676534827464951207::1766796665::0::1::::PlayerHandler<>Node<><>0<>0<><>::
+player.tscn::PackedScene::3855604988153612160::1766824973::0::1::::<><><>0<>0<><>::uid://47qmqjrcynap::::res://scenes/ui/player_ui/player.gd<>uid://b7vl30h7n28q2::::res://scenes/ui/player_ui/player_handler.gd<>uid://e15upyrd65wh::::res://scenes/ui/player_ui/in_play_card_arrangement_update.gd<>uid://cqyicv4soqc0d::::res://scenes/ui/player_ui/player_stats_ui.gd<>uid://bkrlp2xubq1um::::res://scenes/ui/player_ui/power_stats_ui.gd<>uid://ccx3sbsddxbrm::::res://art/player_avatars/owl_head.png<>uid://ckwneqr762wcy::::res://art/icons/Icon_Transfiguration.webp<>uid://dpj28dvgg510i::::res://art/icons/Icon_Charms.webp<>uid://segffe5suyky::::res://art/icons/Icon_Potions.webp<>uid://dgf1ebta1d35b::::res://art/icons/Icon_Care_Of_Magical_Creatures.webp<>uid://e2k7y2h45qky::::res://art/icons/Icon_Quidditch.webp<>uid://bbaky85jeamv5::::res://scenes/ui/player_ui/action_stats_ui.gd<>uid://cb6wsdhiwk8xk::::res://art/icons/Icon_Lightning_Bolt.webp<>uid://bphcyyafso7w4::::res://scenes/ui/player_ui/card_pile_opener.tscn<>uid://cv8a7p2ct54ic::::res://scenes/ui/player_ui/card_ui_starting_character.tscn<>uid://0hpeofrccrjo::::res://art/card_piles/DiscardPile.png<>uid://c02gd2xora3oi::::res://scenes/ui/player_ui/card_draw_button.gd<>uid://dtqq27f5rwlw3::::res://scenes/ui/player_ui/in_play_lessons.tscn<>uid://d3umfnxw3s3ha::::res://scenes/ui/player_ui/hand.gd<>uid://b0y0wl0v7a7jd::::res://scenes/ui/player_ui/player_turn_ui/turn_step_ui.tscn
+player_handler.gd::GDScript::4676534827464951207::1766822180::0::1::::PlayerHandler<>Node<><>0<>0<><>::
 player_stats_ui.gd::GDScript/GDScript::5945898387848955837::1754803450::0::1::::PlayerStatsUI<>ColorRect<><>0<>0<><>::
 power_stats_ui.gd::GDScript/GDScript::3124099670293105516::1754723709::0::1::::PowerStatsUI<>VBoxContainer<><>0<>0<><>::
-::res://scenes/ui/player_ui/player_turn_ui/::1766821232
+::res://scenes/ui/player_ui/player_turn_ui/::1766825061
 action_state.gd::GDScript/GDScript::4755432232372577375::1766649181::0::1::::<>TurnStepState<><>0<>0<><>::
-before_your_turn_state.gd::GDScript::8830035629819332548::1766773325::0::1::::<>TurnStepState<><>0<>0<><>::
+before_your_turn_state.gd::GDScript::8830035629819332548::1766822842::0::1::::<>TurnStepState<><>0<>0<><>::
 create_damage_state.gd::GDScript/GDScript::7678302303674046904::1766649178::0::1::::<>TurnStepState<><>0<>0<><>::
 draw_state.gd::GDScript/GDScript::7160018069706012700::1766649174::0::1::::<>TurnStepState<><>0<>0<><>::
 end_of_your_turn_state.gd::GDScript/GDScript::8626916264710561508::1766649183::0::1::::<>TurnStepState<><>0<>0<><>::
-opponents_turn_state.gd::GDScript::4475018916801668074::1766818866::0::1::::<>TurnStepState<><>0<>0<><>::
+opponents_turn_state.gd::GDScript::4475018916801668074::1766822917::0::1::::<>TurnStepState<><>0<>0<><>::
 turn_step_active.tres::StyleBoxFlat::7114252324615532569::1766821001::0::1::::<><><>0<>0<><>::
 turn_step_state.gd::GDScript/GDScript::5581807125396406050::1766607563::0::1::::TurnStepState<>Node<><>0<>0<><>::
-turn_step_state_machine.gd::GDScript/GDScript::155886526947482823::1766733683::0::1::::TurnStepStateMachine<>Node<><>0<>0<><>::
-turn_step_ui.gd::GDScript::4272491489517902374::1766778079::0::1::::TurnStepUI<>Panel<><>0<>0<><>::
-turn_step_ui.tscn::PackedScene::4192244670400320533::1766821232::0::1::::<><><>0<>0<><>::uid://b14vktcmb7al7::::res://scenes/ui/player_ui/player_turn_ui/turn_step_ui.gd<>uid://c8mgxxatguci8::::res://scenes/ui/player_ui/player_turn_ui/turn_step_active.tres<>uid://oh1e3xmpecpq::::res://art/icons/Icon_Creature_Damage.png<>uid://chrote3ewy8v::::res://scenes/ui/player_ui/player_turn_ui/turn_step_state_machine.gd<>uid://32q43tbq7xed::::res://art/icons/Icon_Draw.png<>uid://dx2lnqvoknjeq::::res://scenes/ui/player_ui/player_turn_ui/before_your_turn_state.gd<>uid://daampl7nryu4c::::res://scenes/ui/player_ui/player_turn_ui/draw_state.gd<>uid://dhnort2gdqdlg::::res://scenes/ui/player_ui/player_turn_ui/create_damage_state.gd<>uid://b80tjk33dy7dj::::res://scenes/ui/player_ui/player_turn_ui/action_state.gd<>uid://du57byly668m7::::res://scenes/ui/player_ui/player_turn_ui/end_of_your_turn_state.gd<>uid://b40y54miyf27w::::res://scenes/ui/player_ui/player_turn_ui/opponents_turn_state.gd
+turn_step_state_machine.gd::GDScript::155886526947482823::1766823702::0::1::::TurnStepStateMachine<>Node<><>0<>0<><>::
+turn_step_ui.gd::GDScript/GDScript::4272491489517902374::1766778079::0::1::::TurnStepUI<>Panel<><>0<>0<><>::
+turn_step_ui.tscn::PackedScene::4192244670400320533::1766825061::0::1::::<><><>0<>0<><>::uid://b14vktcmb7al7::::res://scenes/ui/player_ui/player_turn_ui/turn_step_ui.gd<>uid://c8mgxxatguci8::::res://scenes/ui/player_ui/player_turn_ui/turn_step_active.tres<>uid://oh1e3xmpecpq::::res://art/icons/Icon_Creature_Damage.png<>uid://ca3dk8b5r18pi::::res://art/icons/Icon_BYTS.png<>uid://chrote3ewy8v::::res://scenes/ui/player_ui/player_turn_ui/turn_step_state_machine.gd<>uid://de4s8lcw0vk7t::::res://art/icons/Icon_Draw.png<>uid://t7e7sapsnjrn::::res://art/icons/Icon_Action.png<>uid://dx2lnqvoknjeq::::res://scenes/ui/player_ui/player_turn_ui/before_your_turn_state.gd<>uid://daampl7nryu4c::::res://scenes/ui/player_ui/player_turn_ui/draw_state.gd<>uid://dhnort2gdqdlg::::res://scenes/ui/player_ui/player_turn_ui/create_damage_state.gd<>uid://bfsx6n7tl1s5f::::res://art/icons/Icon_EOYTS.png<>uid://b80tjk33dy7dj::::res://scenes/ui/player_ui/player_turn_ui/action_state.gd<>uid://du57byly668m7::::res://scenes/ui/player_ui/player_turn_ui/end_of_your_turn_state.gd<>uid://b40y54miyf27w::::res://scenes/ui/player_ui/player_turn_ui/opponents_turn_state.gd
