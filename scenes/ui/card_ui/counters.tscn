@@ -1,0 +1,50 @@
+[gd_scene load_steps=5 format=3 uid="uid://dbeyiyqwcjx2q"]
+
+[ext_resource type="StyleBox" uid="uid://bgioswlqi22us" path="res://custom_resources/Themes/counter_theme.tres" id="1_y0bsd"]
+[ext_resource type="LabelSettings" uid="uid://cgoblacvyeg2s" path="res://custom_resources/Themes/max_health_counter_label.tres" id="2_boxi3"]
+[ext_resource type="Script" uid="uid://dkvqkli8q7k8d" path="res://scenes/ui/card_ui/counters_ui.gd" id="3_boxi3"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_boxi3"]
+size = Vector2(38, 27)
+
+[node name="CountersUI" type="Label"]
+custom_minimum_size = Vector2(38, 27)
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -36.0
+offset_top = 17.0
+offset_right = 2.0
+offset_bottom = 44.0
+grow_horizontal = 0
+grow_vertical = 2
+rotation = -1.5708
+mouse_filter = 1
+theme_override_styles/normal = ExtResource("1_y0bsd")
+text = "444"
+label_settings = ExtResource("2_boxi3")
+horizontal_alignment = 1
+vertical_alignment = 1
+script = ExtResource("3_boxi3")
+
+[node name="Area2D" type="Area2D" parent="."]
+visible = false
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(19, 13.5)
+shape = SubResource("RectangleShape2D_boxi3")
+debug_color = Color(0, 0.6, 0.701961, 0)
+
+[node name="HoverTextLabel" type="Label" parent="."]
+visible = false
+layout_mode = 0
+offset_left = 32.0
+offset_top = 21.0
+offset_right = 72.0
+offset_bottom = 44.0
+text = "Unknown Counters"
+
+[connection signal="mouse_entered" from="Area2D" to="." method="_on_area_2d_mouse_entered"]
+[connection signal="mouse_exited" from="Area2D" to="." method="_on_area_2d_mouse_exited"]

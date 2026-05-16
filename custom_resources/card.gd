@@ -7,6 +7,7 @@ signal update_card_is_valid_choice_requested(value: bool)
 enum SetName {BASE}
 enum Rarity {RARE, UNCOMMON, COMMON}
 
+# Potentially have enum to represent all different ability types, whenever, once per turn, once per game
 var once_per_game_ability_used: bool = false
 var card_ui : CardUI
 
@@ -24,16 +25,24 @@ var card_ui : CardUI
 @export var transfiguration_power_provided_amount: int
 @export var quidditch_power_provided_amount: int
 @export_enum("CARE_OF_MAGICAL_CREATURES", "CHARMS", "POTIONS", "TRANSFIGURATION", "QUIDDITCH") var powerneeded_type: String
-@export var artist: String
+@export var has_activated_ability: bool
+@export_enum("WHENEVER","ONCE_PER_TURN","ONCE_PER_GAME") var activated_ability_type: String
+@export var has_triggered_ability: bool
+@export_enum("WHENEVER","ONCE_PER_TURN","ONCE_PER_GAME") var triggered_ability_type: String
 
 @export_subgroup("Type")
 @export var type_adventure: bool
 @export var type_character: bool
 @export var type_creature: bool
+@export var type_event: bool
 @export var type_item: bool
 @export var type_lesson: bool
+@export var type_location: bool
+@export var type_match: bool
 @export var type_spell: bool
 
+# When a new type is added here it also needs to be added to the card
+# restrcition modifier effect
 @export_subgroup("SubType")
 @export var subtype_bird: bool
 @export var subtype_cauldron: bool
@@ -65,11 +74,15 @@ var card_ui : CardUI
 @export_multiline var rulestexttoSolve: String
 @export_multiline var rulestextreward: String
 @export_multiline var flavortext: String
+@export var artist: String
 
 @export_group("Card Visuals")
 @export var card_image: Texture
 @export var card_back_image: Texture
 @export var is_valid_choice: bool : set = _set_is_valid_choice
+
+@export_group("Stats")
+@export var creature_stats: CreatureStats
 
 @export_group("Player Data")
 @export var player_owner: String
@@ -150,6 +163,10 @@ func selection_sort(_card_a: Card,_card_b: Card) -> bool:
 func check_selected_cards_is_valid(_card_array: Array[Card]) -> bool:
 	# Return false by default, each card to override if needed
 	return false
+
+func effect_started() -> void:
+	# Set the active card
+	Global.active_card = self
 
 func effect_finished() -> void:
 	# Set the active card to null when the cards effects have been completed.

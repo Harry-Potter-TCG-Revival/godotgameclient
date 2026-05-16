@@ -18,7 +18,6 @@ func add_player(id,username:String,roll:int):
 		}
 	print(players_in_match)
 
-
 func _on_button_pressed():
 	rng = randi_range(1,20)
 	add_player(1,"player1",rng)

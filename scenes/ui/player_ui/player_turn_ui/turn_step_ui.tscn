@@ -2,15 +2,15 @@
 
 [ext_resource type="Script" uid="uid://b14vktcmb7al7" path="res://scenes/ui/player_ui/player_turn_ui/turn_step_ui.gd" id="1_8ukhb"]
 [ext_resource type="StyleBox" uid="uid://c8mgxxatguci8" path="res://scenes/ui/player_ui/player_turn_ui/turn_step_active.tres" id="2_56bdj"]
-[ext_resource type="Texture2D" uid="uid://oh1e3xmpecpq" path="res://art/icons/Icon_Creature_Damage.png" id="3_uo3hi"]
-[ext_resource type="Texture2D" uid="uid://ca3dk8b5r18pi" path="res://art/icons/Icon_BYTS.png" id="3_wfjxr"]
+[ext_resource type="Texture2D" uid="uid://ep54katxqgxa" path="res://art/icons/Icon_BYT.png" id="3_jymra"]
 [ext_resource type="Script" uid="uid://chrote3ewy8v" path="res://scenes/ui/player_ui/player_turn_ui/turn_step_state_machine.gd" id="4_56bdj"]
 [ext_resource type="Texture2D" uid="uid://de4s8lcw0vk7t" path="res://art/icons/Icon_Draw.png" id="4_bw7r4"]
+[ext_resource type="Texture2D" uid="uid://cthudhlw5g147" path="res://art/icons/Icon_CreatureDamage.png" id="5_4u565"]
 [ext_resource type="Texture2D" uid="uid://t7e7sapsnjrn" path="res://art/icons/Icon_Action.png" id="5_e1af1"]
 [ext_resource type="Script" uid="uid://dx2lnqvoknjeq" path="res://scenes/ui/player_ui/player_turn_ui/before_your_turn_state.gd" id="5_uo3hi"]
 [ext_resource type="Script" uid="uid://daampl7nryu4c" path="res://scenes/ui/player_ui/player_turn_ui/draw_state.gd" id="6_d0kdi"]
+[ext_resource type="Texture2D" uid="uid://ch772fb02jqah" path="res://art/icons/Icon_EOTY.png" id="7_87m3m"]
 [ext_resource type="Script" uid="uid://dhnort2gdqdlg" path="res://scenes/ui/player_ui/player_turn_ui/create_damage_state.gd" id="7_bkfsp"]
-[ext_resource type="Texture2D" uid="uid://bfsx6n7tl1s5f" path="res://art/icons/Icon_EOYTS.png" id="7_jymra"]
 [ext_resource type="Script" uid="uid://b80tjk33dy7dj" path="res://scenes/ui/player_ui/player_turn_ui/action_state.gd" id="8_bw7r4"]
 [ext_resource type="Script" uid="uid://du57byly668m7" path="res://scenes/ui/player_ui/player_turn_ui/end_of_your_turn_state.gd" id="9_e1af1"]
 [ext_resource type="Script" uid="uid://b40y54miyf27w" path="res://scenes/ui/player_ui/player_turn_ui/opponents_turn_state.gd" id="10_wfjxr"]
@@ -79,7 +79,7 @@ offset_right = 29.0
 offset_bottom = 29.0
 grow_horizontal = 2
 grow_vertical = 2
-texture = ExtResource("3_wfjxr")
+texture = ExtResource("3_jymra")
 expand_mode = 2
 stretch_mode = 4
 
@@ -161,7 +161,7 @@ offset_right = 29.0
 offset_bottom = 29.0
 grow_horizontal = 2
 grow_vertical = 2
-texture = ExtResource("3_uo3hi")
+texture = ExtResource("5_4u565")
 expand_mode = 2
 stretch_mode = 4
 
@@ -243,7 +243,7 @@ offset_right = 29.0
 offset_bottom = 29.0
 grow_horizontal = 2
 grow_vertical = 2
-texture = ExtResource("7_jymra")
+texture = ExtResource("7_87m3m")
 expand_mode = 2
 stretch_mode = 4
 

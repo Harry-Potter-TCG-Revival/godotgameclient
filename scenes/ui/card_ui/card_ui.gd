@@ -17,6 +17,7 @@ var card_in_hand: bool
 var card_in_play: bool
 var card_size: Vector2 = Vector2(202,280)
 
+
 @export var card: Card : set = _set_card
 @export var player_stats: PlayerStats : set = _set_player_stats
 @export var selected_cards: Array[Card]
@@ -31,6 +32,7 @@ var card_size: Vector2 = Vector2(202,280)
 @onready var card_state_machine: CardStateMachine = $CardStateMachine as CardStateMachine
 @onready var card_drop_area: Array[Node] = []
 @onready var ability_used_flag = $CardVisuals/AbilityUsedFlag
+@onready var counters_h_box = $CardVisuals/CountersHBox
 
 # card size - MTG Arena - 448 x 320 (7 - 5 ratio)
 # hptcg defaul card size - 1040 x 745 (7 - 5 ratio)
@@ -39,7 +41,7 @@ func _ready():
 	# This is temporary code to set to initiate the card state machine, this will happen on battle start
 	card_state_machine.init(self)
 	self.add_to_group("all_card_ui")
-	
+
 func _on_mouse_entered():
 	card_state_machine.on_mouse_entered()
 
@@ -99,12 +101,17 @@ func leave_play() -> void:
 	rotation_degrees = 0
 	scale = Vector2(1,1)
 	
+	# Remove all the counters scences as they can only exist while in play
+	for counter_node: Node in counters_h_box.get_children():
+		counter_node.queue_free()
+	
 	card.leave_play(player_stats)
 	card.leave_play_upate_power(player_stats)
 	
 	# check if card is discarded from play
 	# check if card is bounced to hand
 	# check if card is shuffled into deck
+	# check if card goes into the veil
 
 func _set_playable(value: bool) -> void:
 	playable = value
@@ -121,6 +128,12 @@ func _set_player_stats(value: PlayerStats) -> void:
 	player_stats = value
 	player_stats.stats_changed.connect(_on_player_stats_changed)
 	_on_player_stats_changed()
+
+func _set_creature_stats(value: CreatureStats) -> void:
+	# Break out if the card is not a creature
+	if not card.type_creature:
+		return
+	
 
 func _set_valid_choice(value : bool) -> void:
 	is_valid_choice = value
@@ -163,8 +176,37 @@ func _on_player_stats_changed() -> void:
 	# Refactor use node group not card_in_hand bool
 	if self.card_in_hand:
 		check_playability()
+	
+
+func _on_creature_stats_changed() -> void:
+	# The creatures stats only matter when the card is in play
+	if self.card_in_play:
+		# update the creatures stats
+		# update the damage counters
+		# update the max health counter
+		pass
 
 func check_playability() -> void:
 	# Only run if the card_ui is for the local player by checking the player owner
 	if self.card.player_owner == Global.session.username:
 		self.playable = player_stats.can_play_card(card)
+	
+
+func set_counter_amount(value: String):
+	pass
+	# This needs to find the child node that matches the counter type
+	# Than set the counter number
+	# Use setter function in child node to update the text
+	
+	#counter_amount = value
+	#
+	#counters.text = counter_amount
+	#
+	#match counter_type:
+		#counter_types.STANDARD:
+			#counters.label_settings = NORMAL_COUNTER_LABEL_SETTINGS
+			#
+		#counter_types.DAMAGE:
+			#counters.label_settings = DAMAGE_COUNTER_LABEL_SETTINGS
+		#
+	#

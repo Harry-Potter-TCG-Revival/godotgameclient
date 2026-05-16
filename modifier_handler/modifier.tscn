@@ -1,0 +1,10 @@
+[gd_scene load_steps=2 format=3 uid="uid://287wd610mm34"]
+
+[ext_resource type="Script" uid="uid://dhmk16644ndpq" path="res://modifier_handler/modifier.gd" id="1_jwbov"]
+
+[node name="Modifier" type="Node"]
+script = ExtResource("1_jwbov")
+ModifierType = {
+"BASIC": 0,
+"CARDPLAYING": 1
+}

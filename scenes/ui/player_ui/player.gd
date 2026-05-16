@@ -87,9 +87,9 @@ func set_starting_character(new_starting_character: Card) -> void:
 	card_ui_starting_character.Starting_Character = new_starting_character
 
 
-func take_damage(_damage: int) -> void:
+func take_damage(damage_amount: int) -> void:
 	# This is not being used and needs to be re-done
-	player_stats.take_damage()
+	player_stats.take_damage(damage_amount)
 
 
 func discard_card(card_ui_to_discard: CardUI) -> void:

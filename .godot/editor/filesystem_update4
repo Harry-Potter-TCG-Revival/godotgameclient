@@ -1,6 +1,7 @@
-res://scenes/battle/battle.tscn
-res://custom_resources/Themes/button_theme.tres
 res://scenes/ui/player_ui/player.tscn
-res://scenes/ui/player_ui/player_turn_ui/turn_step_ui.tscn
-res://scenes/battle/PlayerReadyCheck/player_ready_check.tscn
-res://testing.tscn
+res://modifier_handler/modifier_handler.tscn
+res://modifier_handler/basic_modifier.tscn
+res://card_playing_modifier.tscn
+res://modifier_handler/card_restriction_modifier_value.tscn
+res://modifier_handler/card_restriction_modifier_value.gd
+res://custom_resources/Themes/button_theme.tres

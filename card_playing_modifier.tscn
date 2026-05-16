@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://scw3nchq8aam"]
+
+[ext_resource type="Script" uid="uid://c0lj5g3xp61er" path="res://card_playing_modifier.gd" id="1_8mlwj"]
+
+[node name="CardPlayingModifier" type="Node"]
+script = ExtResource("1_8mlwj")

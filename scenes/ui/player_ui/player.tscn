@@ -1,9 +1,12 @@
-[gd_scene load_steps=37 format=3 uid="uid://bu6xir8f2j3bw"]
+[gd_scene load_steps=40 format=3 uid="uid://bu6xir8f2j3bw"]
 
 [ext_resource type="Script" uid="uid://47qmqjrcynap" path="res://scenes/ui/player_ui/player.gd" id="1_cx6v1"]
 [ext_resource type="Script" uid="uid://b7vl30h7n28q2" path="res://scenes/ui/player_ui/player_handler.gd" id="2_7ibms"]
 [ext_resource type="Script" uid="uid://e15upyrd65wh" path="res://scenes/ui/player_ui/in_play_card_arrangement_update.gd" id="2_of2ir"]
+[ext_resource type="PackedScene" uid="uid://ch40ns8piodg5" path="res://modifier_handler/modifier_handler.tscn" id="3_lf2os"]
+[ext_resource type="PackedScene" uid="uid://lyf2rfllbhcl" path="res://modifier_handler/basic_modifier.tscn" id="4_cmj0h"]
 [ext_resource type="Script" uid="uid://cqyicv4soqc0d" path="res://scenes/ui/player_ui/player_stats_ui.gd" id="4_nr21q"]
+[ext_resource type="PackedScene" uid="uid://scw3nchq8aam" path="res://card_playing_modifier.tscn" id="5_cmj0h"]
 [ext_resource type="Script" uid="uid://bkrlp2xubq1um" path="res://scenes/ui/player_ui/power_stats_ui.gd" id="5_f7oqb"]
 [ext_resource type="Texture2D" uid="uid://ccx3sbsddxbrm" path="res://art/player_avatars/owl_head.png" id="6_127my"]
 [ext_resource type="Texture2D" uid="uid://ckwneqr762wcy" path="res://art/icons/Icon_Transfiguration.webp" id="6_qfo6v"]
@@ -90,6 +93,24 @@ script = ExtResource("1_cx6v1")
 [node name="PlayerHandler" type="Node" parent="." node_paths=PackedStringArray("hand") groups=["player_handler"]]
 script = ExtResource("2_7ibms")
 hand = NodePath("../Hand")
+
+[node name="ModifierHandler" parent="." instance=ExtResource("3_lf2os")]
+
+[node name="DamageDealtModifier" parent="ModifierHandler" instance=ExtResource("4_cmj0h")]
+
+[node name="DamageTakenModifier" parent="ModifierHandler" instance=ExtResource("4_cmj0h")]
+type = 1
+
+[node name="CardRestrictionModifer" parent="ModifierHandler" instance=ExtResource("5_cmj0h")]
+
+[node name="ActionRestrictionModifier" parent="ModifierHandler" instance=ExtResource("5_cmj0h")]
+type = 1
+
+[node name="ActionCostModifier" parent="ModifierHandler" instance=ExtResource("5_cmj0h")]
+type = 2
+
+[node name="PowerCostModifier" parent="ModifierHandler" instance=ExtResource("5_cmj0h")]
+type = 3
 
 [node name="SingletonCardsContainer" type="PanelContainer" parent="."]
 visible = false

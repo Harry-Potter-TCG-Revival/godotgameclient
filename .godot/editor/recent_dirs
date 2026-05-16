@@ -1,7 +1,10 @@
 res://
+res://modifier_handler
+res://custom_resources/Themes
+res://scenes/ui/card_ui
+res://cards/resources
 res://art/backgrounds
 res://scenes/battle/PlayerReadyCheck
-res://custom_resources/Themes
 res://scenes/ui/player_ui/player_turn_ui
 res://cards/images
 C:/Users/Griffin/Godot/hptcg_nakama/godotgameclient/export/web
@@ -17,6 +20,3 @@ res://art/card_piles
 res://art/player_avatars
 res://scenes/ui/card_ui/card_states
 res://scenes/ui
-res://scenes/deck_menu
-res://custom_resources
-res://global

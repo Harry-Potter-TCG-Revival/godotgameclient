@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://byp86222q78ke"]
+
+[ext_resource type="Script" uid="uid://jhi06fwyyi62" path="res://modifier_handler/card_cost_modifier_value.gd" id="1_3nqpk"]
+
+[node name="CardCostModifierValue" type="Node"]
+script = ExtResource("1_3nqpk")

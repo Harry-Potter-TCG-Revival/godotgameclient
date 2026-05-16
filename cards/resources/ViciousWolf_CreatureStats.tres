@@ -1,0 +1,9 @@
+[gd_resource type="Resource" script_class="CreatureStats" load_steps=2 format=3 uid="uid://dfuxiy06wgr55"]
+
+[ext_resource type="Script" uid="uid://bxkec6foq2pho" path="res://custom_resources/creature_stats.gd" id="1_8v0ho"]
+
+[resource]
+script = ExtResource("1_8v0ho")
+max_health = 3
+damage_per_turn = 3
+metadata/_custom_type_script = "uid://bxkec6foq2pho"

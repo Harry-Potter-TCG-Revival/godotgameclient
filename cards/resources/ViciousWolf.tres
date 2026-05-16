@@ -1,7 +1,8 @@
-[gd_resource type="Resource" script_class="Card" load_steps=3 format=3 uid="uid://cms3twjj0cg80"]
+[gd_resource type="Resource" script_class="Card" load_steps=4 format=3 uid="uid://cms3twjj0cg80"]
 
 [ext_resource type="Texture2D" uid="uid://mchyhd7qqlud" path="res://cards/images/ViciousWolf.png" id="1_cbe1o"]
 [ext_resource type="Script" uid="uid://bmur1pagjicpt" path="res://custom_resources/card.gd" id="1_hnhm3"]
+[ext_resource type="Resource" uid="uid://dfuxiy06wgr55" path="res://cards/resources/ViciousWolf_CreatureStats.tres" id="2_efuai"]
 
 [resource]
 script = ExtResource("1_hnhm3")
@@ -17,7 +18,10 @@ potions_power_provided_amount = 0
 transfiguration_power_provided_amount = 0
 quidditch_power_provided_amount = 0
 powerneeded_type = "CARE_OF_MAGICAL_CREATURES"
-artist = "Patrick Faricy"
+has_activated_ability = false
+activated_ability_type = ""
+has_triggered_ability = false
+triggered_ability_type = ""
 type_adventure = false
 type_character = false
 type_creature = true
@@ -52,5 +56,9 @@ rulestexteffect = ""
 rulestexttoSolve = ""
 rulestextreward = ""
 flavortext = ""
+artist = "Patrick Faricy"
 card_image = ExtResource("1_cbe1o")
 is_valid_choice = false
+creature_stats = ExtResource("2_efuai")
+player_owner = ""
+player_controller = ""

@@ -90,6 +90,20 @@ text = "State"
 horizontal_alignment = 1
 vertical_alignment = 1
 
+[node name="CountersHBox" type="HBoxContainer" parent="CardVisuals"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 174.0
+offset_top = 280.0
+offset_right = 251.0
+offset_bottom = 28.0
+grow_horizontal = 2
+grow_vertical = 2
+rotation = -1.5708
+alignment = 1
+
 [node name="AbilityUsedFlag" parent="CardVisuals" instance=ExtResource("13_1crjl")]
 visible = false
 layout_mode = 1
@@ -97,6 +111,7 @@ rotation = -1.0472
 mouse_filter = 2
 
 [node name="CardBackImage" type="TextureRect" parent="CardVisuals"]
+visible = false
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0

@@ -34,8 +34,10 @@ func update_cards_in_card_zone(targets: Array[CardZone.Zone],new_card_played:Car
 	
 	# Expad this to include all card zones, players and opponents
 	if targets.has(CardZone.Zone.PlayerInPlay):
+		# Need to filter to cards local player controls
 		all_cards += Global.cards_in_play
 	if targets.has(CardZone.Zone.PlayerHand):
+		# Need to disable clicked / dragging statee while cards are being selected.
 		var cards_in_hand = player_handler.hand.get_children()
 		all_cards += cards_in_hand
 	

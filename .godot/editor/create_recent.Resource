@@ -1,3 +1,4 @@
+CreatureStats
 PlayerStats
 DeckList
 Card

@@ -67,10 +67,14 @@ func reset_action_count() -> void:
 	self.action_count = max_action_count
 
 func can_play_card(card: Card) -> bool:
+	# FIXME also need to check restriction effects, action and non action based
+	# Card Type, Lesson Type
+	# Keyword based
+	
 	# The action cost for a card needs to be changed to the game or player handler
-	var actions_needed = action_count >= card.actioncost
-	var power_needed =  total_power_count >= card.powercost
-	var power_needed_type
+	var actions_needed : bool = action_count >= card.actioncost
+	var power_needed : bool =  total_power_count >= card.powercost
+	var power_needed_type : bool
 	if card.powerneeded_type == "CARE_OF_MAGICAL_CREATURES":
 		power_needed_type = care_of_magical_creatures_power_count > 0
 	elif card.powerneeded_type == "CHARMS":

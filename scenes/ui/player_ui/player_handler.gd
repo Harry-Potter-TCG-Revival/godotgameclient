@@ -33,8 +33,8 @@ func _ready() -> void:
 		Events.current_turn_step_changed.connect(_on_current_turn_step_changed)
 		Events.draw_cards_requested.connect(draw_cards)
 		Events.draw_specific_cards_requested.connect(draw_specific_cards)
-		Events.discard_card_requested.connect(_discard_card)
-		Events.discard_cards_requested.connect(_discard_cards)
+		Events.discard_card_requested.connect(discard_card)
+		Events.discard_cards_requested.connect(discard_cards)
 		Events.on_card_draw_button_pressed.connect(_on_card_draw_button_pressed)
 		Events.card_resolved.connect(_on_card_resolved)
 		Events.reparent_card_to_play_from_hand_requested.connect(reparent_card_to_play_from_hand)
@@ -220,9 +220,9 @@ func reparent_remote_card_to_play_from_hand(card_name: String) -> void:
 
 func _on_card_resolved(resolved_card: Card) -> void:
 	if resolved_card.type_spell:
-		_discard_card(resolved_card)
+		discard_card(resolved_card)
 
-func _discard_card(card_to_discard: Card) -> void:
+func discard_card(card_to_discard: Card) -> void:
 	print("discard card : ", card_to_discard.cardname)
 	# Add card to discard
 	player_stats.discard.add_card(card_to_discard)
@@ -239,9 +239,9 @@ func _discard_card(card_to_discard: Card) -> void:
 		card_to_discard.card_ui.queue_free()
 	
 
-func _discard_cards(cards_to_discard: CardPile):
+func discard_cards(cards_to_discard: CardPile):
 	print("player handler discard cards")
 	for card_to_discard in cards_to_discard.cards:
-		_discard_card(card_to_discard)
+		discard_card(card_to_discard)
 		await get_tree().create_timer(HAND_DISCARD_INTERVAL).timeout
 	

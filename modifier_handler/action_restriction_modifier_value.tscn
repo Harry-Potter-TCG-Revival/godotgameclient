@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://4cwcisagk7ij"]
+
+[ext_resource type="Script" uid="uid://bqoy87gef7ilq" path="res://modifier_handler/action_restriction_modifier_value.gd" id="1_22n0l"]
+
+[node name="ActionRestrictionModifierValue" type="Node"]
+script = ExtResource("1_22n0l")
